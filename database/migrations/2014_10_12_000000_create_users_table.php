@@ -47,7 +47,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->char('ativo', 1)->default('1');
+            $table->char('ativo', 1)->default('0');
             $table->string('tipo', 30)->nullable(); // proprietario ou inquilino
             $table->char('status', 1)->nullable(); // qualquer status necessário
 

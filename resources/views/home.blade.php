@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Painel</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Você está concetado!
+                    <ul>
+                        @if (auth()->user()->ativo == '1')
+                            <li><a href="">Ir para Menu</a></li>
+                        @else
+                            <li>Mas...</li>
+                            <li><b>Seu cadastro não está ativo ainda.</b> Você estará ativo quando os dados forem confirmados pelo administrador do sistema.</li>
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>

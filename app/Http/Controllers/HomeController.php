@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $temUnidade = DB::table('unidades')->select('id')->where('user_id', auth()->user()->id)->exists();
+        $temVeiculo = DB::table('veiculos')->select('id')->where('user_id', auth()->user()->id)->exists();
+        //dd($temUnidade);
+        return view('home', compact('temUnidade', 'temVeiculo'));
     }
 }

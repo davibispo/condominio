@@ -15,13 +15,18 @@
                     @endif
 
                     Você está concetado!
+                    <br><br>
                     <ul>
-                        @if (auth()->user()->ativo == '1')
-                            <li><a href="">Ir para Menu</a></li>
-                        @else
-                            <li>Mas...</li>
-                            <li><b>Seu cadastro não está ativo ainda.</b> Você estará ativo quando os dados forem confirmados pelo administrador do sistema.</li>
+                        <li>Cadastre agora sua unidade e seu(s) veículo(s), caso tenha:</li>
+                        <br>
+                        @if ($temUnidade == false)
+                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Unidade(s) </a></li>
                         @endif
+                        @if ($temVeiculo == false)
+                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Veículo(s) </a></li>
+                        @endif
+                        <br>
+                        <li style="list-style:none"><i class="fas fa-exclamation-triangle" style="color:darkgoldenrod"></i> Seu cadastro ficará ativo quando os dados forem confirmados pelo administrador do sistema/condomínio.</li>
                     </ul>
                 </div>
             </div>

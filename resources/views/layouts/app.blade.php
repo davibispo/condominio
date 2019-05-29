@@ -44,8 +44,8 @@
                                     Administrador<span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Unidades</a>
-                                    <a class="dropdown-item" href="#">Áreas Locáveis</a>
+                                    <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
+                                    <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Locáveis</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -53,9 +53,9 @@
                                 </div>
                             </li>
                             @endif
-                            <li class="nav-item"><a class="nav-link" href="#">Reservar Local</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Registrar Ocorrência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Notificações/Multas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('reservas.index') }}">Reservar Área</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.index') }}">Registrar Ocorrência</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('notificacao-multas.index') }}">Notificações/Multas</a></li>
                         @endif
                     </ul>
 

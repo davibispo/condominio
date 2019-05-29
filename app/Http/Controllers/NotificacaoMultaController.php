@@ -13,7 +13,7 @@ class NotificacaoMultaController extends Controller
      */
     public function index()
     {
-        //
+        return view('notificacao-multas.index');
     }
 
     /**

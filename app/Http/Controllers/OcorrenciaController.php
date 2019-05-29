@@ -13,7 +13,7 @@ class OcorrenciaController extends Controller
      */
     public function index()
     {
-        //
+        return view('ocorrencias.index');
     }
 
     /**

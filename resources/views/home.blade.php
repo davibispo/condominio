@@ -26,7 +26,11 @@
                             <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Veículo(s) </a></li>
                         @endif
                         <br>
-                        <li style="list-style:none"><i class="fas fa-exclamation-triangle" style="color:darkgoldenrod"></i> Seu cadastro ficará ativo quando os dados forem confirmados pelo administrador do sistema/condomínio.</li>
+                        @if (auth()->user()->ativo == '1')
+                            <li style="list-style:none"><i class="fas fa-check" style="color:green"></i> Cadastro ativo!</li>
+                        @else
+                            <li style="list-style:none"><i class="fas fa-exclamation-triangle" style="color:darkgoldenrod"></i> Seu cadastro ficará ativo quando os dados forem confirmados pelo administrador do sistema/condomínio.</li>
+                        @endif
                     </ul>
                 </div>
             </div>

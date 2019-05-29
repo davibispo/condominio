@@ -13,7 +13,7 @@ class LocavelAreaController extends Controller
      */
     public function index()
     {
-        //
+        return view('locavel-areas.index');
     }
 
     /**

@@ -11,6 +11,12 @@
 |
 */
 
+Route::resource('notificacao-multas', 'NotificacaoMultaController');
+Route::resource('ocorrencias', 'OcorrenciaController');
+Route::resource('reservas', 'ReservaController');
+Route::resource('locavel-areas', 'LocavelAreaController');
+Route::resource('unidades', 'UnidadeController');
+
 Route::get('/', function () {
     return view('welcome');
 });

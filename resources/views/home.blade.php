@@ -20,10 +20,10 @@
                         <li>Cadastre agora sua unidade e seu(s) veículo(s), caso tenha:</li>
                         <br>
                         @if ($temUnidade == false)
-                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Unidade(s) </a></li>
+                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Minha(s) Unidade(s) </a></li>
                         @endif
                         @if ($temVeiculo == false)
-                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Veículo(s) </a></li>
+                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Meu(s) Veículo(s) </a></li>
                         @endif
                         <br>
                         @if (auth()->user()->ativo == '1')

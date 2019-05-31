@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Unidade;
 
 class UnidadeController extends Controller
 {
@@ -13,7 +14,8 @@ class UnidadeController extends Controller
      */
     public function index()
     {
-        return view('unidades.index');
+        $unidades = Unidade::all()->where('ativo', '1');
+        return view('unidades.index', compact('unidades'));
     }
 
     /**
@@ -23,7 +25,8 @@ class UnidadeController extends Controller
      */
     public function create()
     {
-        //
+        $unidades = Unidade::all()->where('ativo', '1')->sortByDesc('id');
+        return view('unidades.create', compact('unidades'));
     }
 
     /**
@@ -34,7 +37,15 @@ class UnidadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        $unidade = new Unidade();
+
+        $unidade->bloco = $request->bloco;
+        $unidade->unidade = $request->unidade;
+
+        $unidade->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -55,8 +66,8 @@ class UnidadeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $unidade = Unidade::find($id);
+        return view('unidades.update', compact('unidade'));
     }
 
     /**
@@ -68,7 +79,14 @@ class UnidadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $unidade = Unidade::find($id);
+
+        $unidade->bloco = $request->bloco;
+        $unidade->unidade = $request->unidade;
+
+        $unidade->update();
+
+        return redirect()->route('unidades.index');
     }
 
     /**
@@ -79,6 +97,9 @@ class UnidadeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $unidade = Unidade::find($id);
+        $unidade->delete();
+
+        return redirect()->back();
     }
 }

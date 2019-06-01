@@ -14,7 +14,6 @@
                             <tr>
                                 <td>Bloco: {{ $u->bloco }}</td>
                                 <td>Apto: {{ $u->unidade }}</td>
-                                <td>{{ $u->user_id }}</td>
                             </tr>
                         @empty
                         <div class="alert alert-warning">

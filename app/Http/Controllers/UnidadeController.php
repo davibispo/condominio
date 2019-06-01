@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Unidade;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class UnidadeController extends Controller
 {
@@ -101,5 +103,52 @@ class UnidadeController extends Controller
         $unidade->delete();
 
         return redirect()->back();
+    }
+
+
+
+    /**
+     * Cadastro de apartamento por morador
+     */
+    public function cadastro(Request $request)
+    {
+        //dd($request);
+        $unidades   = Unidade::all();
+        $users      = User::all()->where('ativo', '1');
+        return view('unidades.cadastro', compact('unidades', 'users'));
+    }
+
+    public function storeCadastro(Request $request)
+    {
+        //dd($request);
+        $unidade = DB::table('unidades')->select('id')->where('id', $request->id)->value('id');
+
+        if($unidade = $request->id){
+
+            DB::update("update unidades set user_id = '$request->user_id' where id = '$request->id'");
+
+            return redirect()->back();
+        }
+    }
+
+    public function editCadastro($id)
+    {
+        $unidade = Unidade::find($id);
+
+        $unidades = Unidade::all();
+        $users = User::all();
+
+        return view('unidades.edit-cadastro', compact('unidade', 'unidades', 'users'));
+    }
+
+    public function updateCadastro(Request $request, $id)
+    {
+        $unidade = Unidade::find($id);
+
+        $unidade->user_id = $request->user_id;
+
+        $unidade->update();
+
+        return redirect()->route('unidades.cadastro');
     }
 }

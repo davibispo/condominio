@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/unidades/{id}/edit-cadastro','UnidadeController@editCadastro')->name('unidades.edit-cadastro');
+Route::post('/unidades/{id}/edit-cadastro','UnidadeController@updateCadastro');
+Route::post('unidades/cadastro', 'UnidadeController@storeCadastro');
+Route::get('unidades/cadastro', 'UnidadeController@cadastro')->name('unidades.cadastro');
 Route::resource('notificacao-multas', 'NotificacaoMultaController');
 Route::resource('ocorrencias', 'OcorrenciaController');
 Route::resource('reservas', 'ReservaController');

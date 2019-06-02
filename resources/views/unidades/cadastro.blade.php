@@ -8,7 +8,6 @@
                 <div class="card-header">Cadastrar Proprietários em Unidades</div>
 
                 <div class="card-body">
-
                     <div class="container" style="overflow:auto; height: 400px;">
                         <table class="table table-sm table-striped" style="font-size:10px">
                             @forelse ($unidades as $u)
@@ -57,6 +56,13 @@
                         </table>
                     </div>
                 </div>
+
+                <div class="container">
+                    <div class="col-md-4">
+                        <a href="{{ route('unidades.index') }}" class="btn btn-dark btn-sm"><</a>
+                    </div>
+                </div>
+                <br>
             </div>
         </div>
     </div>

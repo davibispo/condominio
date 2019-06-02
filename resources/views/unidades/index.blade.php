@@ -24,7 +24,10 @@
                         </table>
                     </div>
                     <br>
-                    <a href="{{ route('unidades.create') }}" class="btn btn-sm btn-dark">Cadastrar ou Editar Unidades</a>
+                    <div class="container">
+                        <a href="{{ route('unidades.create') }}" class="btn btn-sm btn-dark">Cadastrar ou Editar Unidades</a>
+                        <a href="{{ route('unidades.cadastro') }}" class="btn btn-sm btn-dark">Cadastrar Proprietário em Unidade</a>
+                    </div>
                 </div>
             </div>
         </div>

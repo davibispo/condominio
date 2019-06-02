@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Veiculo;
 
 class VeiculoController extends Controller
 {
@@ -13,7 +14,8 @@ class VeiculoController extends Controller
      */
     public function index()
     {
-        //
+        $veiculos = Veiculo::all()->where('ativo', 1);
+        return view('veiculos.index', compact('veiculos'));
     }
 
     /**
@@ -23,7 +25,8 @@ class VeiculoController extends Controller
      */
     public function create()
     {
-        //
+        $veiculos = Veiculo::all()->where('ativo', 1);
+        return view('veiculos.create', compact('veiculos'));
     }
 
     /**
@@ -34,7 +37,16 @@ class VeiculoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $veiculo = new Veiculo();
+
+        $veiculo->descricao = $request->descricao;
+        $veiculo->cor = $request->cor;
+        $veiculo->placa = $request->placa;
+        $veiculo->user_id = auth()->user()->id;
+
+        $veiculo->save();
+
+        return redirect()->back();
     }
 
     /**

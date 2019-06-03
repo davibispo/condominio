@@ -11,9 +11,24 @@
                     {!! Form::open(['method'=>'POST', 'action'=>'VeiculoController@store', 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
+                            {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <div class="col-md-2">
+                                {!! Form::select('tipo',
+                                    [
+                                    'Carro' => 'Carro',
+                                    'Moto' => 'Moto',
+                                    'Caminhonete' => 'Caminhonete',
+                                    'Caminhão' => 'Caminhão',
+                                    ]
+
+                                , null, ['class'=>'form-control', 'required']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             {!! Form::label('descricao', 'Veículo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Marca, Modelo']) !!}
+                                {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Ex: Fiat Uno Mille']) !!}
                             </div>
                         </div>
 
@@ -23,15 +38,15 @@
                                 {!! Form::select('cor',
                                     [
                                     '' => '',
-                                    'branco' => 'branco',
-                                    'preto' => 'preto',
-                                    'vermelho' => 'vermelho',
-                                    'azul' => 'azul',
-                                    'amarelo' => 'amarelo',
-                                    'marrom' => 'marrom',
-                                    'prata' => 'prata',
-                                    'cinza' => 'cinza',
-                                    'verde' => 'verde',
+                                    'Branco'    => 'Branco',
+                                    'Preto'     => 'Preto',
+                                    'Vermelho'  => 'Vermelho',
+                                    'Azul'      => 'Azul',
+                                    'Amarelo'   => 'Amarelo',
+                                    'Marrom'    => 'Marrom',
+                                    'Prata'     => 'Prata',
+                                    'Cinza'     => 'Cinza',
+                                    'Verde'     => 'Verde',
                                     ]
 
                                 , null, ['class'=>'form-control', 'required']) !!}
@@ -47,7 +62,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                {!! Form::submit('Cadastrar', ['class'=>'btn btn-dark']) !!}
+                                {!! Form::submit('Cadastrar', ['class'=>'btn btn-dark btn-sm']) !!}
                             </div>
                         </div>
 
@@ -55,12 +70,18 @@
                 </div>
 
                 <div class="container">
-                    <table class="table">
+                    <table class="table table-striped">
                         @forelse ($veiculos as $v)
                             <tr>
+                                <td>{{ $v->tipo }}</td>
                                 <td>{{ $v->descricao }}</td>
                                 <td>{{ $v->cor }}</td>
                                 <td>{{ $v->placa }}</td>
+                                <td>
+                                    {!! Form::open(['method'=>'DELETE', 'action'=>['VeiculoController@destroy', $v->id], 'style'=>'display:inline']) !!}
+                                        {!! Form::submit('Remover', ['class'=>'btn btn-danger btn-sm']) !!}
+                                    {!! Form::close() !!}
+                                </td>
                             </tr>
                         @empty
                             <div class="alert alert-warning">

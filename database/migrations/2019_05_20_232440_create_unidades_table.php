@@ -17,10 +17,10 @@ class CreateUnidadesTable extends Migration
             $table->bigIncrements('id');
             $table->string('bloco', 5)->nullable();
             $table->string('unidade', 5);
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->char('ativo', 1)->default('1');
-            
+
             $table->timestamps();
         });
     }

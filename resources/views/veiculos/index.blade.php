@@ -12,21 +12,17 @@
                         <table class="table table-sm table-striped" style="font-size:10px">
                             @forelse ($veiculos as $v)
                             <tr>
+                                <td>Tipo: {{ $v->tipo }}</td>
                                 <td>Veículo: {{ $v->descricao }}</td>
                                 <td>Cor: {{ $v->cor }}</td>
                                 <td>Placa: {{ $v->placa }}</td>
                             </tr>
                         @empty
-                        <div class="alert alert-warning">
+                            <div class="alert alert-warning">
                                 <p>Não há veículos cadastrados!</p>
                             </div>
                             @endforelse
-
                         </table>
-                    </div>
-                    <br>
-                    <div class="container">
-                        <a href="{{ route('veiculos.create') }}" class="btn btn-sm btn-dark">Cadastrar/Editar Veículo</a>
                     </div>
                 </div>
             </div>

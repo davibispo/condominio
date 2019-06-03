@@ -19,9 +19,7 @@
                     <ul>
                         <li>Cadastre agora sua unidade e seu(s) veículo(s), caso tenha:</li>
                         <br>
-                        @if ($temVeiculo == false)
-                            <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar Meu(s) Veículo(s) </a></li>
-                        @endif
+                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-plus"></i> Cadastrar Meu(s) Veículo(s) </a></li>
                         <br>
                         @if (auth()->user()->ativo == '1')
                             <li style="list-style:none"><i class="fas fa-check" style="color:green"></i> Cadastro ativo!</li>

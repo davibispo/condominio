@@ -14,7 +14,7 @@ class VeiculoController extends Controller
      */
     public function index()
     {
-        $veiculos = Veiculo::all()->where('ativo', 1);
+        $veiculos = Veiculo::all()->where('ativo', 1)->sortBy('tipo');
         return view('veiculos.index', compact('veiculos'));
     }
 
@@ -39,9 +39,10 @@ class VeiculoController extends Controller
     {
         $veiculo = new Veiculo();
 
+        $veiculo->tipo = $request->tipo;
         $veiculo->descricao = $request->descricao;
         $veiculo->cor = $request->cor;
-        $veiculo->placa = $request->placa;
+        $veiculo->placa = strtoupper($request->placa);
         $veiculo->user_id = auth()->user()->id;
 
         $veiculo->save();
@@ -91,6 +92,10 @@ class VeiculoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $veiculo = Veiculo::find($id);
+
+        $veiculo->delete();
+
+        return redirect()->back();
     }
 }

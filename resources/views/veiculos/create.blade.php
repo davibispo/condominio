@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="container">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-sm">
                         @forelse ($veiculos as $v)
                             <tr>
                                 <td>{{ $v->tipo }}</td>

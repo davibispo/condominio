@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\LocavelArea;
 
 class LocavelAreaController extends Controller
 {
@@ -13,7 +14,8 @@ class LocavelAreaController extends Controller
      */
     public function index()
     {
-        return view('locavel-areas.index');
+        $areas = LocavelArea::all()->where('ativo', 1);
+        return view('locavel-areas.index', compact('areas'));
     }
 
     /**
@@ -23,7 +25,8 @@ class LocavelAreaController extends Controller
      */
     public function create()
     {
-        //
+        $areas = LocavelArea::all()->where('ativo', 1);
+        return view('locavel-areas.create', compact('areas'));
     }
 
     /**
@@ -34,7 +37,15 @@ class LocavelAreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $area = new LocavelArea();
+
+        $area->descricao = $request->descricao;
+        $area->valor = str_replace(',','.',$request->valor);
+        $area->obs = $request->obs;
+
+        $area->save();
+
+        return redirect()->route('locavel-areas.index');
     }
 
     /**
@@ -79,6 +90,9 @@ class LocavelAreaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $area = LocavelArea::find($id);
+        $area->delete();
+
+        return redirect()->back();
     }
 }

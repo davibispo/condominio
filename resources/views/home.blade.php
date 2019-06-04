@@ -17,9 +17,13 @@
                     Você está concetado!
                     <br><br>
                     <ul>
-                        <li>Cadastre agora sua unidade e seu(s) veículo(s), caso tenha:</li>
+                        <li>Cadastre, caso tenha:</li>
                         <br>
-                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-plus"></i> Cadastrar Meu(s) Veículo(s) </a></li>
+                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-plus"></i> Cadastrar meu(s) Veículo(s) </a></li>
+                        <br>
+                        <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar meu Pet </a></li>
+                        <br>
+                        <li style="list-style:none"><a href="#"><i class="fas fa-plus"></i> Cadastrar meu(s) Fornecedor(es) </a></li>
                         <br>
                         @if (auth()->user()->ativo == '1')
                             <li style="list-style:none"><i class="fas fa-check" style="color:green"></i> Cadastro ativo!</li>

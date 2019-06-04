@@ -16,6 +16,8 @@ class CreateLocavelAreasTable extends Migration
         Schema::create('locavel_areas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descricao');
+            $table->decimal('valor', 5, 2)->nullable();
+            $table->text('obs')->nullable();
             $table->char('ativo', 1)->default('1');
             $table->timestamps();
         });

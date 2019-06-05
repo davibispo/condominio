@@ -79,7 +79,7 @@
                                 <td>{{ $v->placa }}</td>
                                 <td>
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['VeiculoController@destroy', $v->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Remover', ['class'=>'btn btn-danger btn-sm']) !!}
+                                        {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

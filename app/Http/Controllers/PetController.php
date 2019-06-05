@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Veiculo;
-use Illuminate\Foundation\Auth\User;
-use App\Models\Unidade;
 
-class VeiculoController extends Controller
+class PetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +13,7 @@ class VeiculoController extends Controller
      */
     public function index()
     {
-        $veiculos   = Veiculo::all()->where('ativo', 1)->sortBy('user_id');
-        $users      = User::all()->where('ativo', 1);
-        $unidades   = Unidade::all()->where('ativo', 1);
-
-        return view('veiculos.index', compact('veiculos', 'users', 'unidades'));
+        //
     }
 
     /**
@@ -30,8 +23,7 @@ class VeiculoController extends Controller
      */
     public function create()
     {
-        $veiculos = Veiculo::all()->where('ativo', 1)->where('user_id', auth()->user()->id);
-        return view('veiculos.create', compact('veiculos'));
+        //
     }
 
     /**
@@ -42,17 +34,7 @@ class VeiculoController extends Controller
      */
     public function store(Request $request)
     {
-        $veiculo = new Veiculo();
-
-        $veiculo->tipo = $request->tipo;
-        $veiculo->descricao = $request->descricao;
-        $veiculo->cor = $request->cor;
-        $veiculo->placa = strtoupper($request->placa);
-        $veiculo->user_id = auth()->user()->id;
-
-        $veiculo->save();
-
-        return redirect()->back();
+        //
     }
 
     /**
@@ -97,10 +79,6 @@ class VeiculoController extends Controller
      */
     public function destroy($id)
     {
-        $veiculo = Veiculo::find($id);
-
-        $veiculo->delete();
-
-        return redirect()->back();
+        //
     }
 }

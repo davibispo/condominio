@@ -9,6 +9,12 @@
 
     <title>{{ config('app.name', 'Condominio') }}</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -21,6 +27,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -45,8 +52,9 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
-                                    <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
                                     <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Locáveis</a>
+                                    <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
+                                    <a class="dropdown-item" href="#">Pets</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -96,6 +104,18 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Campo para busca na tabela -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#myInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
 
         <main class="py-4">
             @yield('content')

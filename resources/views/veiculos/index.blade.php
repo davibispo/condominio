@@ -3,25 +3,38 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Veículos</div>
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
+                        <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                        <br>
                         <table class="table table-sm table-striped" style="font-size:10px">
-                            @forelse ($veiculos as $v)
                             <tr>
-                                <td>Tipo: {{ $v->tipo }}</td>
-                                <td>Veículo: {{ $v->descricao }}</td>
-                                <td>Cor: {{ $v->cor }}</td>
-                                <td>Placa: {{ $v->placa }}</td>
+                                <th>Tipo</th>
+                                <th>Veículo</th>
+                                <th>Cor</th>
+                                <th>Placa</th>
+                                <th>Dono</th>
+                                <th>Unidade</th>
                             </tr>
-                        @empty
-                            <div class="alert alert-warning">
-                                <p>Não há veículos cadastrados!</p>
-                            </div>
-                            @endforelse
+                            @foreach ($veiculos as $v)
+                            <tbody id="myTable" style="font-size:12px">
+                                <tr>
+                                    <td>{{ $v->tipo }}</td>
+                                    <td>{{ $v->descricao }}</td>
+                                    <td>{{ $v->cor }}</td>
+                                    <td>{{ $v->placa }}</td>
+                                    <td>{{ DB::table('users')->select('name')->where('id', $v->user_id)->value('name') }}</td>
+                                    <td>
+                                        BL {{ DB::table('unidades')->select('bloco', 'user_id')->where('user_id', $v->user_id)->value('bloco') }}
+                                        Ap {{ DB::table('unidades')->select('unidade','user_id')->where('user_id', $v->user_id)->value('unidade') }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>

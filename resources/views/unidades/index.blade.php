@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
-                        <table class="table table-sm table-striped" style="font-size:10px">
+                        <table class="table table-sm table-hover" style="font-size:10px">
                             @forelse ($unidades as $u)
                             <tr>
                                 <td>Bloco: {{ $u->bloco }}</td>

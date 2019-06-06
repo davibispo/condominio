@@ -11,7 +11,7 @@
                     <div class="container" style="overflow:auto; height: 400px;">
                         <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
                         <br>
-                        <table class="table table-sm table-striped" style="font-size:10px">
+                        <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>
                                 <th>Tipo</th>
                                 <th>Veículo</th>

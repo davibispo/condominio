@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="container">
-                    <table class="table table-striped table-sm">
+                    <table class="table table-hover table-sm">
                         @forelse ($areas as $a)
                             <tr>
                                 <td>{{ $a->descricao }}</td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pet;
 
 class PetController extends Controller
 {
@@ -13,7 +14,8 @@ class PetController extends Controller
      */
     public function index()
     {
-        //
+        $pets = Pet::all()->where('status', 1);
+        return view('pets.index', compact('pets'));
     }
 
     /**
@@ -23,7 +25,8 @@ class PetController extends Controller
      */
     public function create()
     {
-        //
+        $pets = Pet::all()->where('status', 1);
+        return view('pets.create', compact('pets'));
     }
 
     /**
@@ -34,7 +37,17 @@ class PetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pet = new Pet();
+
+        $pet->tipo = $request->tipo;
+        $pet->descricao = $request->descricao;
+        $pet->nome = $request->nome;
+        $pet->obs = $request->obs;
+        $pet->vacina = $request->vacina;
+
+        $pet->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +69,8 @@ class PetController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pet = Pet::find($id);
+        return view('pets.update', compact('pet'));
     }
 
     /**
@@ -68,7 +82,17 @@ class PetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pet = Pet::find($id);
+
+        $pet->tipo = $request->tipo;
+        $pet->descricao = $request->descricao;
+        $pet->nome = $request->nome;
+        $pet->obs = $request->obs;
+        $pet->vacina = $request->vacina;
+
+        $pet->update();
+
+        return redirect()->route('pets.create');
     }
 
     /**
@@ -79,6 +103,9 @@ class PetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pet = Pet::find($id);
+        $pet->delete();
+
+        return redirect()->back();
     }
 }

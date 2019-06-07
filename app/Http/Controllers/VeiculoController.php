@@ -74,7 +74,8 @@ class VeiculoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $veiculo = Veiculo::find($id);
+        return view('veiculos.update', compact('veiculo'));
     }
 
     /**
@@ -86,7 +87,16 @@ class VeiculoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $veiculo = Veiculo::find($id);
+
+        $veiculo->tipo = $request->tipo;
+        $veiculo->descricao = $request->descricao;
+        $veiculo->cor = $request->cor;
+        $veiculo->placa = strtoupper($request->placa);
+
+        $veiculo->update();
+
+        return redirect()->route('veiculos.create');
     }
 
     /**

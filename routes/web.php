@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('pets', 'PetController');
 Route::resource('veiculos', 'VeiculoController');
 Route::get('/unidades/{id}/edit-cadastro','UnidadeController@editCadastro')->name('unidades.edit-cadastro');
 Route::post('/unidades/{id}/edit-cadastro','UnidadeController@updateCadastro');

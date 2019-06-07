@@ -21,7 +21,7 @@
                         <br>
                         <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Meu(s) Veículo(s) </a></li>
                         <br>
-                        <li style="list-style:none"><a href="#"><i class="fas fa-paw"></i> Meu(s) Pet(s) </a></li>
+                        <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Meu(s) Pet(s) </a></li>
                         <!--<br>
                         <li style="list-style:none"><a href="#"><i class="fas fa-shipping-fast"></i> Cadastrar meu(s) Fornecedor(es) </a></li>-->
                         <br>

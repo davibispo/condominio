@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Cadastrar Veículo</div>
+                <div class="card-header">Editar Cadastro de Veículo</div>
 
                 <div class="card-body">
-                    {!! Form::open(['method'=>'POST', 'action'=>'VeiculoController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::model($veiculo, ['method'=>'PATCH', 'action'=>['VeiculoController@update', $veiculo->id], 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
@@ -62,37 +62,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                {!! Form::submit('Cadastrar', ['class'=>'btn btn-dark btn-sm']) !!}
+                                {!! Form::submit('Atualizar', ['class'=>'btn btn-dark btn-sm']) !!}
                             </div>
                         </div>
 
                     {!! Form::close() !!}
-                </div>
-
-                <div class="container">
-                    <table class="table table-hover table-sm">
-                        @forelse ($veiculos as $v)
-                            <tr>
-                                <td>{{ $v->tipo }}</td>
-                                <td>{{ $v->descricao }}</td>
-                                <td>{{ $v->cor }}</td>
-                                <td>{{ $v->placa }}</td>
-                                <td>
-                                    <a href="{{route('veiculos.edit', $v->id)}}" class="btn btn-link btn-sm">Editar</a>
-                                </td>
-                                <td>
-                                    {!! Form::open(['method'=>'DELETE', 'action'=>['VeiculoController@destroy', $v->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
-                        @empty
-                            <div class="alert alert-warning">
-                                <p>Nenhum veículo cadastrado!</p>
-                            </div>
-                        @endforelse
-
-                    </table>
                 </div>
 
             </div>

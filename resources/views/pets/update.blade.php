@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Cadastrar Pet</div>
+                <div class="card-header">Editar Cadastro de Pet</div>
 
                 <div class="card-body">
-                    {!! Form::open(['method'=>'POST', 'action'=>'PetController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::model($pet, ['method'=>'PATCH', 'action'=>['PetController@update', $pet->id], 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
@@ -34,7 +34,7 @@
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Características', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                <textarea name="descricao" id="" cols="" rows="2" class="form-control"></textarea>
+                                <textarea name="descricao" id="" cols="" rows="2" class="form-control">{{ $pet->descricao }}</textarea>
                             </div>
                         </div>
 
@@ -48,42 +48,17 @@
                         <div class="form-group row">
                             {!! Form::label('obs', 'Observações', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                <textarea name="obs" id="" cols="" rows="3" class="form-control"></textarea>
+                                <textarea name="obs" id="" cols="" rows="3" class="form-control">{{ $pet->obs }}</textarea>
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                {!! Form::submit('Cadastrar', ['class'=>'btn btn-dark btn-sm']) !!}
+                                {!! Form::submit('Atualizar', ['class'=>'btn btn-dark btn-sm']) !!}
                             </div>
                         </div>
 
                     {!! Form::close() !!}
-                </div>
-
-                <div class="container">
-                    <table class="table table-hover table-sm">
-                        @forelse ($pets as $p)
-                            <tr>
-                                <td>{{ $p->tipo }}</td>
-                                <td>{{ $p->nome }}</td>
-                                <td>{{ $p->descricao }}</td>
-                                <td>
-                                    <a href="{{ route('pets.edit', $p->id) }}" class="btn btn-link btn-sm">Editar</a>
-                                </td>
-                                <td>
-                                    {!! Form::open(['method'=>'DELETE', 'action'=>['PetController@destroy', $p->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
-                        @empty
-                            <div class="alert alert-warning">
-                                <p>Nenhum Pet cadastrado!</p>
-                            </div>
-                        @endforelse
-
-                    </table>
                 </div>
 
             </div>

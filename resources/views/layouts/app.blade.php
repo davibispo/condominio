@@ -18,7 +18,7 @@
     <!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <!-- Scripts 
+    <!-- Scripts
     <script src="{{ asset('js/app.js') }}" defer></script>-->
 
     <!-- Fonts -->
@@ -34,7 +34,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <i class="fas fa-building"></i>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -54,7 +54,7 @@
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
                                     <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Locáveis</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
-                                    <a class="dropdown-item" href="#">Pets</a>
+                                    <a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

@@ -8,7 +8,7 @@
                 <div class="card-header">Cadastrar Pet</div>
 
                 <div class="card-body">
-                    {!! Form::open(['method'=>'POST', 'action'=>'PetController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::open(['method'=>'POST', 'action'=>'PetController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
@@ -34,7 +34,7 @@
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Características', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                <textarea name="descricao" id="" cols="" rows="2" class="form-control"></textarea>
+                                <textarea name="descricao" id="" cols="" rows="2" class="form-control" required placeholder="Ex: Pelos pretos com detalhe amarelo."></textarea>
                             </div>
                         </div>
 

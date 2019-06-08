@@ -14,6 +14,7 @@
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>
                                 <th>Nome</th>
+                                <th>Tipo</th>
                                 <th>Telefone 1</th>
                                 <th>Telefone 2</th>
                                 <th>E-mail</th>
@@ -24,6 +25,7 @@
                             <tbody id="myTable" style="font-size:12px">
                                 <tr>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->tipo }}</td>
                                     <td>{{ $item->telefone1 }}</td>
                                     <td>{{ $item->telefone2 }}</td>
                                     <td>{{ $item->email }}</td>

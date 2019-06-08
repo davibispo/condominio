@@ -43,8 +43,16 @@ class PetController extends Controller
         $pet->descricao = $request->descricao;
         $pet->nome = $request->nome;
         $pet->obs = $request->obs;
-        $pet->vacina = $request->vacina;
         $pet->user_id = auth()->user()->id;
+
+        $pet->vacina = $request->vacina->store('pets');
+
+        // Se informou o arquivo, retorna um boolean
+        $pet->vacina = $request->hasFile('vacina');
+
+        // Se é válido, retorna um boolean
+        $pet->vacina = $request->file('vacina')->isValid();
+
 
         $pet->save();
 

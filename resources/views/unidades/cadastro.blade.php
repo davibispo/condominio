@@ -28,7 +28,7 @@
                                         <div class="form-group">
                                             <div class="col-md-2">
                                                 <select name="user_id" id="">
-                                                    <option value="">Proprietário</option>
+                                                    <option value="">Escolher</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                                                     @endforeach

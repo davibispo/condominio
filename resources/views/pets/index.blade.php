@@ -29,7 +29,7 @@
                                     <td>{{ $p->nome }}</td>
                                     <td>{{ $p->descricao }}</td>
                                     <td>{{ $p->obs }}</td>
-                                    <td>{{ $p->vacina }}</td>
+                                    <td><a href="{{ url("pets/{$p->vacina}") }}" alt="cartão-vacina-{{ $p->name }}">baixar</a></td>
                                     <td>{{ $p->status }}</td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $p->user_id)->value('name') }}</td>
                                     <td>

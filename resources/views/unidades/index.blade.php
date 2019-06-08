@@ -10,14 +10,27 @@
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
                         <table class="table table-sm table-hover" style="font-size:10px">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Proprietário</td>
+                                <td>Inquilino</td>
+                            </tr>
                             @forelse ($unidades as $u)
                             <tr>
                                 <td>Bloco: {{ $u->bloco }}</td>
                                 <td>Apto: {{ $u->unidade }}</td>
                                 <td>
                                     @foreach ($users as $user)
-                                        @if ($u->user_id == $user->id)
-                                            {{ $user->tipo }}: <b>{{ $user->name }}</b>
+                                        @if ($u->user_id == $user->id && $user->tipo == 'Proprietário')
+                                            <b>{{ $user->name }}</b>
+                                        @endif
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($users as $user)
+                                        @if ($u->user_id == $user->id && $user->tipo == 'Inquilino')
+                                            <b>{{ $user->name }}</b>
                                         @endif
                                     @endforeach
                                 </td>

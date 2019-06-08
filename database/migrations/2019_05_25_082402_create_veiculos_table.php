@@ -20,7 +20,7 @@ class CreateVeiculosTable extends Migration
             $table->string('descricao', 100);
             $table->string('cor', 30);
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->char('ativo', 1)->default('1');
             $table->timestamps();
         });

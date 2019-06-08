@@ -14,6 +14,13 @@
                             <tr>
                                 <td>Bloco: {{ $u->bloco }}</td>
                                 <td>Apto: {{ $u->unidade }}</td>
+                                <td>
+                                    @foreach ($users as $user)
+                                        @if ($u->user_id == $user->id)
+                                            {{ $user->tipo }}: <b>{{ $user->name }}</b>
+                                        @endif
+                                    @endforeach
+                                </td>
                             </tr>
                         @empty
                         <div class="alert alert-warning">

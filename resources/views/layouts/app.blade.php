@@ -51,6 +51,7 @@
                                     Administrador<span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
                                     <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Locáveis</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>

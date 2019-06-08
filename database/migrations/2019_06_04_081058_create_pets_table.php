@@ -21,7 +21,7 @@ class CreatePetsTable extends Migration
             $table->text('obs')->nullable();
             $table->text('vacina')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->char('status', 1)->default('1');
             $table->timestamps();
         });

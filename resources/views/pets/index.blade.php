@@ -29,8 +29,8 @@
                                     <td>{{ $p->nome }}</td>
                                     <td>{{ $p->descricao }}</td>
                                     <td>{{ $p->obs }}</td>
-                                    <td>{{ $p->status }}</td>
                                     <td>{{ $p->vacina }}</td>
+                                    <td>{{ $p->status }}</td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $p->user_id)->value('name') }}</td>
                                     <td>
                                         BL {{ DB::table('unidades')->select('bloco', 'user_id')->where('user_id', $p->user_id)->value('bloco') }}

@@ -18,7 +18,7 @@ class CreateUnidadesTable extends Migration
             $table->string('bloco', 5)->nullable();
             $table->string('unidade', 5);
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->char('ativo', 1)->default('1');
 
             $table->timestamps();

@@ -17,9 +17,17 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->char('sexo', 1);
+            $table->string('telefone1');
+            $table->string('telefone2')->nullable();
             $table->string('cpf', 14)->unique();
             $table->date('data_nascimento');
             $table->text('foto')->nullable();
+            $table->string('email');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->char('ativo', 1)->default('0');
+            $table->string('tipo', 30)->nullable(); // proprietario ou inquilino
+            $table->char('status', 1)->default('0'); // qualquer status necessário
             $table->string('residente1', 80)->nullable();
             $table->integer('idade_residente1')->nullable();
             $table->char('sexo_residente1',1)->nullable();
@@ -44,12 +52,6 @@ class CreateUsersTable extends Migration
             $table->string('residente8', 80)->nullable();
             $table->integer('idade_residente8')->nullable();
             $table->char('sexo_residente8',1)->nullable();
-            $table->string('email');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->char('ativo', 1)->default('0');
-            $table->string('tipo', 30)->nullable(); // proprietario ou inquilino
-            $table->char('status', 1)->default('0'); // qualquer status necessário
 
             $table->rememberToken();
             $table->timestamps();

@@ -68,9 +68,8 @@
                                 <td>{{ $p->tipo }}</td>
                                 <td>{{ $p->nome }}</td>
                                 <td>{{ $p->descricao }}</td>
-                                <td>
-                                    <a href="{{ route('pets.edit', $p->id) }}" class="btn btn-link btn-sm">Editar</a>
-                                </td>
+                                <td><a href="{{ route('pets.show', $p->id)}}" class="btn btn-link btn-sm">Ver Vacina</a></td>
+                                <td><a href="{{ route('pets.edit', $p->id) }}" class="btn btn-link btn-sm">Editar</a></td>
                                 <td>
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['PetController@destroy', $p->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}

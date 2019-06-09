@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pet;
+use Illuminate\Support\Facades\Storage;
 
 class PetController extends Controller
 {
@@ -45,14 +46,31 @@ class PetController extends Controller
         $pet->obs = $request->obs;
         $pet->user_id = auth()->user()->id;
 
-        $pet->vacina = $request->vacina->store('pets');
+        // Define o valor default para a variável que contém o nome da imagem
+        $nameFile = null;
 
-        // Se informou o arquivo, retorna um boolean
-        $pet->vacina = $request->hasFile('vacina');
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('vacina') && $request->file('vacina')->isValid()) {
 
-        // Se é válido, retorna um boolean
-        $pet->vacina = $request->file('vacina')->isValid();
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('HisYmd'));
 
+            // Recupera a extensão do arquivo
+            $extension = $request->vacina->extension();
+
+            // Define finalmente o nome
+            $nameFile = "pet{$name}.{$extension}";
+
+            // Faz o upload:
+            $pet->vacina = $request->vacina->storeAs('pets', $nameFile);
+            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
+            // Verifica se NÃO deu certo o upload (Redireciona de volta)
+            if ( !$pet->vacina )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+        }
 
         $pet->save();
 
@@ -67,7 +85,8 @@ class PetController extends Controller
      */
     public function show($id)
     {
-        //
+        $pet = Pet::find($id);
+        return view('pets.show', compact('pet'));
     }
 
     /**
@@ -97,7 +116,6 @@ class PetController extends Controller
         $pet->descricao = $request->descricao;
         $pet->nome = $request->nome;
         $pet->obs = $request->obs;
-        $pet->vacina = $request->vacina;
 
         $pet->update();
 
@@ -113,6 +131,10 @@ class PetController extends Controller
     public function destroy($id)
     {
         $pet = Pet::find($id);
+
+        //deleta o arquivo também.
+        Storage::delete("{$pet->vacina}");
+        
         $pet->delete();
 
         return redirect()->back();

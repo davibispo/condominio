@@ -39,13 +39,6 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('vacina', 'Cartão de Vacina', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                            <div class="col-md-6">
-                                {!! Form::file('vacina', null, ['class'=>'form-control']) !!}
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             {!! Form::label('obs', 'Observações', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 <textarea name="obs" id="" cols="" rows="3" class="form-control">{{ $pet->obs }}</textarea>

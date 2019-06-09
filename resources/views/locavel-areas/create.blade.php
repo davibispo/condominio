@@ -59,7 +59,7 @@
                         @endforelse
 
                     </table>
-                    <a href="{{ route('locavel-areas.index') }}" class="btn btn-dark btn-sm"><</a>
+                    <a href="{{ route('locavel-areas.index') }}" class="btn btn-dark btn-sm"><i class="fas fa-reply"></i> Voltar</a>
                     <br><br>
                 </div>
             </div>

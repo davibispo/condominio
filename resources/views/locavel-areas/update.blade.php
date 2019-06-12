@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Cadastrar Áreas Locáveis</div>
+                <div class="card-header">Editar Área Locável</div>
 
                 <div class="card-body">
-                    {!! Form::model(['method'=>'POST', 'action'=>'LocavelAreaController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::model($area, ['method'=>'PATCH', 'action'=>['LocavelAreaController@update', $area->id], 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Local', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
@@ -33,35 +33,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                {!! Form::submit('Cadastrar', ['class'=>'btn btn-dark btn-sm']) !!}
+                                {!! Form::submit('Atualizar', ['class'=>'btn btn-dark btn-sm']) !!}
                             </div>
                         </div>
 
                     {!! Form::close() !!}
-                </div>
-
-                <div class="container">
-                    <table class="table table-hover table-sm">
-                        @forelse ($areas as $a)
-                            <tr>
-                                <td>{{ $a->descricao }}</td>
-                                <td>R$ {{ $a->valor }}</td>
-                                <td><a href="{{ route('locavel-areas.edit', $a->id) }}" class="btn btn-link btn-sm">Editar</a></td>
-                                <td>
-                                    {!! Form::open(['method'=>'DELETE', 'action'=>['LocavelAreaController@destroy', $a->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
-                        @empty
-                            <div class="alert alert-warning">
-                                <p>Nenhum local cadastrado!</p>
-                            </div>
-                        @endforelse
-
-                    </table>
-                    <a href="{{ route('locavel-areas.index') }}" class="btn btn-dark btn-sm"><i class="fas fa-reply"></i> Voltar</a>
-                    <br><br>
                 </div>
             </div>
         </div>

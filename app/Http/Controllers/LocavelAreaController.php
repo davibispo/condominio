@@ -45,7 +45,7 @@ class LocavelAreaController extends Controller
 
         $area->save();
 
-        return redirect()->route('locavel-areas.index');
+        return redirect()->back();
     }
 
     /**
@@ -67,7 +67,8 @@ class LocavelAreaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area = LocavelArea::find($id);
+        return view('locavel-areas.update', compact('area'));
     }
 
     /**
@@ -79,7 +80,15 @@ class LocavelAreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $area = LocavelArea::find($id);
+
+        $area->descricao = $request->descricao;
+        $area->valor = str_replace(',','.',$request->valor);
+        $area->obs = $request->obs;
+
+        $area->update();
+
+        return redirect()->route('locavel-areas.index');
     }
 
     /**

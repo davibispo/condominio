@@ -17,8 +17,7 @@
                                 <th>Nome</th>
                                 <th>Descricao</th>
                                 <th>Obsservações</th>
-                                <th>Vacina</th>
-                                <th>Status</th>
+                                <th>Vacinas</th>
                                 <th>Dono</th>
                                 <th>Unidade</th>
                             </tr>
@@ -30,7 +29,6 @@
                                     <td>{{ $p->descricao }}</td>
                                     <td>{{ $p->obs }}</td>
                                     <td><a href="{{ route('pets.show', $p->id)}}">Ver</a></td>
-                                    <td>{{ $p->status }}</td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $p->user_id)->value('name') }}</td>
                                     <td>
                                         BL {{ DB::table('unidades')->select('bloco', 'user_id')->where('user_id', $p->user_id)->value('bloco') }}

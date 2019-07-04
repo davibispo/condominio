@@ -8,7 +8,7 @@
                 <div class="card-header">Cadastrar Áreas Locáveis</div>
 
                 <div class="card-body">
-                    {!! Form::model(['method'=>'POST', 'action'=>'LocavelAreaController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::open(['method'=>'post', 'action'=>'LocavelAreaController@store', 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Local', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}

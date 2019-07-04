@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\LocavelArea;
+use App\Models\Reserva;
 
 class ReservaController extends Controller
 {
@@ -23,7 +25,8 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        //
+        $areas = LocavelArea::all()->where('ativo', 1);
+        return view('reservas.create', compact('areas'));
     }
 
     /**
@@ -34,7 +37,18 @@ class ReservaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reserva = new Reserva();
+
+        $reserva->id_locavel_area = $request->id_locavel_area;
+        $reserva->data_solicitada = $request->data_solicitada;
+        $reserva->hora_inicio = $request->hora_inicio;
+        $reserva->hora_fim = $request->hora_fim;
+        $reserva->user = auth()->user()->name;
+        $reserva->status = 1;
+
+        $reserva->save();
+
+        return redirect()->back();
     }
 
     /**

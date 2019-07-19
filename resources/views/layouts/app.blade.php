@@ -53,7 +53,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
-                                    <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Locáveis</a>
+                                    <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Comuns</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
                                     <a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
 
@@ -63,10 +63,10 @@
                                 </div>
                             </li>
                             @endif
-                            
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Reservar Área<span class="caret"></span>
+                                    Áreas Comuns<span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

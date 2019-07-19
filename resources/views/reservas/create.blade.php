@@ -11,9 +11,9 @@
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
                     <div class="form-group row">
-                        {!! Form::label('id_locavel_area', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('locavel_area_id', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-5">
-                            <select name="id_locavel_area" id="" class="form-control">
+                            <select name="locavel_area_id" id="" class="form-control">
                                 <option value=""></option>
                                 @foreach ($areas as $item)
                                     <option value="{{ $item->id }}">{{ $item->descricao }} - R$ {{ $item->valor }}</option>
@@ -86,7 +86,30 @@
                             {!! Form::submit('Solicitar', ['class'=>'btn btn-dark btn-sm']) !!}
                         </div>
                     </div>
-
+                    {!! Form::close() !!}
+                    <br><br>
+                    <div class="container">
+                    <table class="table table-sm table-hover">
+                        <tr>
+                            <th>Solicitante</th>
+                            <th>Data solicitada</th>
+                            <th>Área</th>
+                            <th>Horário</th>
+                            <th>Ação</th>
+                        </tr>
+                        @foreach ($reservas as $item)
+                        @if ($item->user_id == auth()->user()->id)
+                        <tr>
+                            <td>{{ $item->user_id }}</td>
+                            <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
+                            <td>{{ $item->locavel_area_id }}</td>
+                            <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
+                            <td></td>
+                        </tr>
+                        @endif
+                        @endforeach
+                    </table>
+                    </div>
                 </div>
             </div>
         </div>

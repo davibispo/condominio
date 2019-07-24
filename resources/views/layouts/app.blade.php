@@ -130,6 +130,20 @@
             });
         </script>
 
+        <!--alertas-->
+        @if (session('alertSuccess'))
+            <div class="alert alert-success alert-dismissible text-center">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('alertSuccess') }}
+            </div>
+            @elseif(session('alertDanger'))
+                <div class="alert alert-danger alert-dismissible text-center">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ session('alertDanger') }}
+                </div>
+        @endif
+        <!--fim do alerta-->
+
         <main class="py-4">
             @yield('content')
 

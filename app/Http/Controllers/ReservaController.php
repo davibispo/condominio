@@ -29,7 +29,7 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        $reservas = Reserva::all()->where('status', 1);
+        $reservas = Reserva::all()->where('status', 1)->sortByDesc('id');
         $areas = LocavelArea::all()->where('ativo', 1);
         return view('reservas.create', compact('areas', 'reservas'));
     }
@@ -51,9 +51,12 @@ class ReservaController extends Controller
         $reserva->user_id = auth()->user()->id;
         $reserva->status = 1;
 
-        $reserva->save();
-
-        return redirect()->back();
+        if(auth()->user()->status == 1){
+            return redirect()->back()->with('alertDanger', 'Desculpe, algo deu errado. Procure o Síndico ou Administradora para resolver.');
+        }else{
+            $reserva->save();
+            return redirect()->back()->with('alertSuccess', 'Solicitação de reserva enviada com sucesso!');
+        }
     }
 
     /**

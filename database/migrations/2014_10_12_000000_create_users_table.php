@@ -53,6 +53,8 @@ class CreateUsersTable extends Migration
             $table->integer('idade_residente8')->nullable();
             $table->char('sexo_residente8',1)->nullable();
 
+            $table->string('unidade', 5)->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

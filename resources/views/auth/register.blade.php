@@ -29,6 +29,24 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="unidade" class="col-md-4 col-form-label text-md-right">{{ __('Unidade') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="unidade"  class="form-control @error('unidade') is-invalid @enderror" name="unidade" value="{{ old('unidade') }}" autocomplete="unidade" autofocus>
+                                    <option value="">Escolha</option>
+         
+                                    <option value=""></option>
+                                </select>
+                                
+                                @error('unidade')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo') }}</label>
 
                             <div class="col-md-6">

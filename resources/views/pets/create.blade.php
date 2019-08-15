@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('nome', 'Nome', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('nome', 'Nome do Pet', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {!! Form::text('nome', null, ['class'=>'form-control', 'placeholder'=>'']) !!}
                             </div>

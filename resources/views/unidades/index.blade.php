@@ -45,8 +45,8 @@
                     </div>
                     <br>
                     <div class="container">
-                        <a href="{{ route('unidades.create') }}" class="btn btn-sm btn-dark">Cadastrar/Editar Unidade</a>
-                        <a href="{{ route('unidades.cadastro') }}" class="btn btn-sm btn-dark">Cadastrar Morador em Unidade</a>
+                        <a href="{{ route('unidades.create') }}" class="btn btn-sm btn-dark">Cadastrar ou Editar Unidade</a>
+                        <a href="{{ route('unidades.cadastro') }}" class="btn btn-sm btn-dark">Vincular Morador a Unidade</a>
                     </div>
                 </div>
             </div>

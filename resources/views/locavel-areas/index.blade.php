@@ -30,7 +30,7 @@
                         </div>
                         <br>
                         <div class="container">
-                            <a href="{{ route('locavel-areas.create') }}" class="btn btn-sm btn-dark">Cadastrar Locais</a>
+                            <a href="{{ route('locavel-areas.create') }}" class="btn btn-sm btn-dark">Cadastrar ou Editar Locais</a>
                         </div>
                 </div>
             </div>

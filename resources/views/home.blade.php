@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Você está concetado!
+                    <b>Você está concetado</b>, mas ainda sem acesso aos recursos!
                     <br><br>
                     <ul>
                         <li>Cadastre, caso tenha:</li>
@@ -30,7 +30,7 @@
                         @else
                             <li style="list-style:none">
                                 <i class="fas fa-exclamation-triangle" style="color:darkgoldenrod"></i>
-                                Seu ficará ativo quando forem confirmados pelo administrador do sistema/condomínio.
+                                Seu acesso ficará ativo quando os dados forem confirmados pelo administrador.
                             </li>
                         @endif
                     </ul>

@@ -19,6 +19,7 @@
                                     'Moto' => 'Moto',
                                     'Caminhonete' => 'Caminhonete',
                                     'Caminhão' => 'Caminhão',
+                                    'Outro' => 'Outro',
                                     ]
 
                                 , null, ['class'=>'form-control', 'required']) !!}
@@ -28,7 +29,7 @@
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Veículo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Ex: Fiat Uno Mille']) !!}
+                                {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Marca Modelo']) !!}
                             </div>
                         </div>
 

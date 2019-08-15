@@ -15,6 +15,7 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Tipo</th>
+                                <th>Unidade</th>
                                 <th>Telefone 1</th>
                                 <th>Telefone 2</th>
                                 <th>E-mail</th>
@@ -26,8 +27,9 @@
                                 <tr>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->tipo }}</td>
-                                    <td>{{ $item->telefone1 }}</td>
-                                    <td>{{ $item->telefone2 }}</td>
+                                    <td></td>
+                                    <td>{{ $item->tel1 }}</td>
+                                    <td>{{ $item->tel2 }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>
                                         @if ($item->ativo == 1)

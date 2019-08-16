@@ -67,8 +67,8 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'unidade' => $data['unidade'],
-            'email' => $data['email'],
+            'bloco' => $data['bloco'],
+            'apto' => $data['apto'],
             'password' => Hash::make($data['password']),
             'sexo' => $data['sexo'],
             'tel1' => $data['tel1'],
@@ -78,35 +78,18 @@ class RegisterController extends Controller
             'foto' => $data['foto'],
             'residente1' => $data['residente1'],
             'idade_residente1' => $data['idade_residente1'],
-            'sexo_residente1' => $data['sexo_residente1'],
 
             'residente2' => $data['residente2'],
             'idade_residente2' => $data['idade_residente2'],
-            'sexo_residente2' => $data['sexo_residente2'],
 
             'residente3' => $data['residente3'],
             'idade_residente3' => $data['idade_residente3'],
-            'sexo_residente3' => $data['sexo_residente3'],
 
             'residente4' => $data['residente4'],
             'idade_residente4' => $data['idade_residente4'],
-            'sexo_residente4' => $data['sexo_residente4'],
 
             'residente5' => $data['residente5'],
             'idade_residente5' => $data['idade_residente5'],
-            'sexo_residente5' => $data['sexo_residente5'],
-
-            'residente6' => $data['residente6'],
-            'idade_residente6' => $data['idade_residente6'],
-            'sexo_residente6' => $data['sexo_residente6'],
-
-            'residente7' => $data['residente7'],
-            'idade_residente7' => $data['idade_residente7'],
-            'sexo_residente7' => $data['sexo_residente7'],
-
-            'residente8' => $data['residente8'],
-            'idade_residente8' => $data['idade_residente8'],
-            'sexo_residente8' => $data['sexo_residente8'],
 
             'tipo' => $data['tipo'],
             'status' => '0',

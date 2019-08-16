@@ -32,12 +32,33 @@
                             <label for="unidade" class="col-md-4 col-form-label text-md-right">{{ __('Unidade') }}</label>
 
                             <div class="col-md-6">
-                                <select id="unidade"  class="form-control @error('unidade') is-invalid @enderror" name="unidade" value="{{ old('unidade') }}" autocomplete="unidade" autofocus>
-                                    <option value="">Escolha</option>
-         
-                                    <option value=""></option>
+                                <select id="bloco"  class="form-control @error('bloco') is-invalid @enderror" name="bloco" value="{{ old('bloco') }}" autocomplete="bloco" autofocus>
+                                    <option value="">Bloco</option>
+                                    @for ($i = 1; $i < 23; $i++)
+                                    <option value="">{{ $i }}</option>
+
+                                    @endfor
                                 </select>
-                                
+                                <select id="unidade"  class="form-control @error('unidade') is-invalid @enderror" name="unidade" value="{{ old('unidade') }}" autocomplete="unidade" autofocus>
+                                    <option value="">Apartamento</option>
+                                    <option value="001">001</option>
+                                    <option value="002">002</option>
+                                    <option value="003">003</option>
+                                    <option value="004">004</option>
+                                    <option value="101">101</option>
+                                    <option value="102">102</option>
+                                    <option value="103">103</option>
+                                    <option value="104">104</option>
+                                    <option value="201">201</option>
+                                    <option value="202">202</option>
+                                    <option value="203">203</option>
+                                    <option value="204">204</option>
+                                    <option value="301">301</option>
+                                    <option value="302">302</option>
+                                    <option value="303">303</option>
+                                    <option value="304">304</option>
+                                </select>
+
                                 @error('unidade')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -65,7 +86,7 @@
 
                             <div class="col-md-6">
                                 <input id="tel1" type="text" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}" placeholder="Ex: (00) 00000-0000" required autocomplete="tel1" autofocus>
-                                
+
                                 @error('tel1')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

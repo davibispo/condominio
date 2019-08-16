@@ -111,5 +111,6 @@ class RegisterController extends Controller
             'tipo' => $data['tipo'],
             'status' => '0',
         ]);
+
     }
 }

@@ -49,7 +49,8 @@ class MoradorController extends Controller
      */
     public function show($id)
     {
-        //
+        $morador = User::find($id);
+        return view('moradores.show', compact('morador'));
     }
 
     /**

@@ -13,15 +13,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <b>Você está concetado</b>, mas ainda sem acesso aos recursos!
+                    @if (auth()->user()->ativo == '1')
+                        <b>Você está concetado!</b>
+                    @else
+                        <b>Você está concetado</b>, mas ainda sem acesso aos recursos!
+                    @endif    
                     <br><br>
                     <ul>
                         <li>Cadastre, caso tenha:</li>
                         <br>
-                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Meu(s) Veículo(s):</a> {{ $totalVeiculos }}</li>
+                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Meu(s) Veículo(s) cadastrado(s):</a> {{ $totalVeiculos }}</li>
                         <br>
-                        <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Meu(s) Pet(s):</a> {{ $totalPets }}</li>
+                        <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Meu(s) Pet(s) cadastrado(s):</a> {{ $totalPets }}</li>
                         <!--<br>
                         <li style="list-style:none"><a href="#"><i class="fas fa-shipping-fast"></i> Cadastrar meu(s) Fornecedor(es) </a></li>-->
                         <br>

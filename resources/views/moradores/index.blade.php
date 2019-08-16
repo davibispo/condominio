@@ -13,21 +13,27 @@
                         <br>
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>
+                                <th><i class="fas fa-search"></i></th>
                                 <th>Nome</th>
                                 <th>Tipo</th>
                                 <th>Unidade</th>
                                 <th>Telefone 1</th>
                                 <th>Telefone 2</th>
                                 <th>E-mail</th>
-                                <th>Ativar</th>
+                                <th>Ativo</th>
                                 <th>Status</th>
                             </tr>
                             @foreach ($users as $item)
                             <tbody id="myTable" style="font-size:12px">
                                 <tr>
+                                    <td style="font-size: 10px">
+                                        <a href="{{ route('moradores.show', $item->id) }}">
+                                            <i class="fas fa-search" data-toggle="tooltip" data-placement="top" title="Detalhes"></i>
+                                        </a>
+                                    </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->tipo }}</td>
-                                    <td></td>
+                                    <td>{{ $item->bloco }} - {{ $item->apto }} </td>
                                     <td>{{ $item->tel1 }}</td>
                                     <td>{{ $item->tel2 }}</td>
                                     <td>{{ $item->email }}</td>
@@ -39,8 +45,6 @@
 
                                             <a href="{{ route('moradores.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
                                         @endif
-
-
                                     </td>
                                     <td>{{ $item->status }}</td>
                                 </tr>

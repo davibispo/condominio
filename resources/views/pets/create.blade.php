@@ -63,6 +63,14 @@
 
                 <div class="container">
                     <table class="table table-hover table-sm">
+                        <thead>
+                            <th>Cadastrado(s)</th>
+                            <th>Nome</th>
+                            <th>Características</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </thead>
                         @forelse ($pets as $p)
                             <tr>
                                 <td>{{ $p->tipo }}</td>

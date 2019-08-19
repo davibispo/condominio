@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Cadastrar Áreas Locáveis</div>
 
@@ -42,10 +42,14 @@
 
                 <div class="container">
                     <table class="table table-hover table-sm">
+                        <thead>
+                            <th colspan="5">Áreas cadastradas</th>
+                        </thead>
                         @forelse ($areas as $a)
                             <tr>
                                 <td>{{ $a->descricao }}</td>
                                 <td>R$ {{ $a->valor }}</td>
+                                <td>{{ $a->obs }}</td>
                                 <td><a href="{{ route('locavel-areas.edit', $a->id) }}" class="btn btn-link btn-sm">Editar</a></td>
                                 <td>
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['LocavelAreaController@destroy', $a->id], 'style'=>'display:inline']) !!}

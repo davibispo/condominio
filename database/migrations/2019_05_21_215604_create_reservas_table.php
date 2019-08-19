@@ -19,6 +19,7 @@ class CreateReservasTable extends Migration
             $table->string('user');
             $table->date('data_solicitada');
             $table->string('periodo_solicitado')->nullable();
+            $table->text('obs')->nullable();
             $table->char('status', 1);
 
             $table->timestamps();

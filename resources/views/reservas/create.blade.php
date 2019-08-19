@@ -81,9 +81,16 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        {!! Form::label('obs', 'Observação', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <div class="col-md-5">
+                            <textarea class="form-control" name="obs"></textarea>
+                        </div>
+                    </div>
+
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            {!! Form::submit('Solicitar', ['class'=>'btn btn-dark btn-sm']) !!}
+                            {!! Form::submit('Enviar solicitação', ['class'=>'btn btn-dark btn-sm']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}

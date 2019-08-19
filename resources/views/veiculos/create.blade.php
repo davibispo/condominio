@@ -72,6 +72,14 @@
 
                 <div class="container">
                     <table class="table table-hover table-sm">
+                        <thead>
+                            <th>Veículos cadastrados</th>
+                            <th>Marca e modelo</th>
+                            <th>Cor</th>
+                            <th>Placa</th>
+                            <th></th>
+                            <th></th>
+                        </thead>
                         @forelse ($veiculos as $v)
                             <tr>
                                 <td>{{ $v->tipo }}</td>

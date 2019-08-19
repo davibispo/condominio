@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'tipo' => $data['tipo'],
             'bloco' => $data['bloco'],
             'apto' => $data['apto'],
-            'name' => $data['name'],
+            'name' => strtoupper($data['name']),
             'tel1' => $data['tel1'],
             'tel2' => $data['tel2'],
             'cpf' => $data['cpf'],
@@ -77,19 +77,19 @@ class RegisterController extends Controller
             'data_nascimento' => $data['data_nascimento'],
             'foto' => $data['foto'],
 
-            'residente1' => $data['residente1'],
+            'residente1' => strtoupper($data['residente1']),
             'idade_residente1' => $data['idade_residente1'],
 
-            'residente2' => $data['residente2'],
+            'residente2' => strtoupper($data['residente2']),
             'idade_residente2' => $data['idade_residente2'],
-            
-            'residente3' => $data['residente3'],
+
+            'residente3' => strtoupper($data['residente3']),
             'idade_residente3' => $data['idade_residente3'],
-            
-            'residente4' => $data['residente4'],
+
+            'residente4' => strtoupper($data['residente4']),
             'idade_residente4' => $data['idade_residente4'],
-            
-            'residente5' => $data['residente5'],
+
+            'residente5' => strtoupper($data['residente5']),
             'idade_residente5' => $data['idade_residente5'],
 
             'email' => $data['email'],

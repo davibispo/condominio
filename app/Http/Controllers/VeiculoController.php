@@ -45,7 +45,7 @@ class VeiculoController extends Controller
         $veiculo = new Veiculo();
 
         $veiculo->tipo = $request->tipo;
-        $veiculo->descricao = $request->descricao;
+        $veiculo->descricao = strtoupper($request->descricao);
         $veiculo->cor = $request->cor;
         $veiculo->placa = strtoupper($request->placa);
         $veiculo->user_id = auth()->user()->id;

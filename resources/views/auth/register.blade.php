@@ -160,7 +160,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="residente1" class="col-md-4 col-form-label text-md-right">{{ __('Residentes') }}</label>
+                            <label for="residente1" class="col-md-4 col-form-label text-md-right">{{ __('Residente com') }}</label>
 
                             <div class="col-md-6">
                                 <table class="table table-sm">

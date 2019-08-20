@@ -49,7 +49,7 @@
                                 <td></td>
                             </tr>
                             <thead>
-                                <th>Residentes a mais</th>
+                                <th>Residente com</th>
                                 <th>Idade</th>
                                 <th></th>
                                 <th></th>

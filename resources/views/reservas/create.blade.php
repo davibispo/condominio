@@ -11,9 +11,9 @@
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
                     <div class="form-group row">
-                        {!! Form::label('locavel_area_id', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('area_locavel', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-5">
-                            <select name="locavel_area_id" id="" class="form-control">
+                            <select name="area_locavel" id="" class="form-control">
                                 <option value=""></option>
                                 @foreach ($areas as $item)
                                     <option value="{{ $item->id }}">{{ $item->descricao }} - R$ {{ $item->valor }}</option>

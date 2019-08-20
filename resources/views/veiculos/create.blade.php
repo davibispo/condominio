@@ -73,7 +73,7 @@
                 <div class="container">
                     <table class="table table-hover table-sm">
                         <thead>
-                            <th>Veículos cadastrados</th>
+                            <th>Cadastrado(s)</th>
                             <th>Marca e modelo</th>
                             <th>Cor</th>
                             <th>Placa</th>

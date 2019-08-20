@@ -44,7 +44,7 @@ class ReservaController extends Controller
     {
         $reserva = new Reserva();
 
-        $reserva->locavel_area_id = $request->locavel_area_id;
+        $reserva->area_locavel = $request->area_locavel;
         $reserva->data_solicitada = $request->data_solicitada;
         $reserva->hora_inicio = $request->hora_inicio;
         $reserva->hora_fim = $request->hora_fim;

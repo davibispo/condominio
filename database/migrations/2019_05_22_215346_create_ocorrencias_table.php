@@ -15,7 +15,9 @@ class CreateOcorrenciasTable extends Migration
     {
         Schema::create('ocorrencias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ocorrencia_tipo');
+            $table->unsignedBigInteger('ocorrencia_tipo');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('data');
             $table->text('foto')->nullable();
             $table->text('descricao');

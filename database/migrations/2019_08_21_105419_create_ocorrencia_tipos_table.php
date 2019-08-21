@@ -15,8 +15,8 @@ class CreateOcorrenciaTiposTable extends Migration
     {
         Schema::create('ocorrencia_tipos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descricao');
-            $table->char('ativo', 1)->default('1');
+            $table->text('descricao');
+            $table->char('ativo', 1)->default(1);
             $table->timestamps();
         });
     }

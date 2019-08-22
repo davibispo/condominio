@@ -79,6 +79,12 @@ class MoradorController extends Controller
         return redirect()->back();
     }
 
+    public function atualizaMorador($id)
+    {
+        $user = User::find($id);
+        return view('moradores.update', compact('user'));
+    }
+
     /**
      * Update the specified resource in storage.
      *

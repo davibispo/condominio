@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('moradores/atualizaMorador/{id}', 'MoradorController@atualizaMorador')->name('moradores.atualizaMorador');
+Route::post('moradores', 'MoradorController@atualizaMorador');
 Route::resource('moradores', 'MoradorController');
 Route::resource('pets', 'PetController');
 Route::resource('veiculos', 'VeiculoController');

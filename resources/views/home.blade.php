@@ -16,7 +16,7 @@
                     @if (auth()->user()->ativo == '1')
                         <b>Você está concetado!</b>
                     @else
-                        <b>Você está concetado</b>, mas ainda sem acesso aos recursos!
+                        Você está concetado, <b style="color:red">mas ainda sem acesso aos recursos!</b>
                     @endif    
                     <br><br>
                     <ul>
@@ -33,7 +33,7 @@
                         @else
                             <li style="list-style:none">
                                 <i class="fas fa-exclamation-triangle" style="color:darkgoldenrod"></i>
-                                Seu acesso ficará ativo quando os dados forem confirmados pelo administrador.
+                                <b>Seu acesso ficará ativo quando os dados forem confirmados pelo administrador.</b>
                             </li>
                         @endif
                     </ul>

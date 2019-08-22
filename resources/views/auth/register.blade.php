@@ -17,8 +17,10 @@
                             <div class="col-md-6">
                                 <select id="tipo" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
                                     <option value=""></option>
-                                    <option value="Proprietário">Proprietário</option>
-                                    <option value="Inquilino">Inquilino</option>
+                                    <option value="Proprietário">Proprietário (Responsável)</option>
+                                    <option value="Inquilino">Inquilino (Responsável)</option>
+                                    <option value="Inquilino">Apenas Morador</option>
+                                    <option value="Inquilino">Outro</option>
                                 </select>
                                 @error('tipo')
                                     <span class="invalid-feedback" role="alert">

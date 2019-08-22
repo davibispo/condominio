@@ -54,6 +54,7 @@
                                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
                                     <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Comuns</a>
+                                    <a class="dropdown-item" href="{{ route('reservas.index') }}">Administrar Solicitações</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
                                     <a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
 
@@ -64,18 +65,7 @@
                             </li>
                             @endif
 
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Áreas Comuns<span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('reservas.create') }}">Solicitar</a>
-                                    @if (auth()->user()->status == '9')
-                                    <a class="dropdown-item" href="{{ route('reservas.index') }}">Administrar</a>
-                                    @endif
-                                </div>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Áreas Comuns</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.index') }}">Registrar Ocorrência</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('notificacao-multas.index') }}">Notificações/Multas</a></li>
                         @endif

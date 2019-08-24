@@ -22,15 +22,8 @@
                                             'Outro'             => 'Outro', 
                                         ], 
                                         null, ['class' => 'form-control', 'required', 'placeholder' => '-- Escolha --']) 
-                                    !!}
-                                    
-                                
-                                @error('tipo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                    !!}                                 
+                              </div>
                         </div>
 
                         <div class="form-group row">

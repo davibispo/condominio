@@ -121,7 +121,7 @@
 
                             <div class="col-md-6">
                                 <select id="sexo" class="form-control @error('sexo') is-invalid @enderror" name="sexo" value="{{ old('sexo') }}"  autocomplete="sexo" autofocus>
-                                    <option value=""></option>
+                                    <option value="">-- Escolha --</option>
                                     <option value="F">Feminino</option>
                                     <option value="M">Masculino</option>
                                 </select>

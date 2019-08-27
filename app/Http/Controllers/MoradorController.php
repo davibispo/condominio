@@ -7,6 +7,7 @@ use App\Models\Veiculo;
 use App\Models\Pet;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class MoradorController extends Controller
 {
@@ -29,7 +30,7 @@ class MoradorController extends Controller
      */
     public function create()
     {
-        //
+        return view('moradores.create');
     }
 
     /**
@@ -40,7 +41,34 @@ class MoradorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+
+        $user->tipo = $request->tipo;
+        $user->bloco = $request->bloco;
+        $user->apto = $request->apto;
+        $user->name = strtoupper($request->name);
+        $user->tel1 = $request->tel1;
+        $user->tel2 = $request->tel2;
+        $user->cpf = $request->cpf;
+        $user->sexo = $request->sexo;
+        $user->data_nascimento = $request->data_nascimento;
+        $user->foto = $request->foto;
+        $user->residente1 = strtoupper($request->residente1);
+        $user->residente2 = strtoupper($request->residente2);
+        $user->residente3 = strtoupper($request->residente3);
+        $user->residente4 = strtoupper($request->residente4);
+        $user->residente5 = strtoupper($request->residente5);
+        $user->idade_residente1 = $request->idade_residente1;
+        $user->idade_residente2 = $request->idade_residente2;
+        $user->idade_residente3 = $request->idade_residente3;
+        $user->idade_residente4 = $request->idade_residente4;
+        $user->idade_residente5 = $request->idade_residente5;
+        $user->email = $request->email;
+        $user->password = Hash::make($user->password);
+
+        $user->save();
+
+        return redirect()->route('home');
     }
 
     /**

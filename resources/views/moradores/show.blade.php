@@ -91,12 +91,14 @@
                                 <th></th>
                             </thead>
                             @foreach ($veiculos as $v)
-                            <tr>
-                                <td>{{ $v->descricao }}</td>
-                                <td>{{ $v->cor }}</td>
-                                <td>{{ $v->placa }}</td>
-                                <td></td>
-                            </tr>
+                                @if ($v->user_id == $morador->id)  
+                                    <tr>
+                                        <td>{{ $v->descricao }}</td>
+                                        <td>{{ $v->cor }}</td>
+                                        <td>{{ $v->placa }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endif
                             @endforeach
                             <thead>
                                 <th>Pets</th>
@@ -105,12 +107,14 @@
                                 <th>Obs</th>
                             </thead>
                             @foreach ($pets as $p)
-                            <tr>
-                                <td>{{ $p->tipo }}</td>
-                                <td>{{ $p->nome }}</td>
-                                <td>{{ $p->descricao }}</td>
-                                <td>{{ $p->obs}}</td>
-                            </tr>
+                                @if ($p->user_id == $morador->id)
+                                    <tr>
+                                        <td>{{ $p->tipo }}</td>
+                                        <td>{{ $p->nome }}</td>
+                                        <td>{{ $p->descricao }}</td>
+                                        <td>{{ $p->obs}}</td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </table>
                     </div>

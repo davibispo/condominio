@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Unidade;
 use App\Models\Veiculo;
+use App\Models\Pet;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -52,9 +53,10 @@ class MoradorController extends Controller
     {
         $morador = User::find($id);
         $veiculos = Veiculo::all();
+        $pets = Pet::all();
         $users = user::all();
 
-        return view('moradores.show', compact('morador', 'veiculos', 'users'));
+        return view('moradores.show', compact('morador', 'veiculos', 'users', 'pets'));
     }
 
     /**

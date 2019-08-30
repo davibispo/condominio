@@ -116,6 +116,33 @@ class PetController extends Controller
         $pet->descricao = $request->descricao;
         $pet->nome = $request->nome;
         $pet->obs = $request->obs;
+        $pet->user_id = auth()->user()->id;
+
+        // Define o valor default para a variável que contém o nome da imagem
+        $nameFile = null;
+
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('vacina') && $request->file('vacina')->isValid()) {
+
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('HisYmd'));
+
+            // Recupera a extensão do arquivo
+            $extension = $request->vacina->extension();
+
+            // Define finalmente o nome
+            $nameFile = "pet{$name}.{$extension}";
+
+            // Faz o upload:
+            $pet->vacina = $request->vacina->storeAs('pets', $nameFile);
+            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
+            // Verifica se NÃO deu certo o upload (Redireciona de volta)
+            if ( !$pet->vacina )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+        }
 
         $pet->update();
 

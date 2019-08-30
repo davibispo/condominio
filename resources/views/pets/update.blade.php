@@ -8,7 +8,7 @@
                 <div class="card-header">Editar Cadastro de Pet</div>
 
                 <div class="card-body">
-                    {!! Form::model($pet, ['method'=>'PATCH', 'action'=>['PetController@update', $pet->id], 'class'=>'form-horizontal']) !!}
+                    {!! Form::model($pet, ['method'=>'PATCH', 'action'=>['PetController@update', $pet->id], 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
@@ -35,6 +35,13 @@
                             {!! Form::label('descricao', 'Características', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 <textarea name="descricao" id="" cols="" rows="2" class="form-control">{{ $pet->descricao }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label('vacina', 'Cartão de Vacina', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <div class="col-md-6">
+                                {!! Form::file('vacina', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
 

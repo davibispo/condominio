@@ -28,6 +28,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Para Mascaras Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
 
 </head>
 <body>
@@ -133,6 +137,19 @@
                 </div>
         @endif
         <!--fim do alerta-->
+
+        <!-- Mascaras  -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+        <script>
+            $(document).ready(function () { 
+                var $seuCampoCpf = $("#cpf");
+                var $seuCampoCelular = $("#tel");
+                $seuCampoCpf.mask('000.000.000-00', {reverse: false});
+                $seuCampoCelular.mask('(00)00000-0000', {reverse: false});
+            });
+        </script>
+        <!-- fim de mascaras-->
+
 
         <main class="py-4">
             @yield('content')

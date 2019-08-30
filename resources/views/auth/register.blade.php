@@ -83,17 +83,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Telefones') }}</label>
+                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tel1" type="text" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}" placeholder="Ex: 82 98888-8888" required autocomplete="tel1" autofocus>
+                                <input id="tel" type="text" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}" placeholder="com DDD" required autocomplete="tel1" autofocus>
                                 @error('tel1')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
 
-                                <input id="tel2" type="text" class="form-control @error('tel2') is-invalid @enderror" name="tel2" value="{{ old('tel2') }}" placeholder="Ex: 82 98888-8888" autocomplete="tel2" autofocus>
+                                <input id="tel" type="text" class="form-control @error('tel2') is-invalid @enderror" name="tel2" value="{{ old('tel2') }}" placeholder="com DDD" autocomplete="tel2" autofocus>
                                 @error('tel2')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -106,7 +106,7 @@
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" maxlength="11" placeholder="digite apenas números"class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
+                                <input id="cpf" type="text" maxlength="14" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
 
                                 @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -241,3 +241,4 @@
     </div>
 </div>
 @endsection
+

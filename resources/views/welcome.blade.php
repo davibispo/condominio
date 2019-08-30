@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Gerenciador do Condomínio
+                    Condomínio<b>BA</b>
                 </div>
 
                 <div class="links">

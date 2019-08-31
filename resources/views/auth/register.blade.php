@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Cadastro') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype='multipart/form-data'>
                         @csrf
 
                         <div class="form-group row">
@@ -26,11 +26,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Morador tipo') }}</label>
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
 
                             <div class="col-md-6">
                                 <select id="tipo" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
-                                    <option value=""></option>
+                                    <option value="">-- Escolha --</option>
                                     <option value="Proprietário">Proprietário (Responsável)</option>
                                     <option value="Inquilino">Inquilino (Responsável)</option>
                                     <option value="Inquilino">Apenas Morador</option>
@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Data de nascimento') }}</label>
+                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Nascimento') }}</label>
 
                             <div class="col-md-6">
                                 <input id="data_nascimento" type="date" class="form-control @error('data_nascimento') is-invalid @enderror" name="data_nascimento" value="{{ old('data_nascimento') }}" required autocomplete="data_nascimento" autofocus>
@@ -167,7 +167,7 @@
                             <div class="col-md-6">
                                 <table class="table table-sm">
                                     <tr>
-                                        <td><input id="residente1" type="text" class="form-control @error('residente1') is-invalid @enderror" name="residente1" value="{{ old('residente1') }}" autocomplete="residente1" autofocus placeholder="Nome"></td>
+                                        <td width="70%"><input id="residente1" type="text" class="form-control @error('residente1') is-invalid @enderror" name="residente1" value="{{ old('residente1') }}" autocomplete="residente1" autofocus placeholder="Nome"></td>
                                         <td><input id="idade_residente1" type="number" min="0" max="110" class="form-control @error('idade_residente1') is-invalid @enderror" name="idade_residente1" value="{{ old('idade_residente1') }}" autocomplete="idade_residente1" autofocus placeholder="Idade"></td>
                                     </tr>
                                     <tr>

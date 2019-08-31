@@ -8,10 +8,18 @@
                 <div class="card-header">{{ __('Atualizar Cadastro') }}</div>
 
                 <div class="card-body">
-                    {!! Form::model($user,['method'=>'PATCH', 'action'=>['MoradorController@update', $user->id], 'class'=>'form-horizontal']) !!}
+                    {!! Form::model($user,['method'=>'PATCH', 'action'=>['MoradorController@update', $user->id], 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
                         
-                        <div class="form-group row">
-                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Morador tipo') }}</label>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo') }}</label>
+                    
+                        <div class="col-md-6">
+                            {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
 
                             <div class="col-md-6">
                                     {!! Form::select('tipo', 
@@ -83,20 +91,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo') }}</label>
-
-                            <div class="col-md-6">
-                                {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
-                            </div>
-                        </div>
 
                         <div class="form-group row">
-                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Telefones') }}</label>
+                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                {!! Form::text('tel1', null, ['class' => 'form-control', 'required']) !!}
-                                {!! Form::text('tel2', null, ['class' => 'form-control']) !!}                                
+                                {!! Form::text('tel1', null, ['class' => 'form-control', 'id'=>'tel', 'required']) !!}
+                                {!! Form::text('tel2', null, ['class' => 'form-control', 'id'=>'tel']) !!}                                
                             </div>
                         </div>
 
@@ -104,7 +105,7 @@
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">
-                                {!! Form::text('cpf', null, ['class' => 'form-control', 'required']) !!}    
+                                {!! Form::text('cpf', null, ['class' => 'form-control', 'id'=>'cpf', 'required']) !!}    
                             </div>
                         </div>
 
@@ -123,7 +124,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Data de nascimento') }}</label>
+                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Nascimento') }}</label>
 
                             <div class="col-md-6">
                                 {!! Form::date('data_nascimento', null, ['class' => 'form-control', 'required']) !!}  
@@ -144,7 +145,7 @@
                             <div class="col-md-6">
                                 <table class="table table-sm">
                                     <tr>
-                                        <td>{!! Form::text('residente1', null, ['class' => 'form-control']) !!} </td>
+                                        <td width="70%">{!! Form::text('residente1', null, ['class' => 'form-control']) !!} </td>
                                         <td>{!! Form::number('idade_residente1', null, ['class' => 'form-control']) !!}</td>
                                     </tr>
                                     <tr>

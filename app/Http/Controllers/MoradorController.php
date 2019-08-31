@@ -30,7 +30,7 @@ class MoradorController extends Controller
      */
     public function create()
     {
-        return view('moradores.create');
+        
     }
 
     /**
@@ -41,34 +41,7 @@ class MoradorController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
-
-        $user->tipo = $request->tipo;
-        $user->bloco = $request->bloco;
-        $user->apto = $request->apto;
-        $user->name = strtoupper($request->name);
-        $user->tel1 = $request->tel1;
-        $user->tel2 = $request->tel2;
-        $user->cpf = $request->cpf;
-        $user->sexo = $request->sexo;
-        $user->data_nascimento = $request->data_nascimento;
-        $user->foto = $request->foto;
-        $user->residente1 = strtoupper($request->residente1);
-        $user->residente2 = strtoupper($request->residente2);
-        $user->residente3 = strtoupper($request->residente3);
-        $user->residente4 = strtoupper($request->residente4);
-        $user->residente5 = strtoupper($request->residente5);
-        $user->idade_residente1 = $request->idade_residente1;
-        $user->idade_residente2 = $request->idade_residente2;
-        $user->idade_residente3 = $request->idade_residente3;
-        $user->idade_residente4 = $request->idade_residente4;
-        $user->idade_residente5 = $request->idade_residente5;
-        $user->email = $request->email;
-        $user->password = Hash::make($user->password);
-
-        $user->save();
-
-        return redirect()->route('home');
+        
     }
 
     /**
@@ -130,9 +103,9 @@ class MoradorController extends Controller
         $user->bloco = $request->bloco;
         $user->apto = $request->apto;
         $user->name = strtoupper($request->name);
-        $user->tel1 = $request->tel1;
-        $user->tel2 = $request->tel2;
-        $user->cpf = $request->cpf;
+        $user->tel1 = preg_replace("/[^0-9]/", "", $request->tel1);
+        $user->tel2 = preg_replace("/[^0-9]/", "", $request->tel2);
+        $user->cpf = preg_replace("/[^0-9]/", "", $request->cpf);
         $user->sexo = $request->sexo;
         $user->data_nascimento = $request->data_nascimento;
         $user->foto = $request->foto;
@@ -161,10 +134,10 @@ class MoradorController extends Controller
             $extension = $request->foto->extension();
 
             // Define finalmente o nome
-            $nameFile = "user{$name}.{$extension}";
+            $nameFile = "foto{$name}.{$extension}";
 
             // Faz o upload:
-            $user->foto = $request->foto->storeAs('users', $nameFile);
+            $user->foto = $request->foto->storeAs('fotos', $nameFile);
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
             if ( !$user->foto )

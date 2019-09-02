@@ -9,7 +9,9 @@
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
-                        
+                        <div>
+                                <iframe src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"></iframe>
+                        </div>
                         <table class="table table-sm table-hover" style="font-size:10px">
                             
                             <thead>

@@ -143,9 +143,11 @@
         <script>
             $(document).ready(function () { 
                 var $seuCampoCpf = $("#cpf");
-                var $seuCampoCelular = $("#tel");
+                var $seuCampoCelular1 = $("#tel1");
+                var $seuCampoCelular2 = $("#tel2");
                 $seuCampoCpf.mask('000.000.000-00', {reverse: false});
-                $seuCampoCelular.mask('(00)00000-0000', {reverse: false});
+                $seuCampoCelular1.mask('(00)00000-0000', {reverse: false});
+                $seuCampoCelular2.mask('(00)00000-0000', {reverse: false});
             });
         </script>
         <!-- fim de mascaras-->

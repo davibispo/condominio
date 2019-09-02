@@ -93,11 +93,11 @@
 
 
                         <div class="form-group row">
-                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
+                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                {!! Form::text('tel1', null, ['class' => 'form-control', 'id'=>'tel', 'required']) !!}
-                                {!! Form::text('tel2', null, ['class' => 'form-control', 'id'=>'tel']) !!}                                
+                                {!! Form::tel('tel1', null, ['class' => 'form-control', 'id'=>'tel1', 'required']) !!}
+                                {!! Form::tel('tel2', null, ['class' => 'form-control', 'id'=>'tel2']) !!}                                
                             </div>
                         </div>
 

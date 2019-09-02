@@ -29,8 +29,7 @@
                                     <td>{{ $v->placa }}</td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $v->user_id)->value('name') }}</td>
                                     <td>
-                                        BL {{ DB::table('unidades')->select('bloco', 'user_id')->where('user_id', $v->user_id)->value('bloco') }}
-                                        Ap {{ DB::table('unidades')->select('unidade','user_id')->where('user_id', $v->user_id)->value('unidade') }}
+                                        {{ DB::table('users')->select('bloco')->where('id', $v->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $v->user_id)->value('apto') }}
                                     </td>
                                 </tr>
                             </tbody>

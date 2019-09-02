@@ -33,7 +33,7 @@
                                     </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->tipo }}</td>
-                                    <td>{{ $item->bloco }} - {{ $item->apto }} </td>
+                                    <td>{{ $item->bloco }}-{{ $item->apto }} </td>
                                     <td>{{ $item->tel1 }}</td>
                                     <td>{{ $item->tel2 }}</td>
                                     <td>{{ $item->email }}</td>

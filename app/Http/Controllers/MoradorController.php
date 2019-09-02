@@ -103,8 +103,8 @@ class MoradorController extends Controller
         $user->bloco = $request->bloco;
         $user->apto = $request->apto;
         $user->name = strtoupper($request->name);
-        $user->tel1 = preg_replace("/[^0-9]/", "", $request->tel1);
-        $user->tel2 = preg_replace("/[^0-9]/", "", $request->tel2);
+        $user->tel1 = $request->tel1;
+        $user->tel2 = $request->tel2;
         $user->cpf = preg_replace("/[^0-9]/", "", $request->cpf);
         $user->sexo = $request->sexo;
         $user->data_nascimento = $request->data_nascimento;

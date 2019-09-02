@@ -31,8 +31,7 @@
                                     <td><a href="{{ route('pets.show', $p->id)}}">Ver</a></td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $p->user_id)->value('name') }}</td>
                                     <td>
-                                        {{ DB::table('users')->select('bloco')->where('id', $p->user_id)->value('bloco') }}
-                                        - {{ DB::table('users')->select('apto')->where('id', $p->user_id)->value('apto') }}
+                                        {{ DB::table('users')->select('bloco')->where('id', $p->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $p->user_id)->value('apto') }}
                                     </td>
                                 </tr>
                             </tbody>

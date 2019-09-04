@@ -10,10 +10,10 @@
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
                         <div>
-                            <img src="{{url("fotos/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
+                            <img src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
                         </div>
                         <table class="table table-sm table-hover" style="font-size:10px">
-                            
+
                             <thead>
                                 <th>Nome</th>
                                 <th>Tipo</th>
@@ -74,7 +74,7 @@
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>    
+                            <tr>
                                 <td>{{ $morador->residente4 }}</td>
                                 <td>{{ $morador->idade_residente4 }}</td>
                                 <td></td>
@@ -93,7 +93,7 @@
                                 <th></th>
                             </thead>
                             @foreach ($veiculos as $v)
-                                @if ($v->user_id == $morador->id)  
+                                @if ($v->user_id == $morador->id)
                                     <tr>
                                         <td>{{ $v->descricao }}</td>
                                         <td>{{ $v->cor }}</td>

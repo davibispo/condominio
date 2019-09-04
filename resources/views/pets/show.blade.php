@@ -8,7 +8,7 @@
                 <div class="card-header">Cartão de Vacina do Pet</div>
 
                 <div class="card-body">
-                    <iframe src="{{url("storage/app/public/{$pet->vacina}")}}" width="600" height="780" style="border: none;"></iframe>
+                    <iframe src="{{url("storage/{$pet->vacina}")}}" width="600" height="780" style="border: none;"></iframe>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
                         <div>
-                            <img src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
+                            <img class="img-fluid" src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
                         </div>
                         <table class="table table-sm table-hover" style="font-size:10px">
 
@@ -33,8 +33,16 @@
                                 <th></th>
                             </thead>
                             <tr>
-                                <td>{{ $morador->data_nascimento }}</td>
-                                <td></td>
+                                <td>{{ date('d-m-Y', strtotime($morador->data_nascimento)) }}</td>
+                                <td>
+                                    @php
+                                        //calculo de idade
+                                        $dataAtual = date_create(date('Y-m-d'));
+                                        $dataNascimento = date_create($morador->data_nascimento);
+                                        $idade = date_diff($dataAtual, $dataNascimento);
+                                        echo $idade->format('%y');
+                                    @endphp 
+                                </td>
                                 <td>{{ $morador->sexo}}</td>
                                 <td></td>
                             </tr>

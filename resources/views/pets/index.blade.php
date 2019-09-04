@@ -13,6 +13,7 @@
                         <br>
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>
+                                <th></th>
                                 <th>Tipo</th>
                                 <th>Nome</th>
                                 <th>Descricao</th>
@@ -24,6 +25,7 @@
                             @foreach ($pets as $p)
                             <tbody id="myTable" style="font-size:12px">
                                 <tr>
+                                    <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
                                     <td>{{ $p->tipo }}</td>
                                     <td>{{ $p->nome }}</td>
                                     <td>{{ $p->descricao }}</td>

@@ -57,13 +57,7 @@ class MoradorController extends Controller
         $pets = Pet::all();
         $users = user::all();
 
-        //calculo de idade
-        $dataAtual = date_create(date('Y-m-d'));
-        $dataNascimento = date_create($morador->data_nascimento);
-        $idade = date_diff($dataAtual, $dataNascimento);
-        $idade->format('%y');
-
-        return view('moradores.show', compact('morador', 'veiculos', 'users', 'pets', 'idade'));
+        return view('moradores.show', compact('morador', 'veiculos', 'users', 'pets'));
     }
 
     /**

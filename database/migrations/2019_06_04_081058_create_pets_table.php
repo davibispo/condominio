@@ -19,6 +19,7 @@ class CreatePetsTable extends Migration
             $table->string('descricao');
             $table->string('nome')->nullable();
             $table->text('obs')->nullable();
+            $table->text('foto')->nullable();
             $table->text('vacina')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -46,7 +46,7 @@ class PetController extends Controller
         $pet->obs = $request->obs;
         $pet->user_id = auth()->user()->id;
 
-        // Define o valor default para a variável que contém o nome da imagem
+        // Define o valor default para a variável que contém o nome da imagem --- VACINA ----
         $nameFile = null;
 
         // Verifica se informou o arquivo e se é válido
@@ -66,6 +66,29 @@ class PetController extends Controller
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
             if ( !$pet->vacina )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+        }
+
+        // Verifica se informou o arquivo e se é válido --- FOTO ---
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('HisYmd'));
+
+            // Recupera a extensão do arquivo
+            $extension = $request->foto->extension();
+
+            // Define finalmente o nome
+            $nameFile = "pet{$name}.{$extension}";
+
+            // Faz o upload:
+            $pet->foto = $request->foto->storeAs('pets', $nameFile);
+            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
+            // Verifica se NÃO deu certo o upload (Redireciona de volta)
+            if ( !$pet->foto )
             return redirect()
                         ->back()
                         ->with('error', 'Falha ao fazer upload')
@@ -138,6 +161,29 @@ class PetController extends Controller
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
             if ( !$pet->vacina )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+        }
+
+        // Verifica se informou o arquivo e se é válido --- FOTO ---
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('HisYmd'));
+
+            // Recupera a extensão do arquivo
+            $extension = $request->foto->extension();
+
+            // Define finalmente o nome
+            $nameFile = "pet{$name}.{$extension}";
+
+            // Faz o upload:
+            $pet->foto = $request->foto->storeAs('pets', $nameFile);
+            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
+            // Verifica se NÃO deu certo o upload (Redireciona de volta)
+            if ( !$pet->foto )
             return redirect()
                         ->back()
                         ->with('error', 'Falha ao fazer upload')

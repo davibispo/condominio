@@ -39,6 +39,13 @@
                         </div>
 
                         <div class="form-group row">
+                            {!! Form::label('foto', 'Foto', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <div class="col-md-6">
+                                {!! Form::file('foto', null, ['class'=>'form-control']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             {!! Form::label('vacina', 'Cartão de Vacina', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {!! Form::file('vacina', null, ['class'=>'form-control']) !!}
@@ -64,6 +71,7 @@
                 <div class="container">
                     <table class="table table-hover table-sm">
                         <thead>
+                            <th></th>
                             <th>Cadastrado(s)</th>
                             <th>Nome</th>
                             <th>Características</th>
@@ -73,6 +81,7 @@
                         </thead>
                         @forelse ($pets as $p)
                             <tr>
+                                <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
                                 <td>{{ $p->tipo }}</td>
                                 <td>{{ $p->nome }}</td>
                                 <td>{{ $p->descricao }}</td>

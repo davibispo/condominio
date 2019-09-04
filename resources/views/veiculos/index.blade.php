@@ -8,7 +8,7 @@
                 <div class="card-header">Veículos</div>
 
                 <div class="card-body">
-                    <div class="container" style="overflow:auto; height: 400px;">
+                    <div class="container" style="overflow:auto; height: 600px;">
                         <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
                         <br>
                         <table class="table table-sm table-hover" style="font-size:10px">

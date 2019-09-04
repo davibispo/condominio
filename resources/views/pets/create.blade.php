@@ -71,8 +71,8 @@
                 <div class="container">
                     <table class="table table-hover table-sm">
                         <thead>
-                            <th></th>
-                            <th>Cadastrado(s)</th>
+                            <th>Foto</th>
+                            <th>Tipo</th>
                             <th>Nome</th>
                             <th>Características</th>
                             <th></th>

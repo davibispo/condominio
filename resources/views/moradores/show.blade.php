@@ -8,7 +8,7 @@
                 <div class="card-header">Detalhes de Morador</div>
 
                 <div class="card-body">
-                    <div class="container" style="overflow:auto; height: 400px;">
+                    <div class="container" style="overflow:auto; height: 600px;">
                         <div>
                             <img class="img-fluid" src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
                         </div>
@@ -111,7 +111,7 @@
                                 @endif
                             @endforeach
                             <thead>
-                                <th>Pets</th>
+                                <th>Animais</th>
                                 <th>Nome</th>
                                 <th>Características</th>
                                 <th>Obs</th>
@@ -119,14 +119,17 @@
                             @foreach ($pets as $p)
                                 @if ($p->user_id == $morador->id)
                                     <tr>
-                                        <td>{{ $p->tipo }}</td>
-                                        <td>{{ $p->nome }}</td>
+                                        <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
+                                        <td>{{ $p->nome }} ({{ $p->tipo }})</td>
                                         <td>{{ $p->descricao }}</td>
                                         <td>{{ $p->obs}}</td>
                                     </tr>
                                 @endif
                             @endforeach
                         </table>
+                    </div>
+                    <div class="container">
+                        <a href="{{ route('moradores.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
                     </div>
                 </div>
             </div>

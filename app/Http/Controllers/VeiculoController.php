@@ -90,7 +90,7 @@ class VeiculoController extends Controller
         $veiculo = Veiculo::find($id);
 
         $veiculo->tipo = $request->tipo;
-        $veiculo->descricao = $request->descricao;
+        $veiculo->descricao = strtoupper($request->descricao);
         $veiculo->cor = $request->cor;
         $veiculo->placa = strtoupper($request->placa);
 

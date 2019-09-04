@@ -33,8 +33,8 @@
                                     <option value="">-- Escolha --</option>
                                     <option value="Proprietário">Proprietário (Responsável)</option>
                                     <option value="Inquilino">Inquilino (Responsável)</option>
-                                    <option value="Inquilino">Apenas Morador</option>
-                                    <option value="Inquilino">Outro</option>
+                                    <option value="Morador">Morador</option>
+                                    <option value="Outro">Outro</option>
                                 </select>
                                 @error('tipo')
                                     <span class="invalid-feedback" role="alert">
@@ -122,8 +122,8 @@
                             <div class="col-md-6">
                                 <select id="sexo" class="form-control @error('sexo') is-invalid @enderror" name="sexo" value="{{ old('sexo') }}"  autocomplete="sexo" autofocus>
                                     <option value="">-- Escolha --</option>
-                                    <option value="F">Feminino</option>
                                     <option value="M">Masculino</option>
+                                    <option value="F">Feminino</option>
                                 </select>
                                 @error('sexo')
                                     <span class="invalid-feedback" role="alert">

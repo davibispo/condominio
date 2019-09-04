@@ -29,7 +29,7 @@
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Veículo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Marca Modelo']) !!}
+                                {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Ex: Ford Fiesta Sedan']) !!}
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
                         <div class="form-group row">
                             {!! Form::label('placa', 'Placa', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-3">
-                                {!! Form::text('placa', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'AAA-1234']) !!}
+                                {!! Form::text('placa', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'AAA-1234', 'id'=>'placa']) !!}
                             </div>
                         </div>
 

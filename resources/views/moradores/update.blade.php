@@ -26,7 +26,7 @@
                                         [
                                             'Proprietário'      => 'Proprietário (Responsável)', 
                                             'Inquilino'         => 'Inquilino (Responsável)', 
-                                            'Apenas Morador'    => 'Apenas Morador', 
+                                            'Morador'           => 'Morador', 
                                             'Outro'             => 'Outro', 
                                         ], 
                                         null, ['class' => 'form-control', 'required', 'placeholder' => '-- Escolha --']) 
@@ -115,8 +115,8 @@
                             <div class="col-md-6">
                                 {!! Form::select('sexo', 
                                     [
-                                    'F'=>'Feminino',
-                                    'M'=>'Masculino',
+                                        'M'=>'Masculino',
+                                        'F'=>'Feminino',
                                     ],
                                     null, ['class' => 'form-control', 'required']) 
                                 !!}

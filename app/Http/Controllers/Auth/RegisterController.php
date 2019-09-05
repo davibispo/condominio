@@ -89,18 +89,23 @@ class RegisterController extends Controller
 
             'residente1' => strtoupper($data['residente1']),
             'idade_residente1' => $data['idade_residente1'],
+            'foto_residente1' => $data['foto_residente1'],
 
             'residente2' => strtoupper($data['residente2']),
             'idade_residente2' => $data['idade_residente2'],
+            'foto_residente2' => $data['foto_residente2'],
 
             'residente3' => strtoupper($data['residente3']),
             'idade_residente3' => $data['idade_residente3'],
+            'foto_residente3' => $data['foto_residente3'],
 
             'residente4' => strtoupper($data['residente4']),
             'idade_residente4' => $data['idade_residente4'],
+            'foto_residente4' => $data['foto_residente4'],
 
             'residente5' => strtoupper($data['residente5']),
             'idade_residente5' => $data['idade_residente5'],
+            'foto_residente5' => $data['foto_residente5'],
 
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

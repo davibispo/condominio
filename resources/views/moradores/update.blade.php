@@ -151,20 +151,74 @@
                                         <td>{!! Form::number('idade_residente1', null, ['class' => 'form-control']) !!}</td>
                                     </tr>
                                     <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente1" type="file" class="form-control @error('foto_residente1') is-invalid @enderror" name="foto_residente1" value="{{ old('foto_residente1') }}" autocomplete="foto_residente1" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
                                         <td>{!! Form::text('residente2', null, ['class' => 'form-control']) !!}</td>
                                         <td>{!! Form::number('idade_residente2', null, ['class' => 'form-control']) !!}</td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente2" type="file" class="form-control @error('foto_residente2') is-invalid @enderror" name="foto_residente2" value="{{ old('foto_residente2') }}" autocomplete="foto_residente2" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                     <tr>
                                         <td>{!! Form::text('residente3', null, ['class' => 'form-control']) !!}</td>
                                         <td>{!! Form::number('idade_residente3', null, ['class' => 'form-control']) !!}</td>
                                     </tr>
                                     <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente3" type="file" class="form-control @error('foto_residente3') is-invalid @enderror" name="foto_residente3" value="{{ old('foto_residente3') }}" autocomplete="foto_residente3" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
                                         <td>{!! Form::text('residente4', null, ['class' => 'form-control']) !!}</td>
                                         <td>{!! Form::number('idade_residente4', null, ['class' => 'form-control']) !!}</td>
                                     </tr>
                                     <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente4" type="file" class="form-control @error('foto_residente4') is-invalid @enderror" name="foto_residente4" value="{{ old('foto_residente4') }}" autocomplete="foto_residente4" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
                                         <td>{!! Form::text('residente5', null, ['class' => 'form-control']) !!}</td>
                                         <td>{!! Form::number('idade_residente5', null, ['class' => 'form-control']) !!}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente5" type="file" class="form-control @error('foto_residente5') is-invalid @enderror" name="foto_residente5" value="{{ old('foto_residente5') }}" autocomplete="foto_residente5" autofocus>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </table>
                                 <hr>

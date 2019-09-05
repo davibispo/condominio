@@ -30,18 +30,23 @@ class CreateUsersTable extends Migration
             
             $table->string('residente1', 80)->nullable();
             $table->integer('idade_residente1')->nullable();
+            $table->integer('foto_residente1')->nullable();
             
             $table->string('residente2', 80)->nullable();
             $table->integer('idade_residente2')->nullable();
+            $table->integer('foto_residente2')->nullable();
             
             $table->string('residente3', 80)->nullable();
             $table->integer('idade_residente3')->nullable();
+            $table->integer('foto_residente3')->nullable();
             
             $table->string('residente4', 80)->nullable();
             $table->integer('idade_residente4')->nullable();
+            $table->integer('foto_residente4')->nullable();
             
             $table->string('residente5', 80)->nullable();
             $table->integer('idade_residente5')->nullable();
+            $table->integer('foto_residente5')->nullable();
             
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();

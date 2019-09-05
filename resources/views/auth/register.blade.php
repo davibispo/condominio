@@ -160,7 +160,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <hr>
                         <div class="form-group row">
                             <label for="residente1" class="col-md-4 col-form-label text-md-right">{{ __('Residente com') }}</label>
 
@@ -168,29 +168,83 @@
                                 <table class="table table-sm">
                                     <tr>
                                         <td width="70%"><input id="residente1" type="text" class="form-control @error('residente1') is-invalid @enderror" name="residente1" value="{{ old('residente1') }}" autocomplete="residente1" autofocus placeholder="Nome"></td>
-                                        <td><input id="idade_residente1" type="number" min="0" max="110" class="form-control @error('idade_residente1') is-invalid @enderror" name="idade_residente1" value="{{ old('idade_residente1') }}" autocomplete="idade_residente1" autofocus placeholder="Idade"></td>
+                                        <td width="30%"><input id="idade_residente1" type="number" min="0" max="110" class="form-control @error('idade_residente1') is-invalid @enderror" name="idade_residente1" value="{{ old('idade_residente1') }}" autocomplete="idade_residente1" autofocus placeholder="Idade"></td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente1" type="file" class="form-control @error('foto_residente1') is-invalid @enderror" name="foto_residente1" value="{{ old('foto_residente1') }}" autocomplete="foto_residente1" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                     <tr>
                                         <td><input id="residente2" type="text" class="form-control @error('residente2') is-invalid @enderror" name="residente2" value="{{ old('residente2') }}" autocomplete="residente2" autofocus placeholder="Nome"></td>
                                         <td><input id="idade_residente2" type="number" min="0" max="110" class="form-control @error('idade_residente2') is-invalid @enderror" name="idade_residente2" value="{{ old('idade_residente2') }}" autocomplete="idade_residente2" autofocus placeholder="Idade"></td>
                                     </tr>
                                     <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente2" type="file" class="form-control @error('foto_residente2') is-invalid @enderror" name="foto_residente2" value="{{ old('foto_residente2') }}" autocomplete="foto_residente2" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
                                         <td><input id="residente3" type="text" class="form-control @error('residente3') is-invalid @enderror" name="residente3" value="{{ old('residente3') }}" autocomplete="residente3" autofocus placeholder="Nome"></td>
                                         <td><input id="idade_residente3" type="number" min="0" max="110" class="form-control @error('idade_residente3') is-invalid @enderror" name="idade_residente3" value="{{ old('idade_residente3') }}" autocomplete="idade_residente3" autofocus placeholder="Idade"></td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente3" type="file" class="form-control @error('foto_residente3') is-invalid @enderror" name="foto_residente3" value="{{ old('foto_residente3') }}" autocomplete="foto_residente3" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                     <tr>
                                         <td><input id="residente4" type="text" class="form-control @error('residente4') is-invalid @enderror" name="residente4" value="{{ old('residente4') }}" autocomplete="residente4" autofocus placeholder="Nome"></td>
                                         <td><input id="idade_residente4" type="number" min="0" max="110" class="form-control @error('idade_residente4') is-invalid @enderror" name="idade_residente4" value="{{ old('idade_residente4') }}" autocomplete="idade_residente4" autofocus placeholder="Idade"></td>
                                     </tr>
                                     <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente4" type="file" class="form-control @error('foto_residente4') is-invalid @enderror" name="foto_residente4" value="{{ old('foto_residente4') }}" autocomplete="foto_residente4" autofocus>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
                                         <td><input id="residente5" type="text" class="form-control @error('residente5') is-invalid @enderror" name="residente5" value="{{ old('residente5') }}" autocomplete="residente5" autofocus placeholder="Nome"></td>
                                         <td><input id="idade_residente5" type="number" min="0" max="110" class="form-control @error('idade_residente5') is-invalid @enderror" name="idade_residente5" value="{{ old('idade_residente5') }}" autocomplete="idade_residente5" autofocus placeholder="Idade"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="input-group mb-3 input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Foto</span>
+                                            </div>
+                                            <input id="foto_residente5" type="file" class="form-control @error('foto_residente5') is-invalid @enderror" name="foto_residente5" value="{{ old('foto_residente5') }}" autocomplete="foto_residente5" autofocus>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </table>
                                 <hr>
                             </div>
                         </div>
-
+                        <hr>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 

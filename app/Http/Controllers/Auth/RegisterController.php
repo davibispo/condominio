@@ -65,6 +65,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Define um aleatório para o arquivo baseado no timestamps atual
+        $name = uniqid(date('HisYmd'));
+
+        // Recupera a extensão do arquivo
+        $extension = $data['foto']->extension();
+
+        // Define finalmente o nome
+        $nameFile = "foto{$name}.{$extension}";
+
+        
         return User::create([
             'tipo' => $data['tipo'],
             'bloco' => $data['bloco'],
@@ -75,7 +85,7 @@ class RegisterController extends Controller
             'cpf' => preg_replace("/[^0-9]/", "", $data['cpf']),
             'sexo' => $data['sexo'],
             'data_nascimento' => $data['data_nascimento'],
-            'foto' => $data['foto'],
+            'foto' => $data['foto']->storeAs('fotos', $nameFile),
 
             'residente1' => strtoupper($data['residente1']),
             'idade_residente1' => $data['idade_residente1'],

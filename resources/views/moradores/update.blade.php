@@ -133,9 +133,11 @@
 
                         <div class="form-group row">
                             <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
-
                             <div class="col-md-6">
                                 {!! Form::file('foto', null, ['class' => 'form-control']) !!}  
+                            </div>
+                            <div>
+                                <img class="img-fluid" src="{{url("storage/{$user->foto}")}}" width="80" height="100" style="border: none;"/>
                             </div>
                         </div>
 

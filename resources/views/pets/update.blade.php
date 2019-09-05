@@ -43,6 +43,9 @@
                             <div class="col-md-6">
                                 {!! Form::file('foto', null, ['class'=>'form-control']) !!}
                             </div>
+                            <div>
+                                <img class="img-fluid" src="{{url("storage/{$pet->foto}")}}" width="80" height="100" style="border: none;"/>
+                            </div>
                         </div>
 
                         <div class="form-group row">

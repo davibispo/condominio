@@ -108,7 +108,13 @@ class MoradorController extends Controller
         $user->cpf = preg_replace("/[^0-9]/", "", $request->cpf);
         $user->sexo = $request->sexo;
         $user->data_nascimento = $request->data_nascimento;
-        $user->foto = $request->foto;
+        
+        if($request->foto == null){ // Se foto vier nula
+            $user->foto = $user->foto; //Não atualiza foto
+        }else{
+            $user->foto = $request->foto;
+        }
+        
         $user->residente1 = strtoupper($request->residente1);
         $user->residente2 = strtoupper($request->residente2);
         $user->residente3 = strtoupper($request->residente3);

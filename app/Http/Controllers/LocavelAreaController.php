@@ -39,9 +39,9 @@ class LocavelAreaController extends Controller
     {
         $area = new LocavelArea();
 
-        $area->descricao = $request->descricao;
+        $area->descricao = strtoupper($request->descricao);
         $area->valor = str_replace(',','.',$request->valor);
-        $area->obs = $request->obs;
+        $area->obs = strtoupper($request->obs);
 
         $area->save();
 
@@ -82,13 +82,13 @@ class LocavelAreaController extends Controller
     {
         $area = LocavelArea::find($id);
 
-        $area->descricao = $request->descricao;
+        $area->descricao = strtoupper($request->descricao);
         $area->valor = str_replace(',','.',$request->valor);
-        $area->obs = $request->obs;
+        $area->obs = strtoupper($request->obs);
 
         $area->update();
 
-        return redirect()->route('locavel-areas.index');
+        return redirect()->route('locavel-areas.create');
     }
 
     /**

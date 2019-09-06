@@ -57,8 +57,8 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
-                                    <a class="dropdown-item" href="{{ route('locavel-areas.index') }}">Áreas Comuns</a>
-                                    <a class="dropdown-item" href="{{ route('reservas.index') }}">Administrar Solicitações</a>
+                                    <a class="dropdown-item" href="{{ route('locavel-areas.create') }}">Áreas Comuns</a>
+                                    <a class="dropdown-item" href="{{ route('reservas.index') }}">Reservas</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
                                     <a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
 
@@ -145,14 +145,20 @@
         <script>
             $(document).ready(function () { 
                 var $seuCampoCpf = $("#cpf");
-                var $seuCampoCelular1 = $("#tel1");
-                var $seuCampoCelular2 = $("#tel2");
-                var $seuCampoPlaca = $("#placa");
                 $seuCampoCpf.mask('000.000.000-00', {reverse: false});
+                
+                var $seuCampoCelular1 = $("#tel1");
                 $seuCampoCelular1.mask('(00)00000-0000', {reverse: false});
+                
+                var $seuCampoCelular2 = $("#tel2");
                 $seuCampoCelular2.mask('(00)00000-0000', {reverse: false});
+                
+                var $seuCampoPlaca = $("#placa");
                 $seuCampoPlaca.mask('AAA-9999', {reverse: false});
+                
+                //var $seuCampoValor = $("#valor");
                 //$seuCampoPlaca.mask('AAA9A99', {reverse: false});
+                //$seuCampoValor.mask('00,00', {reverse: false});
             });
         </script>
         <!-- fim de mascaras-->

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Solicitar Reserva de Local</div>
 
@@ -11,9 +11,9 @@
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
                     <div class="form-group row">
-                        {!! Form::label('area_locavel', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('area_locavel_id', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-5">
-                            <select name="area_locavel" id="" class="form-control">
+                            <select name="area_locavel_id" id="" class="form-control">
                                 <option value=""></option>
                                 @foreach ($areas as $item)
                                     <option value="{{ $item->id }}">{{ $item->descricao }} - R$ {{ $item->valor }}</option>
@@ -30,11 +30,11 @@
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('hora_inicio', 'De', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('hora_inicio', 'Horário', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-2">
                             {!! Form::select('hora_inicio',
                                 [
-                                '' => '',
+                                '' => 'de',
                                 '08:00' => '08:00',
                                 '09:00' => '09:00',
                                 '10:00' => '10:00',
@@ -55,11 +55,10 @@
                             , null, ['class'=>'form-control', 'required']) !!}
                         </div>
 
-                        {!! Form::label('hora_fim', 'às', ['class'=>'col-form-label text-md-right']) !!}
                         <div class="col-md-2">
                             {!! Form::select('hora_fim',
                                 [
-                                '' => '',
+                                '' => 'até',
                                 '08:00' => '08:00',
                                 '09:00' => '09:00',
                                 '10:00' => '10:00',
@@ -98,22 +97,26 @@
                     <div class="container">
                     <table class="table table-sm table-hover">
                         <tr>
-                            <th>Solicitante</th>
-                            <th>Data solicitada</th>
+                            <th>Data Solicitada</th>
                             <th>Área</th>
                             <th>Horário</th>
-                            <th>Ação</th>
+                            <th>Solicitado em</th>
+                            <th>Status</th>
                         </tr>
                         @foreach ($reservas as $item)
-                        @if ($item->user_id == auth()->user()->id)
-                        <tr>
-                            <td>{{ $item->user_id }}</td>
-                            <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
-                            <td>{{ $item->locavel_area_id }}</td>
-                            <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
-                            <td></td>
-                        </tr>
-                        @endif
+                            @foreach ($areas as $a)
+                                @if ($item->user_id == auth()->user()->id)
+                                    @if ($item->area_locavel_id == $a->id)
+                                    <tr>
+                                        <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
+                                        <td>{{ $a->descricao }}</td>
+                                        <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
+                                        <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
+                                        <td>  </td>
+                                    </tr>
+                                    @endif
+                                @endif
+                            @endforeach
                         @endforeach
                     </table>
                     </div>

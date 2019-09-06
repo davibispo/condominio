@@ -17,7 +17,7 @@ class CreateReservasTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('area_locavel');
+            $table->string('area_locavel_id');
             $table->date('data_solicitada');
             $table->string('hora_inicio');
             $table->string('hora_fim');

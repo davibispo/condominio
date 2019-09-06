@@ -17,7 +17,7 @@
                                 <th>Veículo</th>
                                 <th>Cor</th>
                                 <th>Placa</th>
-                                <th>Dono</th>
+                                <th>Proprietário</th>
                                 <th>Unidade</th>
                             </tr>
                             @foreach ($veiculos as $v)

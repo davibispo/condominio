@@ -155,8 +155,8 @@
                                             <div class="input-group mb-3 input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Foto</span>
-                                            </div>
-                                            <input id="foto_residente1" type="file" class="form-control @error('foto_residente1') is-invalid @enderror" name="foto_residente1" value="{{ old('foto_residente1') }}" autocomplete="foto_residente1" autofocus>
+                                                </div>
+                                                <input id="foto_residente1" type="file" class="form-control @error('foto_residente1') is-invalid @enderror" name="foto_residente1" value="{{ old('foto_residente1') }}" autocomplete="foto_residente1" autofocus>
                                             </div>
                                         </td>
                                     </tr>
@@ -170,8 +170,8 @@
                                             <div class="input-group mb-3 input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Foto</span>
-                                            </div>
-                                            <input id="foto_residente2" type="file" class="form-control @error('foto_residente2') is-invalid @enderror" name="foto_residente2" value="{{ old('foto_residente2') }}" autocomplete="foto_residente2" autofocus>
+                                                </div>
+                                                <input id="foto_residente2" type="file" class="form-control @error('foto_residente2') is-invalid @enderror" name="foto_residente2" value="{{ old('foto_residente2') }}" autocomplete="foto_residente2" autofocus>
                                             </div>
                                         </td>
                                     </tr>
@@ -185,8 +185,8 @@
                                             <div class="input-group mb-3 input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Foto</span>
-                                            </div>
-                                            <input id="foto_residente3" type="file" class="form-control @error('foto_residente3') is-invalid @enderror" name="foto_residente3" value="{{ old('foto_residente3') }}" autocomplete="foto_residente3" autofocus>
+                                                </div>
+                                                <input id="foto_residente3" type="file" class="form-control @error('foto_residente3') is-invalid @enderror" name="foto_residente3" value="{{ old('foto_residente3') }}" autocomplete="foto_residente3" autofocus>
                                             </div>
                                         </td>
                                     </tr>
@@ -200,8 +200,8 @@
                                             <div class="input-group mb-3 input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Foto</span>
-                                            </div>
-                                            <input id="foto_residente4" type="file" class="form-control @error('foto_residente4') is-invalid @enderror" name="foto_residente4" value="{{ old('foto_residente4') }}" autocomplete="foto_residente4" autofocus>
+                                                </div>
+                                                <input id="foto_residente4" type="file" class="form-control @error('foto_residente4') is-invalid @enderror" name="foto_residente4" value="{{ old('foto_residente4') }}" autocomplete="foto_residente4" autofocus>
                                             </div>
                                         </td>
                                     </tr>
@@ -215,14 +215,55 @@
                                             <div class="input-group mb-3 input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Foto</span>
-                                            </div>
-                                            <input id="foto_residente5" type="file" class="form-control @error('foto_residente5') is-invalid @enderror" name="foto_residente5" value="{{ old('foto_residente5') }}" autocomplete="foto_residente5" autofocus>
+                                                </div>
+                                                <input id="foto_residente5" type="file" class="form-control @error('foto_residente5') is-invalid @enderror" name="foto_residente5" value="{{ old('foto_residente5') }}" autocomplete="foto_residente5" autofocus>
                                             </div>
                                         </td>
                                     </tr>
                                 </table>
                                 <hr>
                             </div>
+                            <!-- Fotos residentes -->
+                            <table class="table-bordered">
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente1}")}}" width="80" height="100" style="border: none;"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente2}")}}" width="80" height="100" style="border: none;"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente3}")}}" width="80" height="100" style="border: none;"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente4}")}}" width="80" height="100" style="border: none;"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente5}")}}" width="80" height="100" style="border: none;"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
 
                         <div class="form-group row">

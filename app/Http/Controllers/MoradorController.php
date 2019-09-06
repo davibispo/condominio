@@ -123,7 +123,7 @@ class MoradorController extends Controller
         /* FOTOS DE RESIDENTES */
         // Define o valor default para a variável que contém o nome da imagem
         $nameFile = null;
-
+        // FOTO RESIDENTE RESPONSAVEL
         if($request->foto == null){ // Se foto vier nula
             $user->foto = $user->foto; //Não atualiza foto
         }else{
@@ -150,7 +150,7 @@ class MoradorController extends Controller
                             ->withInput();
             }
         }
-
+        // FOTO RESIDENTE 1
         if($request->foto_residente1 == null){ // Se foto vier nula
             $user->foto_residente1 = $user->foto_residente1; //Não atualiza foto
         }else{
@@ -177,7 +177,7 @@ class MoradorController extends Controller
                             ->withInput();
             }
         }
-
+        // FOTO RESIDENTE 2
         if($request->foto_residente2 == null){ // Se foto vier nula
             $user->foto_residente2 = $user->foto_residente2; //Não atualiza foto
         }else{
@@ -204,7 +204,7 @@ class MoradorController extends Controller
                             ->withInput();
             }
         }
-
+        // FOTO RESIDENTE 3
         if($request->foto_residente3 == null){ // Se foto vier nula
             $user->foto_residente3 = $user->foto_residente3; //Não atualiza foto
         }else{
@@ -231,7 +231,7 @@ class MoradorController extends Controller
                             ->withInput();
             }
         }
-
+        // FOTO RESIDENTE 4
         if($request->foto_residente4 == null){ // Se foto vier nula
             $user->foto_residente4 = $user->foto_residente4; //Não atualiza foto
         }else{
@@ -258,7 +258,7 @@ class MoradorController extends Controller
                             ->withInput();
             }
         }
-
+        // FOTO RESIDENTE 5
         if($request->foto_residente5 == null){ // Se foto vier nula
             $user->foto_residente5 = $user->foto_residente5; //Não atualiza foto
         }else{

@@ -60,38 +60,38 @@
                             </tr>
                             <thead>
                                 <th>Reside com</th>
+                                <th>Nome</th>
                                 <th>Idade</th>
-                                <th></th>
                                 <th></th>
                             </thead>
                             <tr>
+                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente1}")}}" width="80" height="100" style="border: none;"/></td>
                                 <td>{{ $morador->residente1 }}</td>
                                 <td>{{ $morador->idade_residente1 }}</td>
                                 <td></td>
-                                <td></td>
                             </tr>
                             <tr>
+                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente2}")}}" width="80" height="100" style="border: none;"/></td>
                                 <td>{{ $morador->residente2 }}</td>
                                 <td>{{ $morador->idade_residente2 }}</td>
                                 <td></td>
-                                <td></td>
                             </tr>
                             <tr>
+                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente3}")}}" width="80" height="100" style="border: none;"/></td>
                                 <td>{{ $morador->residente3 }}</td>
                                 <td>{{ $morador->idade_residente3 }}</td>
                                 <td></td>
-                                <td></td>
                             </tr>
                             <tr>
+                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente4}")}}" width="80" height="100" style="border: none;"/></td>
                                 <td>{{ $morador->residente4 }}</td>
                                 <td>{{ $morador->idade_residente4 }}</td>
                                 <td></td>
-                                <td></td>
                             </tr>
                             <tr>
+                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente5}")}}" width="80" height="100" style="border: none;"/></td>
                                 <td>{{ $morador->residente5 }}</td>
                                 <td>{{ $morador->idade_residente5 }}</td>
-                                <td></td>
                                 <td></td>
                             </tr>
                             <thead>

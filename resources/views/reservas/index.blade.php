@@ -21,7 +21,7 @@
                         @foreach ($reservas as $item)
                             @foreach ($users as $u)
                                 @foreach ($areas as $a)
-                                    @if ($item->user_id == $u->id && $item->area_locavel_id == $a->id)
+                                    @if ($item->user_id == $u->id && $item->locavel_area_id == $a->id)
                                     <tr>
                                         <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
                                         <td>{{ $u->name }}</td>
@@ -30,6 +30,9 @@
                                         <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                         <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
                                         <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7"> {{ $item->obs }} </td>
                                     </tr>
                                     @endif
                                 @endforeach

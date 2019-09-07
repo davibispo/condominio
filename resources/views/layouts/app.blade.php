@@ -95,8 +95,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('moradores.atualizaMorador', auth()->user()->id) }}">Atualizar cadastro</a>
-                                    <a class="dropdown-item" href="{{ route('veiculos.create') }}">Veículos</a>
-                                    <a class="dropdown-item" href="{{ route('pets.create') }}">Animais</a>
+                                    <a class="dropdown-item" href="{{ route('veiculos.create') }}">Meus Veículos</a>
+                                    <a class="dropdown-item" href="{{ route('pets.create') }}">Meus Animais</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

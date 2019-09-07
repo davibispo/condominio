@@ -11,9 +11,9 @@
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
                     <div class="form-group row">
-                        {!! Form::label('area_locavel_id', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('locavel_area_id', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-5">
-                            <select name="area_locavel_id" id="" class="form-control">
+                            <select name="locavel_area_id" id="" class="form-control">
                                 <option value=""></option>
                                 @foreach ($areas as $item)
                                     <option value="{{ $item->id }}">{{ $item->descricao }} - R$ {{ $item->valor }}</option>
@@ -102,17 +102,23 @@
                             <th>Horário</th>
                             <th>Solicitado em</th>
                             <th>Status</th>
+                            <th></th>
                         </tr>
                         @foreach ($reservas as $item)
                             @foreach ($areas as $a)
                                 @if ($item->user_id == auth()->user()->id)
-                                    @if ($item->area_locavel_id == $a->id)
+                                    @if ($item->locavel_area_id == $a->id)
                                     <tr>
                                         <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
                                         <td>{{ $a->descricao }}</td>
                                         <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                         <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
                                         <td>  </td>
+                                        <td>
+                                            {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline; font-size:12px']) !!}
+                                                {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
+                                            {!! Form::close() !!}
+                                        </td>
                                     </tr>
                                     @endif
                                 @endif

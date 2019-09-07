@@ -17,7 +17,7 @@ class ReservaController extends Controller
     public function index()
     {
         $users = User::all()->where('ativo', 1);
-        $reservas = Reserva::all()->where('status', 1);
+        $reservas = Reserva::all()->where('status', 1)->sortByDesc('created_at');
         $areas = LocavelArea::all()->where('ativo', 1);
         return view('reservas.index', compact('reservas', 'users', 'areas'));
     }
@@ -44,10 +44,11 @@ class ReservaController extends Controller
     {
         $reserva = new Reserva();
 
-        $reserva->area_locavel = $request->area_locavel;
+        $reserva->locavel_area_id = $request->locavel_area_id;
         $reserva->data_solicitada = $request->data_solicitada;
         $reserva->hora_inicio = $request->hora_inicio;
         $reserva->hora_fim = $request->hora_fim;
+        $reserva->obs = $request->obs;
         $reserva->user_id = auth()->user()->id;
         $reserva->status = 1;
 
@@ -101,6 +102,9 @@ class ReservaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reserva = Reserva::find($id);
+        $reserva->delete();
+
+        return redirect()->back()->with('alertDanger', 'Reserva removida com sucesso!');
     }
 }

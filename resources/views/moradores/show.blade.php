@@ -59,6 +59,22 @@
                                 <td></td>
                             </tr>
                             <thead>
+                                <th>Veículos</th>
+                                <th>Cor</th>
+                                <th>Placa</th>
+                                <th></th>
+                            </thead>
+                            @foreach ($veiculos as $v)
+                                @if ($v->user_id == $morador->id)
+                                    <tr>
+                                        <td>{{ $v->descricao }}</td>
+                                        <td>{{ $v->cor }}</td>
+                                        <td>{{ $v->placa }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                            <thead>
                                 <th>Reside com</th>
                                 <th>Nome</th>
                                 <th>Idade</th>
@@ -94,22 +110,6 @@
                                 <td>{{ $morador->idade_residente5 }}</td>
                                 <td></td>
                             </tr>
-                            <thead>
-                                <th>Veículos</th>
-                                <th>Cor</th>
-                                <th>Placa</th>
-                                <th></th>
-                            </thead>
-                            @foreach ($veiculos as $v)
-                                @if ($v->user_id == $morador->id)
-                                    <tr>
-                                        <td>{{ $v->descricao }}</td>
-                                        <td>{{ $v->cor }}</td>
-                                        <td>{{ $v->placa }}</td>
-                                        <td></td>
-                                    </tr>
-                                @endif
-                            @endforeach
                             <thead>
                                 <th>Animais</th>
                                 <th>Nome</th>

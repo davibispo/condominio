@@ -27,7 +27,7 @@
                         <div class="form-group row">
                             {!! Form::label('obs', 'Observações', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
-                                <textarea name="obs" id="" cols="" rows="4" class="form-control" placeholder="Ex: Horário de término - 22h"> {{ $area->obs}} </textarea>
+                                {!! Form::text('obs', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Ex: 20,00']) !!}
                             </div>
                         </div>
 

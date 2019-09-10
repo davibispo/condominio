@@ -10,18 +10,28 @@
                 <div class="card-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
-                    <div class="form-group row">
-                        {!! Form::label('locavel_area_id', 'Selecione um local para reserva', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <div class="col-md-5">
-                            <select name="locavel_area_id" id="" class="form-control">
-                                <option value=""></option>
+                    <div>
+                        <div>
+                            <table class="table table-sm table-hover">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Escolha</th>
+                                        <th>Valor</th>
+                                        <th>Obs</th>
+                                    </tr>
+                                </thead>
                                 @foreach ($areas as $item)
-                                    <option value="{{ $item->id }}">{{ $item->descricao }} - R$ {{ $item->valor }}</option>
+                                    <tr>
+                                        <td> <input type="radio" name="locavel_area_id" /> </td>
+                                        <td> {{ $item->descricao}} </td>
+                                        <td> R$ {{ $item->valor}} </td>
+                                        <td> {{ $item->obs}} </td>
+                                    </tr>
                                 @endforeach
-                            </select>
+                            </table>
                         </div>
                     </div>
-
+                    <br>
                     <div class="form-group row">
                         {!! Form::label('data_solicitada', 'Data solicitada', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-5">
@@ -97,7 +107,7 @@
                     <div class="container">
                     <table class="table table-sm table-hover">
                         <tr>
-                            <th>Data Solicitada</th>
+                            <th>Solicitações</th>
                             <th>Área</th>
                             <th>Horário</th>
                             <th>Solicitado em</th>

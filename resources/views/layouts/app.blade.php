@@ -144,21 +144,15 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <script>
             $(document).ready(function () {
-                var $seuCampoCpf = $("#cpf");
-                $seuCampoCpf.mask('000.000.000-00', {reverse: false});
+                $("#cpf").mask('000.000.000-00', {reverse: false});
 
-                var $seuCampoCelular1 = $("#tel1");
-                $seuCampoCelular1.mask('(00) 0 0000-0000', {reverse: false});
+                $("#tel1").mask('(00) 0 0000-0000', {reverse: false});
 
-                var $seuCampoCelular2 = $("#tel2");
-                $seuCampoCelular2.mask('(00) 0 0000-0000', {reverse: false});
+                $("#tel2").mask('(00) 0 0000-0000', {reverse: false});
 
-                var $seuCampoPlaca = $("#placa");
-                $seuCampoPlaca.mask('AAA-9999', {reverse: false});
+                $("#placa").mask('AAA-9999', {reverse: false});
 
-                //var $seuCampoValor = $("#valor");
-                //$seuCampoPlaca.mask('AAA9A99', {reverse: false});
-                //$seuCampoValor.mask('00,00', {reverse: false});
+                $('#valor').mask('000.000.000.000.000,00' , { reverse : true});
             });
         </script>
         <!-- fim de mascaras-->

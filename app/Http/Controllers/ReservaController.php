@@ -42,6 +42,7 @@ class ReservaController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $reserva = new Reserva();
 
         $reserva->locavel_area_id = $request->locavel_area_id;

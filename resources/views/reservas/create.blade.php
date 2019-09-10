@@ -15,14 +15,14 @@
                             <table class="table table-sm table-hover">
                                 <thead>
                                     <tr>
-                                        <th colspan="2">Escolha</th>
+                                        <th colspan="2">Áreas</th>
                                         <th>Valor</th>
                                         <th>Obs</th>
                                     </tr>
                                 </thead>
                                 @foreach ($areas as $item)
                                     <tr>
-                                        <td> <input type="radio" name="locavel_area_id" /> </td>
+                                        <td> {!! Form::radio('locavel_area_id', $item->id, ['class'=>'form-control', 'checked'=>'none', 'required']) !!}
                                         <td> {{ $item->descricao}} </td>
                                         <td> R$ {{ $item->valor}} </td>
                                         <td> {{ $item->obs}} </td>
@@ -33,7 +33,7 @@
                     </div>
                     <br>
                     <div class="form-group row">
-                        {!! Form::label('data_solicitada', 'Data solicitada', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('data_solicitada', 'Data', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-5">
                             {!! Form::date('data_solicitada', null, ['class'=>'form-control', 'required']) !!}
                         </div>
@@ -105,7 +105,7 @@
                     {!! Form::close() !!}
                     <br><br>
                     <div class="container">
-                    <table class="table table-sm table-hover">
+                    <table class="table table-sm">
                         <tr>
                             <th>Solicitações</th>
                             <th>Área</th>
@@ -118,18 +118,23 @@
                             @foreach ($areas as $a)
                                 @if ($item->user_id == auth()->user()->id)
                                     @if ($item->locavel_area_id == $a->id)
-                                    <tr>
-                                        <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
-                                        <td>{{ $a->descricao }}</td>
-                                        <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
-                                        <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
-                                        <td>  </td>
-                                        <td>
-                                            {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline; font-size:12px']) !!}
-                                                {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
-                                            {!! Form::close() !!}
-                                        </td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <th>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</th>
+                                            <td>{{ $a->descricao }}</td>
+                                            <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
+                                            <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
+                                            <td>  </td>
+                                            <td>
+                                                {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline; font-size:12px']) !!}
+                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
+                                                {!! Form::close() !!}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">Obs: <i>{{ $item->obs }}</i> </td>
+                                        </tr>
+                                    </tbody>
                                     @endif
                                 @endif
                             @endforeach

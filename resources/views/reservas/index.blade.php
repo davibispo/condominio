@@ -23,7 +23,7 @@
                                 @foreach ($areas as $a)
                                     @if ($item->user_id == $u->id && $item->locavel_area_id == $a->id)
                                     <tr>
-                                        <td>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</td>
+                                        <th>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</th>
                                         <td>{{ $u->name }}</td>
                                         <td> {{ $u->bloco }}-{{ $u->apto }} </td>
                                         <td>{{ $a->descricao }}</td>

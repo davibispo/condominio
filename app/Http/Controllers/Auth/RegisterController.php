@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'name' => strtoupper($data['name']),
             'tel1' => $data['tel1'],
             'tel2' => $data['tel2'],
-            'cpf' => preg_replace("/[^0-9]/", "", $data['cpf']),
+            'cpf' => $data['cpf'],
             'sexo' => $data['sexo'],
             'data_nascimento' => $data['data_nascimento'],
             'foto' => $data['foto']->storeAs('fotos', $nameFile),

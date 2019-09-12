@@ -10,12 +10,12 @@
                 <div class="card-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
-                    <div>
+                    <div class="alert alert-secondary">
                         <div>
                             <table class="table table-sm table-hover">
                                 <thead>
                                     <tr>
-                                        <th colspan="2">Áreas</th>
+                                        <th colspan="2">Locais disponíveis</th>
                                         <th>Valor</th>
                                         <th>Observações</th>
                                     </tr>
@@ -23,7 +23,7 @@
                                 @foreach ($areas as $item)
                                     <tr>
                                         <td> {!! Form::radio('locavel_area_id', $item->id, ['class'=>'form-control', 'checked'=>'none', 'required']) !!}
-                                        <td> {{ $item->descricao}} </td>
+                                        <th> {{ $item->descricao}} </th>
                                         <td> R$ {{ $item->valor}} </td>
                                         <td> {{ $item->obs}} </td>
                                     </tr>

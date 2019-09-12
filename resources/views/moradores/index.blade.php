@@ -16,6 +16,7 @@
                                 <th><i class="fas fa-search"></i></th>
                                 <th>Nome</th>
                                 <th>Tipo</th>
+                                <th>CPF</th>
                                 <th>Unidade</th>
                                 <th>Telefone 1</th>
                                 <th>Telefone 2</th>
@@ -33,6 +34,7 @@
                                     </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->tipo }}</td>
+                                    <td>{{ $item->cpf }}</td>
                                     <td>{{ $item->bloco }}-{{ $item->apto }} </td>
                                     <td>{{ $item->tel1 }}</td>
                                     <td>{{ $item->tel2 }}</td>

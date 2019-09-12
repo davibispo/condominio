@@ -17,7 +17,7 @@
                                     <tr>
                                         <th colspan="2">Áreas</th>
                                         <th>Valor</th>
-                                        <th>Obs</th>
+                                        <th>Observações</th>
                                     </tr>
                                 </thead>
                                 @foreach ($areas as $item)
@@ -105,7 +105,7 @@
                     {!! Form::close() !!}
                     <br><br>
                     <div class="container">
-                    <table class="table table-sm">
+                    <table class="table table-sm" style="font-size:12px">
                         <tr>
                             <th>Solicitações</th>
                             <th>Área</th>
@@ -124,10 +124,16 @@
                                             <td>{{ $a->descricao }}</td>
                                             <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                             <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
-                                            <td>  </td>
+                                            <td> 
+                                                @if ($item->status == 1)
+                                                    <b style="color:brown">Solicitado</b>
+                                                    @else
+                                                    <b style="color:green">LIBERADO</b>
+                                                @endif     
+                                            </td>
                                             <td>
-                                                {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline; font-size:12px']) !!}
-                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
+                                                {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline']) !!}
+                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px']) !!}
                                                 {!! Form::close() !!}
                                             </td>
                                         </tr>

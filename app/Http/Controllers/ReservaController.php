@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\LocavelArea;
 use App\Models\Reserva;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ReservaController extends Controller
 {
@@ -17,7 +18,7 @@ class ReservaController extends Controller
     public function index()
     {
         $users = User::all()->where('ativo', 1);
-        $reservas = Reserva::all()->where('status', 1)->sortByDesc('created_at');
+        $reservas = Reserva::all()->sortBy('data_solicitada');
         $areas = LocavelArea::all()->where('ativo', 1);
         return view('reservas.index', compact('reservas', 'users', 'areas'));
     }
@@ -29,7 +30,7 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        $reservas = Reserva::all()->where('status', 1)->sortByDesc('id');
+        $reservas = Reserva::all()->sortByDesc('data_solicitada');
         $areas = LocavelArea::all()->where('ativo', 1);
         return view('reservas.create', compact('areas', 'reservas'));
     }
@@ -52,14 +53,37 @@ class ReservaController extends Controller
         $reserva->obs = $request->obs;
         $reserva->user_id = auth()->user()->id;
         $reserva->status = 1;
+        
+        $solicitante = auth()->user(); // retorna os dados do usuário logado.
+        
+        $existeData = DB::table('reservas')->select('data_solicitada')->where('data_solicitada', $reserva->data_solicitada)->exists();
+        
+        $dataAtual = date('Y-m-d'); // data atual
 
-        if(auth()->user()->status == 1){
+        if($solicitante->status == 1){ // supondo q status 1 seja inadimplente.
             return redirect()->back()->with('alertDanger', 'Desculpe, algo deu errado. Procure o Síndico ou Administradora para resolver.');
-        }else{
+        }
+        elseif ($existeData == true) { // verifica se existe reserva na data solicitada.
+            return redirect()->back()->with('alertDanger', 'Desculpe, esta data já está reservada! Escolha uma data disponível');
+        }        
+        elseif (strtotime($reserva->data_solicitada) < strtotime($dataAtual)) { // verifica se data solicitada é passado.
+            return redirect()->back()->with('alertDanger', 'Erro! Data escolhida já passou!');
+        }        
+        elseif ($reserva->hora_inicio > $reserva->hora_fim) { // verifica se intervalo de horário é válido.
+            return redirect()->back()->with('alertDanger', 'Erro! O horário não está correto!');
+        }        
+        else{
             $reserva->save();
             return redirect()->back()->with('alertSuccess', 'Solicitação de reserva enviada com sucesso!');
         }
     }
+
+    /**
+     * Status de reserva: 
+     * 1 - Solicitidado
+     * 2 - Liberado
+     */
+
 
     /**
      * Display the specified resource.

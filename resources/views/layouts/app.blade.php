@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @if (Auth::check() && auth()->user()->ativo == '1') <!--  -->
+                        @if (Auth::check() && auth()->user()->ativo == '1') 
                             @if (auth()->user()->status == '9')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -69,7 +69,7 @@
                             </li>
                             @endif
 
-                            <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Áreas Comuns</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservar Local</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.index') }}">Registrar Ocorrência</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('notificacao-multas.index') }}">Notificações/Multas</a></li>
                         @endif

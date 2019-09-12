@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Gerenciar Reservas de Locais</div>
 
@@ -16,6 +16,7 @@
                             <th>Área</th>
                             <th>Horário</th>
                             <th>Solicitada em</th>
+                            <th>Status</th>
                             <th>Ação</th>
                         </tr>
                         @foreach ($reservas as $item)
@@ -29,11 +30,16 @@
                                         <td>{{ $a->descricao }}</td>
                                         <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                         <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
+                                        <td> 
+                                            @if ($item->status == 1)
+                                                <b style="color:brown">Solicitado</b>
+                                                @else
+                                                <b style="color:green">LIBERADO</b>
+                                            @endif     
+                                        </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="7"> {{ $item->obs }} </td>
-                                    </tr>
+                                    <tr><td colspan="8"> {{ $item->obs }} </td></tr>
                                     @endif
                                 @endforeach
                             @endforeach

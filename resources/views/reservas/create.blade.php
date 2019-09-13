@@ -107,8 +107,8 @@
                     <div class="container">
                     <table class="table table-sm" style="font-size:12px">
                         <tr>
-                            <th>Solicitações</th>
-                            <th>Área</th>
+                            <th>Minhas Solicitações</th>
+                            <th>Local</th>
                             <th>Horário</th>
                             <th>Solicitado em</th>
                             <th>Status</th>

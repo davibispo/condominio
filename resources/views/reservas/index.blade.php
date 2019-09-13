@@ -8,12 +8,13 @@
                 <div class="card-header">Gerenciar Reservas de Locais</div>
 
                 <div class="card-body">
-                    <table class="table table-sm table-hover"  style="font-size:12px">
+                    <div class="container" style="overflow:auto; height: 600px;">
+                    <table class="table table-sm table-hover"  style="font-size:12px;">
                         <tr>
                             <th>Data solicitada</th>
                             <th>Solicitante</th>
                             <th>Unidade</th>
-                            <th>Área</th>
+                            <th>Local</th>
                             <th>Horário</th>
                             <th>Solicitada em</th>
                             <th>Status</th>
@@ -45,6 +46,7 @@
                             @endforeach
                         @endforeach
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

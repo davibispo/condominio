@@ -84,7 +84,7 @@ class LocavelAreaController extends Controller
 
         $area->descricao = strtoupper($request->descricao);
         $area->valor = str_replace(',','.',$request->valor);
-        $area->obs = strtoupper($request->obs);
+        $area->obs = $request->obs;
 
         $area->update();
 

@@ -68,13 +68,13 @@ class RegisterController extends Controller
         // Define um aleatório para o arquivo baseado no timestamps atual
         $name = uniqid(date('HisYmd'));
 
-        // Recupera a extensão do arquivo
-        $extension = $data['foto']->extension();
-
-        // Define finalmente o nome
-        $nameFile = "foto{$name}.{$extension}";
-
-        
+        if(isset($data['foto'])){
+            // Recupera a extensão do arquivo
+            $extension = $data['foto']->extension();
+            // Define finalmente o nome
+            $nameFile = "foto{$name}.{$extension}";
+        }
+      
         return User::create([
             'tipo' => $data['tipo'],
             'bloco' => $data['bloco'],

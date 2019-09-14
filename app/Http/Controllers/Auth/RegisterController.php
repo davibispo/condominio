@@ -67,13 +67,27 @@ class RegisterController extends Controller
     {
         // Define um aleatório para o arquivo baseado no timestamps atual
         $name = uniqid(date('HisYmd'));
+        $name1 = uniqid(date('HisYmd'));
+        $name2 = uniqid(date('HisYmd'));
+        $name3 = uniqid(date('HisYmd'));
+        $name4 = uniqid(date('HisYmd'));
+        $name5 = uniqid(date('HisYmd'));
 
-        if(isset($data['foto'])){
-            // Recupera a extensão do arquivo
-            $extension = $data['foto']->extension();
-            // Define finalmente o nome
-            $nameFile = "foto{$name}.{$extension}";
-        }
+        // Recupera a extensão do arquivo
+        $extension = isset($data['foto']) ? $data['foto']->extension() : false;
+        $extension1 = isset($data['foto_residente1']) ? $data['foto_residente1']->extension() : false;
+        $extension2 = isset($data['foto_residente2']) ? $data['foto_residente2']->extension() : false;
+        $extension3 = isset($data['foto_residente3']) ? $data['foto_residente3']->extension() : false;
+        $extension4 = isset($data['foto_residente4']) ? $data['foto_residente4']->extension() : false;
+        $extension5 = isset($data['foto_residente5']) ? $data['foto_residente5']->extension() : false;
+        // Define finalmente o nome
+        $nameFile = "foto{$name}.{$extension}";
+        $nameFile1 = "foto{$name1}.{$extension1}";
+        $nameFile2 = "foto{$name2}.{$extension2}";
+        $nameFile3 = "foto{$name3}.{$extension3}";
+        $nameFile4 = "foto{$name4}.{$extension4}";
+        $nameFile5 = "foto{$name5}.{$extension5}";
+        
       
         return User::create([
             'tipo' => $data['tipo'],
@@ -85,27 +99,27 @@ class RegisterController extends Controller
             'cpf' => $data['cpf'],
             'sexo' => $data['sexo'],
             'data_nascimento' => $data['data_nascimento'],
-            'foto' => $data['foto']->storeAs('fotos', $nameFile),
+            'foto' => isset($data['foto']) ? $data['foto']->storeAs('fotos', $nameFile) : false,
 
             'residente1' => strtoupper($data['residente1']),
             'idade_residente1' => $data['idade_residente1'],
-            'foto_residente1' => $data['foto_residente1'],
+            'foto_residente1' => isset($data['foto_residente1']) ? $data['foto_residente1']->storeAs('fotos', $nameFile1) : false,
 
             'residente2' => strtoupper($data['residente2']),
             'idade_residente2' => $data['idade_residente2'],
-            'foto_residente2' => $data['foto_residente2'],
+            'foto_residente2' => isset($data['foto_residente2']) ? $data['foto_residente2']->storeAs('fotos', $nameFile2) : false,
 
             'residente3' => strtoupper($data['residente3']),
             'idade_residente3' => $data['idade_residente3'],
-            'foto_residente3' => $data['foto_residente3'],
+            'foto_residente3' => isset($data['foto_residente3']) ? $data['foto_residente3']->storeAs('fotos', $nameFile3) : false,
 
             'residente4' => strtoupper($data['residente4']),
             'idade_residente4' => $data['idade_residente4'],
-            'foto_residente4' => $data['foto_residente4'],
+            'foto_residente4' => isset($data['foto_residente4']) ? $data['foto_residente4']->storeAs('fotos', $nameFile4) : false,
 
             'residente5' => strtoupper($data['residente5']),
             'idade_residente5' => $data['idade_residente5'],
-            'foto_residente5' => $data['foto_residente5'],
+            'foto_residente5' => isset($data['foto_residente5']) ? $data['foto_residente5']->storeAs('fotos', $nameFile5) : false,
 
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

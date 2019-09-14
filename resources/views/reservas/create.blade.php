@@ -22,7 +22,7 @@
                                 </thead>
                                 @foreach ($areas as $item)
                                     <tr>
-                                        <td> {!! Form::radio('locavel_area_id', $item->id, ['class'=>'form-control', 'checked'=>'none', 'required']) !!}
+                                        <td> {!! Form::radio('locavel_area_id', $item->id) !!}
                                         <th> {{ $item->descricao}} </th>
                                         <td> R$ {{ $item->valor}} </td>
                                         <td> {{ $item->obs}} </td>
@@ -124,12 +124,12 @@
                                             <td>{{ $a->descricao }}</td>
                                             <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                             <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
-                                            <td> 
+                                            <td>
                                                 @if ($item->status == 1)
                                                     <b style="color:brown">Solicitado</b>
                                                     @else
                                                     <b style="color:green">LIBERADO</b>
-                                                @endif     
+                                                @endif
                                             </td>
                                             <td>
                                                 {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline']) !!}

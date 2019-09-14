@@ -20,11 +20,11 @@
                     @endif    
                     <br><br>
                     <ul>
-                        <li>Cadastre, caso tenha:</li>
+                        <li>Cadastre abaixo, caso tenha:</li>
                         <br>
-                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Meu(s) Veículo(s) cadastrado(s):</a> {{ $totalVeiculos }}</li>
+                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Veículo(s):</a> {{ $totalVeiculos }}</li>
                         <br>
-                        <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Meu(s) Pet(s) cadastrado(s):</a> {{ $totalPets }}</li>
+                        <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Animais:</a> {{ $totalPets }}</li>
                         <!--<br>
                         <li style="list-style:none"><a href="#"><i class="fas fa-shipping-fast"></i> Cadastrar meu(s) Fornecedor(es) </a></li>-->
                         <br>

@@ -12,6 +12,7 @@
 
                         <div class="form-group row">
                             {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <i style="color:red">*</i>
                             <div class="col-md-3">
                                 {!! Form::select('tipo',
                                     [
@@ -26,6 +27,7 @@
 
                         <div class="form-group row">
                             {!! Form::label('nome', 'Nome do Pet', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <i style="color:red">*</i>
                             <div class="col-md-6">
                                 {!! Form::text('nome', null, ['class'=>'form-control', 'placeholder'=>'']) !!}
                             </div>
@@ -33,6 +35,7 @@
 
                         <div class="form-group row">
                             {!! Form::label('descricao', 'Características', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <i style="color:red">*</i>
                             <div class="col-md-6">
                                 <textarea name="descricao" id="" cols="" rows="2" class="form-control" required placeholder="Ex: Pelos pretos com detalhe amarelo."></textarea>
                             </div>
@@ -54,6 +57,7 @@
 
                         <div class="form-group row">
                             {!! Form::label('obs', 'Observações', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <i style="color:red">*</i>
                             <div class="col-md-6">
                                 <textarea name="obs" id="" cols="" rows="3" class="form-control"></textarea>
                             </div>

@@ -15,7 +15,7 @@
                             <table class="table table-sm table-hover">
                                 <thead>
                                     <tr>
-                                        <th colspan="2">Locais disponíveis</th>
+                                        <th colspan="2">Locais disponíveis <i style="color:red">*</i></th>
                                         <th>Valor</th>
                                         <th>Observações</th>
                                     </tr>
@@ -34,6 +34,7 @@
                     <br>
                     <div class="form-group row">
                         {!! Form::label('data_solicitada', 'Data', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <i style="color:red">*</i>
                         <div class="col-md-5">
                             {!! Form::date('data_solicitada', null, ['class'=>'form-control', 'required']) !!}
                         </div>
@@ -41,6 +42,7 @@
 
                     <div class="form-group row">
                         {!! Form::label('hora_inicio', 'Horário', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <i style="color:red">*</i>
                         <div class="col-md-2">
                             {!! Form::select('hora_inicio',
                                 [

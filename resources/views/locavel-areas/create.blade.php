@@ -12,11 +12,11 @@
                     <div class="container">
                         <table class="table table-hover table-sm" style="font-size: 12px">
                             <thead>
-                                <th colspan="5">Áreas cadastradas</th>
+                                <th colspan="5" style="text-align:center">Áreas cadastradas</th>
                             </thead>
                             @forelse ($areas as $a)
                                 <tr>
-                                    <td>{{ $a->descricao }}</td>
+                                    <th>{{ $a->descricao }}</th>
                                     <td>R$ {{ $a->valor }}</td>
                                     <td>{{ $a->obs }}</td>
                                     <td><a href="{{ route('locavel-areas.edit', $a->id) }}" class="btn btn-link btn-sm" style="font-size:12px">Editar</a></td>
@@ -31,17 +31,18 @@
                                     <p>Nenhum local cadastrado!</p>
                                 </div>
                             @endforelse
-                        </table>     
+                        </table>
                     </div>
                     <hr>
                     <div class="alert alert-secondary">
-                        <b>Cadastrar Área</b>    
-                    
-                    
+                        <b>Cadastrar Área</b>
+
+
                         {!! Form::open(['method'=>'post', 'action'=>'LocavelAreaController@store', 'class'=>'form-horizontal']) !!}
 
                             <div class="form-group row">
                                 {!! Form::label('descricao', 'Local', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                                <i style="color:red">*</i>
                                 <div class="col-md-6">
                                     {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Ex: Churrasqueira 1']) !!}
                                 </div>
@@ -49,6 +50,7 @@
 
                             <div class="form-group row">
                                 {!! Form::label('valor', 'Valor do aluguel R$', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                                <i style="color:red">*</i>
                                 <div class="col-md-3">
                                     {!! Form::text('valor', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'Ex: 20,00']) !!}
                                 </div>

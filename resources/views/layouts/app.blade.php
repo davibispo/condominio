@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @if (Auth::check() && auth()->user()->ativo == '1') 
+                        @if (Auth::check() && auth()->user()->ativo == '1')
                             @if (auth()->user()->status == '9')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -57,7 +57,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
                                     <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
-                                    <a class="dropdown-item" href="{{ route('locavel-areas.create') }}">Áreas Comuns</a>
+                                    <a class="dropdown-item" href="{{ route('locavel-areas.create') }}">Locais</a>
                                     <a class="dropdown-item" href="{{ route('reservas.index') }}">Reservas</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
                                     <a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
@@ -145,13 +145,9 @@
         <script>
             $(document).ready(function () {
                 $("#cpf").mask('000.000.000-00', {reverse: false});
-
                 $("#tel1").mask('(00) 0 0000-0000', {reverse: false});
-
                 $("#tel2").mask('(00) 0 0000-0000', {reverse: false});
-
                 $("#placa").mask('AAA-9999', {reverse: false});
-
                 $('#valor').mask('000.000.000.000.000,00' , { reverse : true});
             });
         </script>

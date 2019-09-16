@@ -120,7 +120,7 @@
                             <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
                             <i style="color:red">*</i>
                             <div class="col-md-6">
-                                <select id="sexo" class="form-control @error('sexo') is-invalid @enderror" name="sexo" value="{{ old('sexo') }}"  autocomplete="sexo" autofocus>
+                                <select id="sexo" class="form-control @error('sexo') is-invalid @enderror" name="sexo" value="{{ old('sexo') }}" required autocomplete="sexo" autofocus>
                                     <option value="">-- Escolha --</option>
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
@@ -160,12 +160,12 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
                             <i style="color:red">*</i>
                             <div class="col-md-6">
-                                <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" autocomplete="foto" autofocus>
+                                <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
 
                                 @error('foto')
                                     <span class="invalid-feedback" role="alert">

@@ -87,8 +87,8 @@ class RegisterController extends Controller
         $nameFile3 = "foto{$name3}.{$extension3}";
         $nameFile4 = "foto{$name4}.{$extension4}";
         $nameFile5 = "foto{$name5}.{$extension5}";
-        
-      
+
+
         return User::create([
             'tipo' => $data['tipo'],
             'bloco' => $data['bloco'],

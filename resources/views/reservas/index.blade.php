@@ -33,9 +33,9 @@
                                         <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
                                         <td> 
                                             @if ($item->status == 1)
-                                                <b style="color:brown">Solicitado</b>
+                                                <b style="color:darkgoldenrod">Solicitado</b>
                                                 @else
-                                                <b style="color:green">LIBERADO</b>
+                                                <b style="color:blue">LIBERADO</b>
                                             @endif     
                                         </td>
                                         <td></td>

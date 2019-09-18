@@ -128,14 +128,14 @@
                                             <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
                                             <td>
                                                 @if ($item->status == 1)
-                                                    <b style="color:brown">Solicitado</b>
+                                                    <b style="color:darkgoldenrod">Solicitado</b>
                                                     @else
-                                                    <b style="color:green">LIBERADO</b>
+                                                    <b style="color:blue">LIBERADO</b>
                                                 @endif
                                             </td>
                                             <td>
                                                 {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline']) !!}
-                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px']) !!}
+                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px; color:red;']) !!}
                                                 {!! Form::close() !!}
                                             </td>
                                         </tr>

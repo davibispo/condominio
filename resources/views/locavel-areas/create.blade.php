@@ -22,7 +22,7 @@
                                     <td><a href="{{ route('locavel-areas.edit', $a->id) }}" class="btn btn-link btn-sm" style="font-size:12px">Editar</a></td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['LocavelAreaController@destroy', $a->id], 'style'=>'display:inline']) !!}
-                                            {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px']) !!}
+                                            {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px; color:red;']) !!}
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>

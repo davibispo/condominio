@@ -22,7 +22,7 @@
                                 </thead>
                                 @foreach ($areas as $item)
                                     <tr>
-                                        <td> {!! Form::radio('locavel_area_id', $item->id) !!}
+                                        <td> <input type="radio" name="locavel_area_id" value="{{$item->id}}" required> </td>
                                         <th> {{ $item->descricao}} </th>
                                         <td> R$ {{ $item->valor}} </td>
                                         <td> {{ $item->obs}} </td>
@@ -108,14 +108,14 @@
                     <br><br>
                     <div class="container">
                     <table class="table table-sm" style="font-size:12px">
-                        <tr>
+                        <thead>
                             <th>Minhas Solicitações</th>
                             <th>Local</th>
                             <th>Horário</th>
                             <th>Solicitado em</th>
                             <th>Status</th>
                             <th></th>
-                        </tr>
+                        </thead>
                         @foreach ($reservas as $item)
                             @foreach ($areas as $a)
                                 @if ($item->user_id == auth()->user()->id)
@@ -128,7 +128,7 @@
                                             <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
                                             <td>
                                                 @if ($item->status == 1)
-                                                    <b style="color:darkgoldenrod">Solicitado</b>
+                                                    <i>Solicitado</i>
                                                     @else
                                                     <b style="color:blue">LIBERADO</b>
                                                 @endif
@@ -140,7 +140,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="6">Obs: <i>{{ $item->obs }}</i> </td>
+                                            <td colspan="6"><i>{{ $item->obs }}</i> </td>
                                         </tr>
                                     </tbody>
                                     @endif

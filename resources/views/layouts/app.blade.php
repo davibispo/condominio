@@ -56,11 +56,11 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
-                                    <a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>
+                                <!--<a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>-->
                                     <a class="dropdown-item" href="{{ route('locavel-areas.create') }}">Locais</a>
                                     <a class="dropdown-item" href="{{ route('reservas.index') }}">Reservas</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
-                                    <a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
+                                    <a class="dropdown-item" href="{{ route('pets.index') }}">Animais</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

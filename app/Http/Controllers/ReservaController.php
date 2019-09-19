@@ -18,9 +18,11 @@ class ReservaController extends Controller
     public function index()
     {
         $users = User::all()->where('ativo', 1);
-        $reservas = Reserva::all()->sortBy('data_solicitada');
+        $reservas = Reserva::all()->sortByDesc('data_solicitada');
         $areas = LocavelArea::all()->where('ativo', 1);
-        return view('reservas.index', compact('reservas', 'users', 'areas'));
+
+        $dataAtual = date('Y-m-d');
+        return view('reservas.index', compact('reservas', 'users', 'areas', 'dataAtual'));
     }
 
     /**
@@ -104,7 +106,17 @@ class ReservaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reserva = Reserva::find($id);
+
+        if($reserva->status == 1){
+            $reserva->status = 2; //ativar cadastro
+        }else{
+            $reserva->status = 1; //desativar cadastro
+        }
+
+        $reserva->update();
+
+        return redirect()->back()->with('alertSuccess', 'Liberação realizada com sucesso!');
     }
 
     /**
@@ -116,7 +128,7 @@ class ReservaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

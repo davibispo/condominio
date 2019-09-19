@@ -18,9 +18,8 @@ class MoradorController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $unidades = Unidade::all();
-        return view('moradores.index', compact('users', 'unidades'));
+        $users = User::all()->sortBy('apto')->sortBy('bloco'); 
+        return view('moradores.index', compact('users'));
     }
 
     /**

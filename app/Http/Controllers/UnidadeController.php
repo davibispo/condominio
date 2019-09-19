@@ -16,9 +16,8 @@ class UnidadeController extends Controller
      */
     public function index()
     {
-        $unidades   = Unidade::all()->where('ativo', '1');
-        $users      = User::all()->where('ativo', '1');
-        return view('unidades.index', compact('unidades', 'users'));
+        $users = User::all()->where('ativo', '1');
+        return view('unidades.index', compact('users'));
     }
 
     /**

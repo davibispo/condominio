@@ -43,7 +43,7 @@
                                                     <b style="color:goldenrod">{{ $a->descricao }}</b>
                                                     @break
                                                 @case(5)
-                                                    <b style="color:gray">{{ $a->descricao }}</b>
+                                                    <b style="color:cornflowerblue">{{ $a->descricao }}</b>
                                                     @break
                                                 @default
                                                     

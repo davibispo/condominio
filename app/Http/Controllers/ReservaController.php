@@ -61,18 +61,23 @@ class ReservaController extends Controller
         $existeData = DB::table('reservas')->select('data_solicitada')->where('data_solicitada', $reserva->data_solicitada)->exists();
         
         $dataAtual = date('Y-m-d'); // data atual
-
+                
+        $dataLimite = date('d-m-Y', strtotime('+30 days')); // limite de data para permitir solicitações.
+        
         if($solicitante->status == 1){ // supondo q status 1 seja inadimplente.
             return redirect()->back()->with('alertDanger', 'Desculpe, algo deu errado. Procure o Síndico ou Administradora para resolver.');
         }
         elseif ($existeData == true) { // verifica se existe reserva na data solicitada.
-            return redirect()->back()->with('alertDanger', 'Desculpe, esta data já está reservada! Escolha uma data disponível');
+            return redirect()->back()->with('alertDanger', 'Desculpe, esta data já está reservada! Escolha uma data disponível.');
         }        
         elseif (strtotime($reserva->data_solicitada) < strtotime($dataAtual)) { // verifica se data solicitada é passado.
-            return redirect()->back()->with('alertDanger', 'Erro! Data escolhida já passou!');
+            return redirect()->back()->with('alertDanger', 'Erro! Data solicitada já passou!');
         }        
         elseif ($reserva->hora_inicio > $reserva->hora_fim) { // verifica se intervalo de horário é válido.
             return redirect()->back()->with('alertDanger', 'Erro! O horário não está correto!');
+        }        
+        elseif (strtotime($reserva->data_solicitada) > strtotime($dataLimite)) { // verifica se data solicitada está dentro do intervalo permitido.
+            return redirect()->back()->with('alertDanger', 'Desculpe! Não é permitido reservas para datas superiores a 30 dias.');
         }        
         else{
             $reserva->save();

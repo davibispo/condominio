@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ocorrencia;
 
 class OcorrenciaController extends Controller
 {
@@ -34,7 +35,15 @@ class OcorrenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ocorrencia = new Ocorrencia();
+
+        $ocorrencia->data = $request->data;
+        $ocorrencia->foto = $request->foto;
+        $ocorrencia->descricao = $request->descricao;
+
+        $ocorrencia->save();
+
+        return redirect()->back()->with('alertSuccess', 'Obrigado! Ocorrência registrada com sucesso! As informações serão analisadas em breve.');
     }
 
     /**

@@ -35,7 +35,7 @@
                     <div class="form-group row">
                         {!! Form::label('data_solicitada', 'Data', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <i style="color:red">*</i>
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             {!! Form::date('data_solicitada', null, ['class'=>'form-control', 'required']) !!}
                         </div>
                     </div>

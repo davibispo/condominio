@@ -37,7 +37,7 @@
                         {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <i style="color:red">*</i>
                         <div class="col-md-6">
-                            <textarea rows="10" class="form-control" name="descricao">Descreva a situação com detalhes...</textarea>
+                            <textarea rows="10" class="form-control" name="descricao"></textarea>
                         </div>
                     </div>
 

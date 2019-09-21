@@ -23,7 +23,7 @@ class OcorrenciaController extends Controller
      */
     public function create()
     {
-        //
+        return view('ocorrencias.create');
     }
 
     /**

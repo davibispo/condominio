@@ -70,7 +70,7 @@
                             @endif
 
                             <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservar Local</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.index') }}">Registrar Ocorrência</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.create') }}">Registrar Ocorrência</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('notificacao-multas.index') }}">Notificações/Multas</a></li>
                         @endif
                     </ul>

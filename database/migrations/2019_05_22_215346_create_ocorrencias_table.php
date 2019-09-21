@@ -20,6 +20,8 @@ class CreateOcorrenciasTable extends Migration
             $table->date('data');
             $table->text('foto')->nullable();
             $table->text('descricao');
+            $table->boolean('anonimo')->default(false);
+            $table->char('status', 1)->default(1);
             $table->timestamps();
         });
     }

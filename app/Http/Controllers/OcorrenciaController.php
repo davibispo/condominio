@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ocorrencia;
+use App\User;
 
 class OcorrenciaController extends Controller
 {
@@ -14,7 +15,9 @@ class OcorrenciaController extends Controller
      */
     public function index()
     {
-        return view('ocorrencias.index');
+        $ocorrencias = Ocorrencia::all()->sortByDesc('data');
+        $users = User::all();
+        return view('ocorrencias.index', compact('ocorrencias', 'users'));
     }
 
     /**
@@ -37,9 +40,13 @@ class OcorrenciaController extends Controller
     {
         $ocorrencia = new Ocorrencia();
 
+        $ocorrencia->user_id = auth()->user()->id;
         $ocorrencia->data = $request->data;
-        $ocorrencia->foto = $request->foto;
+        $ocorrencia->foto1 = $request->foto1;
+        $ocorrencia->foto2 = $request->foto2;
+        $ocorrencia->foto3 = $request->foto3;
         $ocorrencia->descricao = $request->descricao;
+        $ocorrencia->anonimo = $request->anonimo;
 
         $ocorrencia->save();
 

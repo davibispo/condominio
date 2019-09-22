@@ -18,9 +18,11 @@ class CreateOcorrenciasTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('data');
-            $table->text('foto')->nullable();
+            $table->text('foto1')->nullable();
+            $table->text('foto2')->nullable();
+            $table->text('foto3')->nullable();
             $table->text('descricao');
-            $table->boolean('anonimo')->default(false);
+            $table->char('anonimo', 1)->default(0);
             $table->char('status', 1)->default(1);
             $table->timestamps();
         });

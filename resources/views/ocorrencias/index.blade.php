@@ -21,7 +21,7 @@
                                                 <i>
                                                 <b>Assinado:</b>
                                                 @if ($item->anonimo == 1)
-                                                    {{ $u->name }} ({{ $u->bloco }} - {{ $u->apto }} )
+                                                    {{ $u->name }} - (Unidade: {{ $u->bloco }} - {{ $u->apto }} )
                                                 @else
                                                     (Anônimo)
                                                 @endif

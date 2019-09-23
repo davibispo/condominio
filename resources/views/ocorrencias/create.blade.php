@@ -15,39 +15,40 @@
                             você possa dar o máximo de detalhes paa facilitar na busca de uma solução do ocorrido.
                         </p>
                     </div>
-                    {!! Form::open(['method'=>'POST', 'action'=>'OcorrenciaController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::open(['method'=>'POST', 'action'=>'OcorrenciaController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
 
                     <div class="form-group row">
                         {!! Form::label('data_solicitada', 'Data', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <i style="color:red">*</i>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             {!! Form::date('data', null, ['class'=>'form-control', 'required']) !!}
                         </div>
                     </div>
-
-
-
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Imagem 1</span>
-                                            </div>
-                                            <input type="file" name="foto1" class="form-control">
-                                        </div>
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Imagem 2</span>
-                                            </div>
-                                            <input type="file" name="foto2" class="form-control">
-                                        </div>
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Imagem 3</span>
-                                            </div>
-                                            <input type="file" name="foto3" class="form-control">
-                                        </div>
-                                        </div>
-
-
+                    
+                    <div class="form-group row">
+                        {!! Form::label('', 'Fotos', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <b>&nbsp</b>
+                        <div class="col-md-4">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">1</span>
+                                </div>
+                                <input type="file" name="foto1" class="form-control">
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">2</span>
+                                </div>
+                                <input type="file" name="foto2" class="form-control">
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">3</span>
+                                </div>
+                                <input type="file" name="foto3" class="form-control">
+                            </div>
+                        </div>
+                    </div>                  
 
                     <div class="form-group row">
                         {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}

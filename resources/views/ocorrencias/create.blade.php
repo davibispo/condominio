@@ -23,12 +23,30 @@
                         <div class="col-md-3">
                             {!! Form::date('data', null, ['class'=>'form-control', 'required']) !!}
                         </div>
-                    </div>
-                    
+                    </div>      
+
                     <div class="form-group row">
-                        {!! Form::label('', 'Fotos', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <b>&nbsp</b>
+                        {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <i style="color:red">*</i>
+                        <div class="col-md-6">
+                            <textarea rows="6" class="form-control" name="descricao"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        {!! Form::label('anonimo', 'Assinar', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <i style="color:red">*</i>
                         <div class="col-md-4">
+                            <input type="radio" name="anonimo" value="1" required> SIM
+                            <br>
+                            <input type="radio" name="anonimo" value="0" required> NÃO
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        {!! Form::label('', 'Anexos', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        <b>&nbsp</b>
+                        <div class="col-md-6">
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">1</span>
@@ -48,25 +66,7 @@
                                 <input type="file" name="foto3" class="form-control">
                             </div>
                         </div>
-                    </div>                  
-
-                    <div class="form-group row">
-                        {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
-                        <div class="col-md-6">
-                            <textarea rows="6" class="form-control" name="descricao"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        {!! Form::label('anonimo', 'Assinar', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
-                        <div class="col-md-4">
-                            <input type="radio" name="anonimo" value="1" required> SIM
-                            <br>
-                            <input type="radio" name="anonimo" value="0" required> NÃO
-                        </div>
-                    </div>
+                    </div>            
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">

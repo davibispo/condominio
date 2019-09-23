@@ -137,7 +137,8 @@ class OcorrenciaController extends Controller
      */
     public function show($id)
     {
-        //
+        $ocorrencia = Ocorrencia::find($id);
+        return view('ocorrencias.show', compact('ocorrencia'));
     }
 
     /**

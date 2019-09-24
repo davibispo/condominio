@@ -10,7 +10,7 @@
                 <div class="card-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}
 
-                    <div class="alert alert-secondary">
+                    <div class="alert" style="background-color:rgba(0,0,0,.03)">
                         <div>
                             <table class="table table-sm table-hover">
                                 <thead>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ocorrencia;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class OcorrenciaController extends Controller
 {
@@ -27,7 +28,9 @@ class OcorrenciaController extends Controller
      */
     public function create()
     {
-        return view('ocorrencias.create');
+        $ocorrencias = Ocorrencia::all()->sortByDesc('data');
+        $users = User::all();
+        return view('ocorrencias.create', compact('ocorrencias', 'users'));
     }
 
     /**
@@ -138,7 +141,10 @@ class OcorrenciaController extends Controller
     public function show($id)
     {
         $ocorrencia = Ocorrencia::find($id);
-        return view('ocorrencias.show', compact('ocorrencia'));
+        $userName = DB::table('users')->select('name')->where('id', $ocorrencia->user_id)->value('name');
+        $userBloco = DB::table('users')->select('bloco')->where('id', $ocorrencia->user_id)->value('bloco');
+        $userApto = DB::table('users')->select('apto')->where('id', $ocorrencia->user_id)->value('apto');
+        return view('ocorrencias.show', compact('ocorrencia', 'userName', 'userBloco', 'userApto'));
     }
 
     /**

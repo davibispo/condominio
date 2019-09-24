@@ -8,7 +8,7 @@
                 <div class="card-header">Registrar Ocorrência</div>
 
                 <div class="card-body">
-                    <div class="alert alert-secondary">
+                    <div class="alert" style="background-color:rgba(0,0,0,.03)">
                         <p>
                             O registro de ocorrências serve para alertar a administração sobre algo que está em
                             desacordo com o Regimento Interno do Condomínio. É importante que ao registrar a ocorrência
@@ -75,6 +75,44 @@
                     </div>
                     {!! Form::close() !!}
 
+                    <div class="container">
+                        <br>
+                        <table class="table table-sm"  style="font-size:12px;">
+                            @foreach ($ocorrencias as $item)
+                                @foreach ($users as $u)
+                                    @if ($item->user_id == $u->id && $item->user_id == auth()->user()->id)
+                                    <tbody  id="myTable">
+                                        <tr style="background-color:rgba(0,0,0,.03)">
+                                            <td>Data da ocorrência: <b>{{ date('d-m-Y', strtotime($item->data)) }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8">
+                                                {{ $item->descricao }} <br>
+                                                <i>
+                                                    <b>Assinado:</b>
+                                                    @if ($item->anonimo == 1)
+                                                        {{ $u->name }} - (Unidade: {{ $u->bloco }}-{{ $u->apto }} )
+                                                    @else
+                                                        (Anônimo)
+                                                    @endif
+                                                </i>
+                                                <br>
+                                                @if ($item->foto1 || $item->foto2 || $item->foto3)
+                                                    <img class="img-fluid" src="{{url("storage/{$item->foto1}")}}" width="80" height="100" style="border: none;"/>
+                                                    <img class="img-fluid" src="{{url("storage/{$item->foto2}")}}" width="80" height="100" style="border: none;"/>
+                                                    <img class="img-fluid" src="{{url("storage/{$item->foto3}")}}" width="80" height="100" style="border: none;"/>
+                                                @else
+                                                    <br>
+                                                @endif
+                                                <br><br>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

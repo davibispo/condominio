@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 600px;">
-                        <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                        <input class="form-control" id="myInput" type="text" placeholder="Pesquisar..">
                         <br>
                         <table class="table table-sm table-hover"  style="font-size:12px;">
                             @foreach ($ocorrencias as $item)
@@ -28,13 +28,14 @@
                                             <td colspan="8">
                                                 {{ $item->descricao }} <br>
                                                 <i>
-                                                <b>Assinado:</b>
-                                                @if ($item->anonimo == 1)
-                                                    {{ $u->name }} - (Unidade: {{ $u->bloco }}-{{ $u->apto }} )
-                                                @else
-                                                    (Anônimo)
-                                                @endif
+                                                    <b>Assinado:</b>
+                                                    @if ($item->anonimo == 1)
+                                                        {{ $u->name }} - (Unidade: {{ $u->bloco }}-{{ $u->apto }} )
+                                                    @else
+                                                        (Anônimo)
+                                                    @endif
                                                 </i>
+                                                <br><br>
                                             </td>
                                         </tr>
                                     </tbody>

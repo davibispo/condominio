@@ -18,17 +18,17 @@
                         </li>
                         <li class="nav-item">
                             @if ($ocorrencia->foto1)
-                                <a class="nav-link active" data-toggle="tab" href="#home">Anexo 1</a>
+                                <a class="nav-link active" data-toggle="tab" href="#home">Foto 1</a>
                             @endif
                         </li>
                         <li class="nav-item">
                             @if ($ocorrencia->foto2)
-                                <a class="nav-link" data-toggle="tab" href="#menu1">Anexo 2</a>
+                                <a class="nav-link" data-toggle="tab" href="#menu1">Foto 2</a>
                             @endif
                         </li>
                         <li class="nav-item">
                             @if ($ocorrencia->foto3)
-                                <a class="nav-link" data-toggle="tab" href="#menu2">Anexo 3</a>
+                                <a class="nav-link" data-toggle="tab" href="#menu2">Foto 3</a>
                             @endif
                         </li>
                     </ul>
@@ -37,38 +37,38 @@
                     <div class="tab-content">
                         <div id="descricao" class="container tab-pane fade">
                             <div class="container">
-                                    <table class="table table-sm"  style="font-size:12px;">
-                                        <tbody>
-                                            <tr style="background-color:rgba(0,0,0,.03)">
-                                                <td>
-                                                    Data da ocorrência: <b>{{ date('d-m-Y', strtotime($ocorrencia->data)) }}</b>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="8">
-                                                    {{ $ocorrencia->descricao }} <br>
-                                                    <i>
-                                                        <b>Assinado:</b>
-                                                        @if ($ocorrencia->anonimo == 1)
-                                                            {{ $userName }} - (Unidade: {{ $userBloco }}-{{ $userApto }} )
-                                                        @else
-                                                            (Anônimo)
-                                                        @endif
-                                                    </i>
-                                                </td>
-                                            </tr>
-                                        </tbody>          
-                                    </table>
+                                <table class="table table-sm"  style="font-size:12px;">
+                                    <tbody>
+                                        <tr style="background-color:rgba(0,0,0,.03)">
+                                            <td>
+                                                Data da ocorrência: <b>{{ date('d-m-Y', strtotime($ocorrencia->data)) }}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8">
+                                                {{ $ocorrencia->descricao }} <br>
+                                                <i>
+                                                    <b>Assinado:</b>
+                                                    @if ($ocorrencia->anonimo == 1)
+                                                        {{ $userName }} - (Unidade: {{ $userBloco }}-{{ $userApto }} )
+                                                    @else
+                                                        (Anônimo)
+                                                    @endif
+                                                </i>
+                                            </td>
+                                        </tr>
+                                    </tbody>          
+                                </table>
                             </div>  
                         </div>
                         <div id="home" class="container tab-pane active">
-                            <iframe src="{{asset('storage/'. $ocorrencia->foto1)}}" width="700" height="780" style="border: none;"></iframe>  
+                            <img src="{{asset('storage/'. $ocorrencia->foto1)}}" class="img-fluid" width="100%"/>
                         </div>
                         <div id="menu1" class="container tab-pane fade">
-                            <iframe src="{{asset('storage/'. $ocorrencia->foto2)}}" width="700" height="780" style="border: none;"></iframe>
+                            <img src="{{asset('storage/'. $ocorrencia->foto2)}}" class="img-fluid" width="100%"/>
                         </div>
                         <div id="menu2" class="container tab-pane fade">
-                            <iframe src="{{asset('storage/'. $ocorrencia->foto3)}}" width="700" height="780" style="border: none;"></iframe>
+                            <img src="{{asset('storage/'. $ocorrencia->foto3)}}" class="img-fluid" width="100%"/>
                         </div>
                     </div>
                 </div>

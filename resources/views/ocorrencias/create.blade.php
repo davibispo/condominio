@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('', 'Anexos', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('', 'Fotos', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <b>&nbsp</b>
                         <div class="col-md-6">
                             <div class="input-group input-group-sm">
@@ -97,13 +97,15 @@
                                                     @endif
                                                 </i>
                                                 <br>
-                                                @if ($item->foto1 || $item->foto2 || $item->foto3)
+                                                @if ($item->foto1)
                                                     <img class="img-fluid" src="{{url("storage/{$item->foto1}")}}" width="80" height="100" style="border: none;"/>
-                                                    <img class="img-fluid" src="{{url("storage/{$item->foto2}")}}" width="80" height="100" style="border: none;"/>
-                                                    <img class="img-fluid" src="{{url("storage/{$item->foto3}")}}" width="80" height="100" style="border: none;"/>
-                                                @else
-                                                    <br>
                                                 @endif
+                                                @if ($item->foto2)
+                                                    <img class="img-fluid" src="{{url("storage/{$item->foto2}")}}" width="80" height="100" style="border: none;"/>
+                                                @endif
+                                                @if ($item->foto3)
+                                                    <img class="img-fluid" src="{{url("storage/{$item->foto3}")}}" width="80" height="100" style="border: none;"/>
+                                                @endif                                                
                                                 <br><br>
                                             </td>
                                         </tr>

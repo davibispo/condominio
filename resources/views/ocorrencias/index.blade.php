@@ -20,7 +20,7 @@
                                             <td>
                                                 Data da ocorrência: <b>{{ date('d-m-Y', strtotime($item->data)) }}</b>
                                                 @if ($item->foto1 || $item->foto2 || $item->foto3)
-                                                    <a href="{{ route('ocorrencias.show', $item->id) }}"> - Ver Anexos</a>  
+                                                    <a href="{{ route('ocorrencias.show', $item->id) }}"> - Ver Fotos</a>  
                                                 @endif
                                             </td>
                                         </tr>

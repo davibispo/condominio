@@ -31,8 +31,8 @@
                             <div class="col-md-6">
                                 <select id="tipo" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
                                     <option value="">-- Escolha --</option>
-                                    <option value="Proprietário">Proprietário (Responsável)</option>
-                                    <option value="Inquilino">Inquilino (Responsável)</option>
+                                    <option value="Proprietário">Proprietário (Responsável pela Unidade)</option>
+                                    <option value="Inquilino">Inquilino (Responsável pela Unidade)</option>
                                     <option value="Morador">Morador</option>
                                     <option value="Outro">Outro</option>
                                 </select>

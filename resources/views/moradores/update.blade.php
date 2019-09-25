@@ -24,8 +24,8 @@
                             <div class="col-md-6">
                                     {!! Form::select('tipo', 
                                         [
-                                            'Proprietário'      => 'Proprietário (Responsável)', 
-                                            'Inquilino'         => 'Inquilino (Responsável)', 
+                                            'Proprietário'      => 'Proprietário (Responsável pela Unidade)', 
+                                            'Inquilino'         => 'Inquilino (Responsável pela Unidade)', 
                                             'Morador'           => 'Morador', 
                                             'Outro'             => 'Outro', 
                                         ], 

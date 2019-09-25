@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 400px;">
-                        <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                        <input class="form-control" id="myInput" type="text" placeholder="Pesquisar..">
                         <br>
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>

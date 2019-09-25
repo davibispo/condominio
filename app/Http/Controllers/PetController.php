@@ -42,7 +42,7 @@ class PetController extends Controller
 
         $pet->tipo = $request->tipo;
         $pet->descricao = $request->descricao;
-        $pet->nome = $request->nome;
+        $pet->nome = strtoupper($request->nome);
         $pet->obs = $request->obs;
         $pet->user_id = auth()->user()->id;
 
@@ -137,7 +137,7 @@ class PetController extends Controller
 
         $pet->tipo = $request->tipo;
         $pet->descricao = $request->descricao;
-        $pet->nome = $request->nome;
+        $pet->nome = strtoupper($request->nome);
         $pet->obs = $request->obs;
         $pet->user_id = auth()->user()->id;
 

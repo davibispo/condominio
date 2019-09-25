@@ -27,13 +27,13 @@
                                 <tr>
                                     <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
                                     <td>{{ $p->tipo }}</td>
-                                    <td>{{ $p->nome }}</td>
+                                    <td><b>{{ $p->nome }}</b></td>
                                     <td>{{ $p->descricao }}</td>
                                     <td>{{ $p->obs }}</td>
                                     <td><a href="{{ route('pets.show', $p->id)}}">Ver</a></td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $p->user_id)->value('name') }}</td>
                                     <td>
-                                        {{ DB::table('users')->select('bloco')->where('id', $p->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $p->user_id)->value('apto') }}
+                                        <b>{{ DB::table('users')->select('bloco')->where('id', $p->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $p->user_id)->value('apto') }}</b>
                                     </td>
                                 </tr>
                             </tbody>

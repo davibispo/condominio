@@ -26,10 +26,10 @@
                                     <td>{{ $v->tipo }}</td>
                                     <td>{{ $v->descricao }}</td>
                                     <td>{{ $v->cor }}</td>
-                                    <td>{{ $v->placa }}</td>
+                                    <td><b>{{ $v->placa }}</b></td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $v->user_id)->value('name') }}</td>
                                     <td>
-                                        {{ DB::table('users')->select('bloco')->where('id', $v->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $v->user_id)->value('apto') }}
+                                        <b>{{ DB::table('users')->select('bloco')->where('id', $v->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $v->user_id)->value('apto') }}</b>
                                     </td>
                                 </tr>
                             </tbody>

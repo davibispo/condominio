@@ -29,7 +29,9 @@ class HomeController extends Controller
 
         $totalVeiculos = DB::table('veiculos')->select('id')->where('user_id', auth()->user()->id)->count();
         $totalPets = DB::table('pets')->select('id')->where('user_id', auth()->user()->id)->count();
-        //dd($temUnidade);
-        return view('home', compact('temUnidade', 'temVeiculo', 'totalVeiculos', 'totalPets'));
+
+        $totalUnidade = DB::table('users')->select('id')->count(); //incompleto...
+
+        return view('home', compact('temUnidade', 'temVeiculo', 'totalVeiculos', 'totalPets', 'totalUnidade'));
     }
 }

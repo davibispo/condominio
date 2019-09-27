@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Arquivo;
 
 class ArquivoController extends Controller
 {
@@ -13,7 +14,8 @@ class ArquivoController extends Controller
      */
     public function index()
     {
-        //
+        $arquivos = Arquivo::all();
+        return view('files.index', compact('arquivos'));
     }
 
     /**
@@ -23,7 +25,7 @@ class ArquivoController extends Controller
      */
     public function create()
     {
-        //
+        return view('files.create');
     }
 
     /**
@@ -34,7 +36,40 @@ class ArquivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $arquivo = new Arquivo();
+
+        $arquivo->descricao = $request->descricao;
+
+        // Define o valor default para a variável que contém o nome da imagem --- ARQUIVO ----
+        $nameFile = null;
+
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('YmdHis'));
+
+            // Recupera a extensão do arquivo
+            $extension = $request->arquivo->extension();
+
+            // Define finalmente o nome
+            $nameFile = "file{$name}.{$extension}";
+
+            // Faz o upload:
+            $arquivo->arquivo = $request->arquivo->storeAs('files', $nameFile);
+            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
+            // Verifica se NÃO deu certo o upload (Redireciona de volta)
+            if ( !$arquivo->arquivo )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+        }
+
+
+        $arquivo->save();
+
+        return redirect()->route('files.index');
     }
 
     /**

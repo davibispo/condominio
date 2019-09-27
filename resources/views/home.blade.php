@@ -54,7 +54,7 @@
 
                             var options = {
                                 title: 'Cadastros Realizados',
-                                is3D: false,
+                                is3D: true,
                             };
 
                             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));

@@ -55,9 +55,9 @@
                                     Administrador<span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('ocorrencias.index') }}">Ocorrências</a>
                                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
-                                <!--<a class="dropdown-item" href="{{ route('unidades.index') }}">Unidades</a>-->
+                                    <a class="dropdown-item" href="{{ route('ocorrencias.index') }}">Ocorrências</a>
+                                    <a class="dropdown-item" href="{{ route('files.create') }}">Arquivos</a>
                                     <a class="dropdown-item" href="{{ route('locavel-areas.create') }}">Locais</a>
                                     <a class="dropdown-item" href="{{ route('reservas.index') }}">Reservas</a>
                                     <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
@@ -71,8 +71,8 @@
                             @endif
 
                             <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservar Local</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.create') }}">Registrar Ocorrência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('notificacao-multas.index') }}">Notificações/Multas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.create') }}">Ocorrências</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('files.index') }}">Arquivos</a></li>
                         @endif
                     </ul>
 

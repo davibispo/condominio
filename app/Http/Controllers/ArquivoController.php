@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Arquivo;
+use Illuminate\Support\Facades\Storage;
 
 class ArquivoController extends Controller
 {
@@ -25,7 +26,8 @@ class ArquivoController extends Controller
      */
     public function create()
     {
-        return view('files.create');
+        $arquivos = Arquivo::all();
+        return view('files.create', compact('arquivos'));
     }
 
     /**
@@ -114,6 +116,13 @@ class ArquivoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $arquivo = Arquivo::find($id);
+
+        //deleta o arquivo também.
+        Storage::delete("{$arquivo->arquivo}");
+        
+        $arquivo->delete();
+
+        return redirect()->back()->with('alertDanger', 'Arquivo excluído com sucesso!');
     }
 }

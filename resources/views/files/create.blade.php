@@ -32,6 +32,32 @@
                             </div>
                         </div>
                     {!! Form::close() !!}
+
+                    <br>
+                    <div class="container">
+                        <table class="table table-sm">
+                            <thead>
+                                <th>Nº</th>
+                                <th>Descrição</th>
+                                <th>Baixar</th>
+                                <th>Excluir</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($arquivos as $item)
+                                <tr>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->descricao }}</td>
+                                    <td><a href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
+                                    <td>
+                                        {!! Form::open(['method'=>'DELETE', 'action'=>['ArquivoController@destroy', $item->id], 'style'=>'display:inline']) !!}
+                                            {!! Form::submit('Excluir', ['class'=>'btn btn-link btn-sm', 'style'=>'color:red']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

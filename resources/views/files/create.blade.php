@@ -39,15 +39,15 @@
                             <thead>
                                 <th>Nº</th>
                                 <th>Descrição</th>
-                                <th>Baixar</th>
-                                <th>Excluir</th>
+                                <th><i class="fas fa-download"></i></th>
+                                <th><i class="fas fa-trash-alt"></i></th>
                             </thead>
                             <tbody>
                                 @foreach ($arquivos as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $i++ }}</td>
                                     <td>{{ $item->descricao }}</td>
-                                    <td><a href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
+                                    <td><a class="btn btn-link btn-sm" href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['ArquivoController@destroy', $item->id], 'style'=>'display:inline']) !!}
                                             {!! Form::submit('Excluir', ['class'=>'btn btn-link btn-sm', 'style'=>'color:red']) !!}

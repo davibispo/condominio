@@ -8,18 +8,18 @@
                 <div class="card-header">Arquivos Enviados</div>
 
                 <div class="card-body">
-                    <table class="table table-sm">
+                    <table class="table table-sm table-hover table-striped">
                         <thead>
                             <th>Nº</th>
                             <th>Descrição</th>
-                            <th>Baixar</th>
+                            <th><i class="fas fa-download"></i></th>
                         </thead>
                         <tbody>
                             @foreach ($arquivos as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
+                                <td>{{ $i++ }}</td>
                                 <td>{{ $item->descricao }}</td>
-                                <td><a href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
+                                <td><a href="{{url("storage/{$item->arquivo}")}}" target="_blank">baixar</a></td>
                             </tr>
                             @endforeach
                         </tbody>

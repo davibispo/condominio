@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Arquivo;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class ArquivoController extends Controller
 {
@@ -16,7 +17,8 @@ class ArquivoController extends Controller
     public function index()
     {
         $arquivos = Arquivo::all();
-        return view('files.index', compact('arquivos'));
+        $i = 1;
+        return view('files.index', compact('arquivos', 'i'));
     }
 
     /**
@@ -27,7 +29,8 @@ class ArquivoController extends Controller
     public function create()
     {
         $arquivos = Arquivo::all();
-        return view('files.create', compact('arquivos'));
+        $i = 1;
+        return view('files.create', compact('arquivos', 'i'));
     }
 
     /**
@@ -71,7 +74,7 @@ class ArquivoController extends Controller
 
         $arquivo->save();
 
-        return redirect()->route('files.index');
+        return redirect()->route('files.index')->with('alertSuccess', 'Arquivo enviado com sucesso!');
     }
 
     /**

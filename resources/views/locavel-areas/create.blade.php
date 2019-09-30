@@ -8,7 +8,6 @@
                 <div class="card-header">Áreas Comuns</div>
 
                 <div class="card-body">
-
                     <div class="container">
                         <table class="table table-hover table-sm" style="font-size: 12px">
                             <thead>
@@ -36,8 +35,6 @@
                     <hr>
                     <div class="alert alert-secondary">
                         <b>Cadastrar Área</b>
-
-
                         {!! Form::open(['method'=>'post', 'action'=>'LocavelAreaController@store', 'class'=>'form-horizontal']) !!}
 
                             <div class="form-group row">
@@ -68,8 +65,10 @@
                                     {!! Form::submit('Cadastrar', ['class'=>'btn btn-dark btn-sm']) !!}
                                 </div>
                             </div>
-
                         {!! Form::close() !!}
+                    </div>
+                    <div class="container">
+                        <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
                     </div>
                 </div>
             </div>

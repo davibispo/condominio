@@ -52,6 +52,9 @@
                             @endforeach
                         </table>
                     </div>
+                    <div class="container">
+                        <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
+                    </div>
                 </div>
             </div>
         </div>

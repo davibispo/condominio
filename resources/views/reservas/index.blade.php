@@ -46,29 +46,29 @@
                                                     <b style="color:cornflowerblue">{{ $a->descricao }}</b>
                                                     @break
                                                 @default
-                                                    
+
                                             @endswitch
-                                            
+
                                         </td>
                                         <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                         <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
-                                        <td> 
+                                        <td>
                                             @if ($item->status == 1)
                                                 <i style="">Solicitado</i>
                                             @else
                                                 <b style="color:blue">LIBERADO</b>
-                                            @endif     
+                                            @endif
                                         </td>
                                         <td>
                                             @if ($item->data_solicitada >= $dataAtual)
                                                 @if ($item->status == 1)
-                                                    <a href="{{ route('reservas.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a> 
+                                                    <a href="{{ route('reservas.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
                                                 @else
                                                     <a href="{{ route('reservas.edit', $item->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
                                                 @endif
-                                            @endif                                            
+                                            @endif
                                         </td>
-                                        
+
                                     </tr>
                                     <tr><td colspan="8"> {{ $item->obs }} </td></tr>
                                     @endif
@@ -76,6 +76,9 @@
                             @endforeach
                         @endforeach
                     </table>
+                    </div>
+                    <div class="container">
+                        <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
                     </div>
                 </div>
             </div>

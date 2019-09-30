@@ -20,7 +20,7 @@
                                             <td>
                                                 Data da ocorrência: <b>{{ date('d-m-Y', strtotime($item->data)) }}</b>
                                                 @if ($item->foto1 || $item->foto2 || $item->foto3)
-                                                    <a href="{{ route('ocorrencias.show', $item->id) }}"> - Ver Fotos</a>  
+                                                    <a href="{{ route('ocorrencias.show', $item->id) }}"> - Ver Fotos</a>
                                                 @endif
                                             </td>
                                         </tr>
@@ -43,6 +43,9 @@
                                 @endforeach
                             @endforeach
                         </table>
+                    </div>
+                    <div class="container">
+                        <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
                     </div>
                 </div>
             </div>

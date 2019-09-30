@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Enviar Arquivos</div>
 
                 <div class="card-body">
-                    {!! Form::open(['method'=>'POST', 'action'=>'ArquivoController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!} 
-
+                    <div class="container" style="overflow:auto; height: 500px;">
+                    {!! Form::open(['method'=>'POST', 'action'=>'ArquivoController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
                     <div class="form-group row">
                         {!! Form::label('arquivo', 'Arquivo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <i style="color:red">*</i>
@@ -17,7 +17,7 @@
                             {!! Form::file('arquivo', null, ['class'=>'form-control', 'required']) !!}
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <i style="color:red">*</i>
@@ -58,6 +58,10 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="container">
+                    <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
+                </div>
                 </div>
             </div>
         </div>

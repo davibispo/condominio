@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Arquivos Disponíveis</div>
 
-                <div class="card-body">
+                <div class="card-body" style="overflow:auto; height: 400px;">
                     <table class="table table-sm table-hover table-striped">
                         <thead>
                             <th>Nº</th>

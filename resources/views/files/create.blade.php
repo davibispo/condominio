@@ -19,7 +19,7 @@
                     </div>
                     
                     <div class="form-group row">
-                        {!! Form::label('descricao', 'Descrição do Arquivo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <i style="color:red">*</i>
                         <div class="col-md-6">
                             {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'placeholder'=>'Dê um nome para o arquivo.']) !!}

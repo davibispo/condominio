@@ -50,24 +50,7 @@
                     <ul class="navbar-nav mr-auto">
                         @if (Auth::check() && auth()->user()->ativo == '1')
                             @if (auth()->user()->status == '9')
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Administrador<span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>
-                                    <a class="dropdown-item" href="{{ route('ocorrencias.index') }}">Ocorrências</a>
-                                    <a class="dropdown-item" href="{{ route('files.create') }}">Arquivos</a>
-                                    <a class="dropdown-item" href="{{ route('locavel-areas.create') }}">Locais</a>
-                                    <a class="dropdown-item" href="{{ route('reservas.index') }}">Reservas</a>
-                                    <a class="dropdown-item" href="{{ route('veiculos.index') }}">Veículos</a>
-                                    <a class="dropdown-item" href="{{ route('pets.index') }}">Animais</a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('adm.index') }}">Administrador</a></li>
                             @endif
 
                             <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservar Local</a></li>

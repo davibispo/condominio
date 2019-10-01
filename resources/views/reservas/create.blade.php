@@ -128,9 +128,9 @@
                                             <td> {{ date('d-m-Y', strtotime($item->created_at)) }} </td>
                                             <td>
                                                 @if ($item->status == 1)
-                                                    <i>Solicitado</i>
+                                                    <i style="">Solicitado</i>
                                                     @else
-                                                    <b style="color:blue">LIBERADO</b>
+                                                    <b style="color:green">Liberado</b>
                                                 @endif
                                             </td>
                                             <td>

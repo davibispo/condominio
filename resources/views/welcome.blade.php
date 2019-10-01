@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Condomínio<b>BA</b>
+                    Residencial<b>BA</b>
                 </div>
 
                 <div class="links">

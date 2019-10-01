@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Administração de Recursos</div>
+                <div class="card-header">Gerenciamento de Recursos</div>
 
                 <div class="card-body">
                     <a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a>

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('portaria', 'PortariaController');
 Route::resource('adm', 'AdmController');
 Route::resource('files', 'ArquivoController');
 Route::get('moradores/{id}/atualizaMorador', 'MoradorController@atualizaMorador')->name('moradores.atualizaMorador');

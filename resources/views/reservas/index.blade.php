@@ -9,6 +9,8 @@
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 600px;">
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <br>
                     <table class="table table-sm table-hover"  style="font-size:12px;">
                         <thead>
                             <th>Data solicitada</th>
@@ -24,6 +26,7 @@
                             @foreach ($users as $u)
                                 @foreach ($areas as $a)
                                     @if ($item->user_id == $u->id && $item->locavel_area_id == $a->id)
+                                    <tbody id="myTable">
                                     <tr>
                                         <th>{{ date('d-m-Y', strtotime($item->data_solicitada)) }}</th>
                                         <td> {{ $u->bloco }}-{{ $u->apto }} </td>
@@ -54,9 +57,9 @@
                                         <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
                                         <td>
                                             @if ($item->status == 1)
-                                                <i style="">Solicitado</i>
+                                                <i style="color:red">Solicitado</i>
                                             @else
-                                                <b style="color:blue">LIBERADO</b>
+                                                <i style="color:green">Liberado</i>
                                             @endif
                                         </td>
                                         <td>
@@ -71,6 +74,7 @@
 
                                     </tr>
                                     <tr><td colspan="8"> {{ $item->obs }} </td></tr>
+                                    </tbody>
                                     @endif
                                 @endforeach
                             @endforeach

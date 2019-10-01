@@ -9,10 +9,10 @@
 
                 <div class="card-body">
                     <div class="alert" style="background-color:rgba(0,0,0,.03)">
-                        <p>
+                        <p style="font-style:oblique; font-weight:bold; text-align:justify">
                             O registro de ocorrências serve para alertar a administração sobre algo que está em
                             desacordo com o Regimento Interno do Condomínio. É importante que ao registrar a ocorrência
-                            você possa dar o máximo de detalhes paa facilitar na busca de uma solução do ocorrido.
+                            você possa dar o máximo de detalhes para facilitar na busca de uma solução do ocorrido.
                         </p>
                     </div>
                     {!! Form::open(['method'=>'POST', 'action'=>'OcorrenciaController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
@@ -86,7 +86,7 @@
                                             <td>Data da ocorrência: <b>{{ date('d-m-Y', strtotime($item->data)) }}</b></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="8">
+                                            <td colspan="8" style="text-align:justify">
                                                 {{ $item->descricao }} <br>
                                                 <i>
                                                     <b>Assinado:</b>

@@ -38,7 +38,7 @@
                         @endif
                     </ul>
 
-                    <!-- Gráficos inicio -->
+                    <!-- Gráficos inicio 
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
                         google.charts.load("current", {packages:["corechart"]});
@@ -62,7 +62,7 @@
                         }
                     </script>
                     <div id="piechart_3d" style="width: 100%; height: 500px;"></div>
-                    <!-- Gráficos fim -->
+                    -->
                 </div>
             </div>
         </div>

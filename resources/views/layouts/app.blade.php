@@ -49,13 +49,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @if (Auth::check() && auth()->user()->ativo == '1')
-                            @if (auth()->user()->status == '9')
-                                <li class="nav-item"><a class="nav-link" href="{{ route('adm.index') }}">Administração</a></li>
-                            @endif
                             @if (auth()->user()->status == '8' or auth()->user()->status == '9')
                                 <li class="nav-item"><a class="nav-link" href="{{ route('portaria.index') }}"><b>PORTARIA</b></a></li>
                             @endif
-
+                            @if (auth()->user()->status == '9')
+                                <li class="nav-item"><a class="nav-link" href="{{ route('adm.index') }}">Administração</a></li>
+                            @endif
                             <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservar Local</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.create') }}">Ocorrências</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('files.index') }}">Arquivos</a></li>

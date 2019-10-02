@@ -135,7 +135,7 @@
                                             </td>
                                             <td>
                                                 {!! Form::open(['method'=>'DELETE', 'action'=>['ReservaController@destroy', $item->id], 'style'=>'display:inline']) !!}
-                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px; color:red;']) !!}
+                                                    {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm', 'style'=>'font-size:12px; color:red; padding:0px;']) !!}
                                                 {!! Form::close() !!}
                                             </td>
                                         </tr>

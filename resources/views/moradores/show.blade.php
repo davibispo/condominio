@@ -10,7 +10,27 @@
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 600px;">
                         <div>
-                            <img class="img-fluid" src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
+                            <td>
+                                <!-- Button to Open the Modal -->
+                                <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal">
+                                    <img class="img-fluid" src="{{url("storage/{$morador->foto}")}}" width="80" height="100" style="border: none;"/>
+                                </button>
+                                <!-- The Modal -->
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">                                             
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <img class="img-fluid" src="{{url("storage/{$morador->foto}")}}" width="100%" style="border: none;"/>
+                                            </div>
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </div>
                         <table class="table table-sm table-hover" style="font-size:10px">
 
@@ -80,36 +100,152 @@
                                 <th>Idade</th>
                                 <th></th>
                             </thead>
+                            @if ($morador->residente1)
                             <tr>
-                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente1}")}}" width="80" height="100" style="border: none;"/></td>
+                                <td>
+                                    <!-- Button to Open the Modal -->
+                                    <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal1">
+                                        <img class="img-fluid" src="{{url("storage/{$morador->foto_residente1}")}}" width="80" height="100" style="border: none;"/>
+                                    </button>
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="myModal1">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">                                             
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <img class="img-fluid" src="{{url("storage/{$morador->foto_residente1}")}}" width="100%" style="border: none;"/>
+                                                </div>
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>{{ $morador->residente1 }}</td>
                                 <td>{{ $morador->idade_residente1 }}</td>
                                 <td></td>
                             </tr>
+                            @endif
+                            @if ($morador->residente2)
                             <tr>
-                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente2}")}}" width="80" height="100" style="border: none;"/></td>
+                                <td>
+                                    <!-- Button to Open the Modal -->
+                                    <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal2">
+                                        <img class="img-fluid" src="{{url("storage/{$morador->foto_residente2}")}}" width="80" height="100" style="border: none;"/>
+                                    </button>
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="myModal2">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">                                             
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <img class="img-fluid" src="{{url("storage/{$morador->foto_residente2}")}}" width="100%" style="border: none;"/>
+                                                </div>
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>{{ $morador->residente2 }}</td>
                                 <td>{{ $morador->idade_residente2 }}</td>
                                 <td></td>
                             </tr>
+                            @endif
+                            @if ($morador->residente3)
                             <tr>
-                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente3}")}}" width="80" height="100" style="border: none;"/></td>
+                                <td>
+                                    <td>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal3">
+                                            <img class="img-fluid" src="{{url("storage/{$morador->foto_residente3}")}}" width="80" height="100" style="border: none;"/>
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal3">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">                                             
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <img class="img-fluid" src="{{url("storage/{$morador->foto_residente3}")}}" width="100%" style="border: none;"/>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </td>
                                 <td>{{ $morador->residente3 }}</td>
                                 <td>{{ $morador->idade_residente3 }}</td>
                                 <td></td>
                             </tr>
+                            @endif
+                            @if ($morador->residente4)
                             <tr>
-                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente4}")}}" width="80" height="100" style="border: none;"/></td>
+                                <td>
+                                    <td>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal4">
+                                            <img class="img-fluid" src="{{url("storage/{$morador->foto_residente4}")}}" width="80" height="100" style="border: none;"/>
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal4">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">                                             
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <img class="img-fluid" src="{{url("storage/{$morador->foto_residente4}")}}" width="100%" style="border: none;"/>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </td>
                                 <td>{{ $morador->residente4 }}</td>
                                 <td>{{ $morador->idade_residente4 }}</td>
                                 <td></td>
                             </tr>
+                            @endif
+                            @if ($morador->residente5)
                             <tr>
-                                <td><img class="img-fluid" src="{{url("storage/{$morador->foto_residente5}")}}" width="80" height="100" style="border: none;"/></td>
+                                <td>
+                                    <td>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal5">
+                                            <img class="img-fluid" src="{{url("storage/{$morador->foto_residente5}")}}" width="80" height="100" style="border: none;"/>
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal5">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">                                             
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <img class="img-fluid" src="{{url("storage/{$morador->foto_residente5}")}}" width="100%" style="border: none;"/>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>    
+                                </td>
                                 <td>{{ $morador->residente5 }}</td>
                                 <td>{{ $morador->idade_residente5 }}</td>
                                 <td></td>
                             </tr>
+                            @endif
                             <thead>
                                 <th>Animais</th>
                                 <th>Nome</th>

@@ -225,20 +225,25 @@
                             </div>
                             <!-- Fotos residentes -->
                             <table class="table-bordered">
-                                <tr>
+                                @if ($user->foto_residente1)
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <img class="img-fluid" src="{{url("storage/{$user->foto_residente1}")}}" width="80" height="100" style="border: none;"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($user->foto_residente2)
+                                    <tr>
                                     <td>
                                         <div>
-                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente1}")}}" width="80" height="100" style="border: none;"/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <img class="img-fluid" src="{{url("storage/{$user->foto_residente2}")}}" width="80" height="100" style="border: none;"/>
-                                        </div>
-                                    </td>
-                                </tr>
+                                                <img class="img-fluid" src="{{url("storage/{$user->foto_residente2}")}}" width="80" height="100" style="border: none;"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($user->foto_residente3)
                                 <tr>
                                     <td>
                                         <div>
@@ -246,6 +251,8 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endif
+                                @if ($user->foto_residente4)
                                 <tr>
                                     <td>
                                         <div>
@@ -253,6 +260,8 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endif
+                                @if ($user->foto_residente5)
                                 <tr>
                                     <td>
                                         <div>
@@ -260,9 +269,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                </tr>
+                                @endif
+                                
                             </table>
                         </div>
 

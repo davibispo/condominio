@@ -29,7 +29,7 @@
                             {!! Form::label('nome', 'Nome do Pet', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <i style="color:red">*</i>
                             <div class="col-md-6">
-                                {!! Form::text('nome', null, ['class'=>'form-control', 'placeholder'=>'']) !!}
+                                {!! Form::text('nome', null, ['class'=>'form-control', 'required']) !!}
                             </div>
                         </div>
 
@@ -40,11 +40,12 @@
                                 <textarea name="descricao" id="" cols="" rows="2" class="form-control" required placeholder="Ex: Pelos pretos com detalhe amarelo."></textarea>
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             {!! Form::label('foto', 'Foto', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <i style="color:red">*</i>
                             <div class="col-md-6">
-                                {!! Form::file('foto', null, ['class'=>'form-control']) !!}
+                                {!! Form::file('foto', null, ['class'=>'form-control', 'required']) !!}
                             </div>
                         </div>
 
@@ -57,7 +58,7 @@
 
                         <div class="form-group row">
                             {!! Form::label('obs', 'Observações', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                            <i style="color:red">*</i>
+                            <i style="color:red"></i>
                             <div class="col-md-6">
                                 <textarea name="obs" id="" cols="" rows="3" class="form-control"></textarea>
                             </div>
@@ -85,11 +86,37 @@
                         </thead>
                         @forelse ($pets as $p)
                             <tr>
-                                <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
+                                <td>
+                                    @if ($p->foto)
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal+{{$i++}}">
+                                            <img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/>
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal+{{$i++}}">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">                                             
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="100%" style="border: none;"/>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </td>
                                 <td>{{ $p->tipo }}</td>
                                 <td>{{ $p->nome }}</td>
                                 <td>{{ $p->descricao }}</td>
-                                <td><a href="{{ route('pets.show', $p->id)}}" class="btn btn-link btn-sm">Vacinas</a></td>
+                                <td>
+                                    @if ($p->vacina)
+                                        <a href="{{ route('pets.show', $p->id)}}" class="btn btn-link btn-sm">Vacinas</a>
+                                    @endif
+                                </td>
                                 <td><a href="{{ route('pets.edit', $p->id) }}" class="btn btn-link btn-sm">Editar</a></td>
                                 <td>
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['PetController@destroy', $p->id], 'style'=>'display:inline']) !!}

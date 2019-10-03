@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class PortariaController extends Controller
@@ -13,7 +14,8 @@ class PortariaController extends Controller
      */
     public function index()
     {
-        return view('portaria.index');
+        $moradores = User::all()->where('ativo', 1);
+        return view('portaria.index', compact('moradores'));
     }
 
     /**

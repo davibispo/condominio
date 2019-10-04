@@ -29,10 +29,7 @@
                         <br>
 
                         <div class="input-group mb-3 input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Visitante</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Nome" autofocus>
+                            <input type="text" class="form-control" placeholder="Nome do visitante" autofocus>
                             <input type="text" class="form-control" placeholder="CPF ou RG" autofocus>
                         </div>
 

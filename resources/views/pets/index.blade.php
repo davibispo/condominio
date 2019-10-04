@@ -25,7 +25,27 @@
                             @foreach ($pets as $p)
                             <tbody id="myTable" style="font-size:12px">
                                 <tr>
-                                    <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
+                                    <td>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal{{$p->id}}">
+                                            <img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/>
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal{{$p->id}}">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">                                             
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="100%" style="border: none;"/>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>{{ $p->tipo }}</td>
                                     <td><b>{{ $p->nome }}</b></td>
                                     <td>{{ $p->descricao }}</td>

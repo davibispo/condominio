@@ -255,7 +255,9 @@
                             @foreach ($pets as $p)
                                 @if ($p->user_id == $morador->id)
                                     <tr>
-                                        <td><img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/></td>
+                                        <td>
+                                            <img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/>
+                                        </td>
                                         <td>{{ $p->nome }} ({{ $p->tipo }})</td>
                                         <td>{{ $p->descricao }}</td>
                                         <td>{{ $p->obs}}</td>

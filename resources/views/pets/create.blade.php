@@ -89,11 +89,11 @@
                                 <td>
                                     @if ($p->foto)
                                         <!-- Button to Open the Modal -->
-                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal+{{$i++}}">
+                                        <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#myModal{{$p->id}}">
                                             <img class="img-fluid" src="{{url("storage/{$p->foto}")}}" width="80" height="100" style="border: none;"/>
                                         </button>
                                         <!-- The Modal -->
-                                        <div class="modal fade" id="myModal+{{$i++}}">
+                                        <div class="modal fade" id="myModal{{$p->id}}">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">                                             
                                                     <!-- Modal body -->

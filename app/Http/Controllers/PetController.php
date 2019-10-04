@@ -27,8 +27,7 @@ class PetController extends Controller
     public function create()
     {
         $pets = Pet::all()->where('status', 1)->where('user_id', auth()->user()->id);
-        $i = 1;
-        return view('pets.create', compact('pets', 'i'));
+        return view('pets.create', compact('pets'));
     }
 
     /**

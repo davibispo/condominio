@@ -14,13 +14,13 @@
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>
                                 <th></th>
-                                <th>Tipo</th>
-                                <th>Nome</th>
-                                <th>Descricao</th>
-                                <th>Obsservações</th>
-                                <th>Vacinas</th>
                                 <th>Dono</th>
                                 <th>Unidade</th>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Descricao</th>
+                                <th>Vacinas</th>
+                                <th>Obsservações</th>
                             </tr>
                             @foreach ($pets as $p)
                             <tbody id="myTable" style="font-size:12px">
@@ -46,15 +46,13 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>{{ $p->tipo }}</td>
-                                    <td><b>{{ $p->nome }}</b></td>
-                                    <td>{{ $p->descricao }}</td>
-                                    <td>{{ $p->obs }}</td>
-                                    <td><a href="{{ route('pets.show', $p->id)}}">Ver</a></td>
                                     <td>{{ DB::table('users')->select('name')->where('id', $p->user_id)->value('name') }}</td>
-                                    <td>
-                                        <b>{{ DB::table('users')->select('bloco')->where('id', $p->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $p->user_id)->value('apto') }}</b>
-                                    </td>
+                                    <td><b>{{ DB::table('users')->select('bloco')->where('id', $p->user_id)->value('bloco') }}-{{ DB::table('users')->select('apto')->where('id', $p->user_id)->value('apto') }}</b></td>
+                                    <td><b>{{ $p->nome }}</b></td>
+                                    <td>{{ $p->tipo }}</td>
+                                    <td>{{ $p->descricao }}</td>
+                                    <td><a href="{{ route('pets.show', $p->id)}}">Ver</a></td>
+                                    <td>{{ $p->obs }}</td>
                                 </tr>
                             </tbody>
                             @endforeach

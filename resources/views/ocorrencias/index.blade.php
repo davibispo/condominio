@@ -23,6 +23,15 @@
                                                     <a href="{{ route('ocorrencias.show', $item->id) }}"> - Ver Fotos</a>
                                                 @endif
                                             </td>
+                                            <td>
+                                                @if ($item->status == 2)
+                                                <a href="{{ route('ocorrencias.edit', $item->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                                    <i>Lida</i>
+                                                @else
+                                                    <a href="{{ route('ocorrencias.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                                    <i>Não lida</i>
+                                                @endif
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan="8">

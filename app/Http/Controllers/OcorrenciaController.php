@@ -52,21 +52,21 @@ class OcorrenciaController extends Controller
         // Define o valor default para a variável que contém o nome da imagem --- foto ----
         $nameFile = null;
         // --- FOTO 1 ---
-        // Verifica se informou o arquivo e se é válido 
+        // Verifica se informou o arquivo e se é válido
         if ($request->hasFile('foto1') && $request->file('foto1')->isValid()) {
 
             // Define um aleatório para o arquivo baseado no timestamps atual
             $name = uniqid(date('HisdmY'));
-            
+
             // Recupera a extensão do arquivo
             $extension = $request->foto1->extension();
-            
+
             // Define finalmente o nome
             $nameFile = "oc{$name}.{$extension}";
-            
+
             // Faz o upload:
             $ocorrencia->foto1 = $request->foto1->storeAs('ocorrencias', $nameFile);
-            
+
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
             if ( !$ocorrencia->foto1)
@@ -76,21 +76,21 @@ class OcorrenciaController extends Controller
                         ->withInput();
         }
         // --- FOTO 2 ---
-        // Verifica se informou o arquivo e se é válido 
+        // Verifica se informou o arquivo e se é válido
         if ($request->hasFile('foto2') && $request->file('foto2')->isValid()) {
 
             // Define um aleatório para o arquivo baseado no timestamps atual
             $name = uniqid(date('Hisdmy'));
-            
+
             // Recupera a extensão do arquivo
             $extension = $request->foto2->extension();
-            
+
             // Define finalmente o nome
             $nameFile = "oc{$name}.{$extension}";
-            
+
             // Faz o upload:
             $ocorrencia->foto2 = $request->foto2->storeAs('ocorrencias', $nameFile);
-            
+
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
             if ( !$ocorrencia->foto2)
@@ -100,21 +100,21 @@ class OcorrenciaController extends Controller
                         ->withInput();
         }
         // --- FOTO 3 ---
-        // Verifica se informou o arquivo e se é válido 
+        // Verifica se informou o arquivo e se é válido
         if ($request->hasFile('foto3') && $request->file('foto3')->isValid()) {
 
             // Define um aleatório para o arquivo baseado no timestamps atual
             $name = uniqid(date('HisYmd'));
-            
+
             // Recupera a extensão do arquivo
             $extension = $request->foto3->extension();
-            
+
             // Define finalmente o nome
             $nameFile = "oc{$name}.{$extension}";
-            
+
             // Faz o upload:
             $ocorrencia->foto3 = $request->foto3->storeAs('ocorrencias', $nameFile);
-            
+
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
             if ( !$ocorrencia->foto3)
@@ -155,7 +155,17 @@ class OcorrenciaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ocorrencia = Ocorrencia::find($id);
+
+        if($ocorrencia->status == 1){
+            $ocorrencia->status = 2; // lida
+        }else{
+            $ocorrencia->status = 1; // não lida
+        }
+
+        $ocorrencia->update();
+
+        return redirect()->back();
     }
 
     /**

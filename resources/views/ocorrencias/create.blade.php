@@ -23,7 +23,7 @@
                         <div class="col-md-3">
                             {!! Form::date('data', null, ['class'=>'form-control', 'required']) !!}
                         </div>
-                    </div>      
+                    </div>
 
                     <div class="form-group row">
                         {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
@@ -66,7 +66,7 @@
                                 <input type="file" name="foto3" class="form-control">
                             </div>
                         </div>
-                    </div>            
+                    </div>
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
@@ -84,6 +84,18 @@
                                     <tbody  id="myTable">
                                         <tr style="background-color:rgba(0,0,0,.03)">
                                             <td>Data da ocorrência: <b>{{ date('d-m-Y', strtotime($item->data)) }}</b></td>
+                                            <td style="float:right">
+                                                Status:
+                                                @switch($item->status)
+                                                    @case(1)
+                                                        <i>Ocorrência registrada</i>
+                                                        @break
+                                                    @case(2)
+                                                        <i style="color:blue">Ocorrência lida</i>
+                                                        @break
+                                                    @default
+                                                @endswitch
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan="8" style="text-align:justify">
@@ -105,7 +117,7 @@
                                                 @endif
                                                 @if ($item->foto3)
                                                     <img class="img-fluid" src="{{url("storage/{$item->foto3}")}}" width="80" height="100" style="border: none;"/>
-                                                @endif                                                
+                                                @endif
                                                 <br><br>
                                             </td>
                                         </tr>

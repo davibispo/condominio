@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdmController extends Controller
 {
@@ -13,7 +14,8 @@ class AdmController extends Controller
      */
     public function index()
     {
-        return view('adm.index');
+        $total = DB::table('users')->select('id')->where('ativo', 1)->count();
+        return view('adm.index', compact('total'));
     }
 
     /**

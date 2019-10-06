@@ -32,6 +32,10 @@
                             <input type="text" class="form-control" placeholder="Nome do visitante" autofocus>
                             <input type="text" class="form-control" placeholder="CPF ou RG" autofocus>
                         </div>
+                        
+                        <div class="input-group mb-3 input-group-lg">
+                            <input type="text" class="form-control" placeholder="Placa do Veículo" autofocus>
+                        </div>
 
                         <div class="input-group mb-3 input-group-lg">
                             <div class="input-group-prepend">

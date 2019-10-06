@@ -14,8 +14,15 @@ class AdmController extends Controller
      */
     public function index()
     {
-        $total = DB::table('users')->select('id')->where('ativo', 1)->count();
-        return view('adm.index', compact('total'));
+        $totalMoradores = DB::table('users')->select('id')->where('ativo', 1)->count();
+        $totalOcorrencias = DB::table('ocorrencias')->select('id')->count();
+        $totalFiles = DB::table('arquivos')->select('id')->count();
+        $totalLocais = DB::table('locavel_areas')->select('id')->count();
+        $totalReservas = DB::table('reservas')->select('id')->count();
+        $totalVeiculos = DB::table('veiculos')->select('id')->count();
+        $totalPets = DB::table('pets')->select('id')->count();
+        
+        return view('adm.index', compact('totalMoradores','totalOcorrencias','totalFiles','totalLocais','totalReservas','totalVeiculos','totalPets'));
     }
 
     /**

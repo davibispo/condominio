@@ -86,14 +86,14 @@
                             <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
                             <i style="color:red">*</i>
                             <div class="col-md-6">
-                                <input id="tel1" type="text" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}" placeholder="com DDD" required autocomplete="tel1" autofocus>
+                                <input id="tel1" type="tel" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}" placeholder="com DDD" required autocomplete="tel1" autofocus>
                                 @error('tel1')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
 
-                                <input id="tel2" type="text" class="form-control @error('tel2') is-invalid @enderror" name="tel2" value="{{ old('tel2') }}" placeholder="com DDD" autocomplete="tel2" autofocus>
+                                <input id="tel2" type="tel" class="form-control @error('tel2') is-invalid @enderror" name="tel2" value="{{ old('tel2') }}" placeholder="com DDD" autocomplete="tel2" autofocus>
                                 @error('tel2')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

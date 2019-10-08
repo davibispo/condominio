@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,6 +15,7 @@ class AdmController extends Controller
      */
     public function index()
     {
+
         $totalMoradores = DB::table('users')->select('id')->where('ativo', 1)->count();
         $totalOcorrencias = DB::table('ocorrencias')->select('id')->count();
         $totalFiles = DB::table('arquivos')->select('id')->count();
@@ -21,8 +23,9 @@ class AdmController extends Controller
         $totalReservas = DB::table('reservas')->select('id')->count();
         $totalVeiculos = DB::table('veiculos')->select('id')->count();
         $totalPets = DB::table('pets')->select('id')->count();
+        $totalUnidades = DB::table('users')->select('id')->where('tipo', 'Proprietário')->orWhere('tipo', 'Inquilino')->count();
         
-        return view('adm.index', compact('totalMoradores','totalOcorrencias','totalFiles','totalLocais','totalReservas','totalVeiculos','totalPets'));
+        return view('adm.index', compact('totalMoradores','totalOcorrencias','totalFiles','totalLocais','totalReservas','totalVeiculos','totalPets','totalUnidades'));
     }
 
     /**
@@ -89,5 +92,11 @@ class AdmController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function unidades()
+    {
+        $users = User::all()->where('ativo', 1);
+        return view('adm.unidades', compact('users'));
     }
 }

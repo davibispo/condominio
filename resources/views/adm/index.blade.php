@@ -13,7 +13,14 @@
                             <td><i class="fas fa-users"></i></td>
                             <td><a class="dropdown-item" href="{{ route('moradores.index') }}">Moradores</a></td>
                             <td>{{ $totalMoradores }}</td>
-                            <td> <a href="{{ route('adm.unidades') }}">Unidades</a> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i></td>
+                            <td><a class="dropdown-item" href="{{ route('adm.unidades') }}">Unidades</a></td>
+                            <td>{{ $totalUnidades }}</td>
+                            <td></td>
                             <td></td>
                         </tr>
                         <tr>

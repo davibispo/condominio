@@ -18,11 +18,10 @@ class CreateVisitantesTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nome');
-            $table->string('tipo'); // se amigo, parente, entregador e etc
-            $table->string('quantidade')->default(1); // quantidade de visitantes 
+            $table->string('tipo')->nullable(); // se amigo, parente, entregador e etc
+            $table->string('qtde')->default(1); // quantidade de visitantes 
             $table->text('foto')->nullable();
-            $table->string('cpf')->nullable(); 
-            $table->string('rg')->nullable(); 
+            $table->string('doc')->nullable(); 
             $table->timestamps();
         });
     }

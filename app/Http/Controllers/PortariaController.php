@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Visitante;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,7 @@ class PortariaController extends Controller
      */
     public function index()
     {
-        $moradores = User::all()->where('ativo', 1);
-        return view('portaria.index', compact('moradores'));
+        
     }
 
     /**
@@ -25,7 +25,8 @@ class PortariaController extends Controller
      */
     public function create()
     {
-        //
+        $moradores = User::all()->where('ativo', 1)->sortBy('apto')->sortBy('bloco');
+        return view('portaria.create', compact('moradores'));
     }
 
     /**
@@ -36,7 +37,18 @@ class PortariaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $visitante = new Visitante();
+
+        $visitante->user_id = $request->user_id;
+        $visitante->nome    = $request->nome;
+        $visitante->tipo    = $request->tipo;
+        $visitante->qtde    = $request->qtde;
+        $visitante->foto    = $request->foto;
+        $visitante->doc     = $request->doc;
+
+        $visitante->save();
+
+        return redirect()->back();
     }
 
     /**

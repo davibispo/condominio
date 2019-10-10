@@ -8,10 +8,8 @@
                 <div class="card-header">Gerenciamento de Recursos - Unidades</div>
 
                 <div class="card-body">
+                    <div class="container" style="overflow:auto; height: 600px;">
                     <table class="table table-sm">
-                        <thead>
-                                                        
-                        </thead>
                         <tbody>
                             <tr>
                                 <td> 
@@ -85,6 +83,10 @@
                             </tr>
                         </tbody>
                     </table> 
+                    </div>
+                    <div class="container">
+                        <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
+                    </div>
                 </div>
             </div>
         </div>

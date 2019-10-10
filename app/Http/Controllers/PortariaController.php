@@ -42,7 +42,7 @@ class PortariaController extends Controller
         $visitante->user_id = $request->user_id;
         $visitante->nome    = $request->nome;
         $visitante->tipo    = $request->tipo;
-        $visitante->qtde    = $request->qtde;
+        $visitante->qtde    = 1;
         $visitante->foto    = $request->foto;
         $visitante->doc     = $request->doc;
 

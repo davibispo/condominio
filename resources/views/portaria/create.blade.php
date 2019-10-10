@@ -21,7 +21,7 @@
                                         <td> {{$m->tel1}} </td>
                                         <td> {{$m->tel2}} </td>
                                         <td style="background-color:rgba(0,0,0,.03); text-align:center"> 
-                                            <input type="radio" name="user_id" value="user_id"> 
+                                            <input type="radio" name="user_id" value="{{$m->user_id}}">
                                         </td>
                                     </tr>    
                                 </tbody>

@@ -20,8 +20,10 @@ class CreateVisitantesTable extends Migration
             $table->string('nome');
             $table->string('tipo')->nullable(); // se amigo, parente, entregador e etc
             $table->string('qtde')->default(1); // quantidade de visitantes 
+            $table->string('placa')->nullable();
+            $table->string('cpf')->nullable(); 
+            $table->string('rg')->nullable(); 
             $table->text('foto')->nullable();
-            $table->string('doc')->nullable(); 
             $table->timestamps();
         });
     }

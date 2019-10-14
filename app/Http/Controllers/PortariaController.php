@@ -26,7 +26,10 @@ class PortariaController extends Controller
     public function create()
     {
         $moradores = User::all()->where('ativo', 1)->sortBy('apto')->sortBy('bloco');
-        return view('portaria.create', compact('moradores'));
+        $visitantes = Visitante::all()->sortByDesc('id');
+        $dataAtual = date('Y-m-d');
+        //dd($dataAtual);
+        return view('portaria.create', compact('moradores', 'visitantes', 'dataAtual'));
     }
 
     /**
@@ -37,14 +40,17 @@ class PortariaController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $visitante = new Visitante();
 
         $visitante->user_id = $request->user_id;
-        $visitante->nome    = $request->nome;
+        $visitante->nome    = strtoupper($request->nome);
         $visitante->tipo    = $request->tipo;
-        $visitante->qtde    = 1;
+        $visitante->qtde    = $request->qtde;
         $visitante->foto    = $request->foto;
-        $visitante->doc     = $request->doc;
+        $visitante->placa   = strtoupper($request->placa);
+        $visitante->cpf     = $request->cpf;
+        $visitante->rg      = strtoupper($request->rg);
 
         $visitante->save();
 

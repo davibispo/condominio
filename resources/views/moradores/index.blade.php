@@ -8,7 +8,7 @@
                 <div class="card-header">Moradores Cadastrados</div>
 
                 <div class="card-body">
-                    <div class="container" style="overflow:auto; height: 400px;">
+                    <div class="container" style="overflow:auto; height: 500px;">
                         <input class="form-control" id="myInput" type="text" placeholder="Pesquisar..">
                         <br>
                         <table class="table table-sm table-hover" style="font-size:10px">

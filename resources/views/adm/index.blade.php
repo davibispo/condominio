@@ -31,6 +31,13 @@
                             <td></td>
                         </tr>
                         <tr>
+                            <td><i class="fas fa-door-open"></i></td>
+                            <td><a class="dropdown-item" href="{{ route('portaria.index') }}">Visitantes</a></td>
+                            <td>Média por dia</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td><i class="fas fa-folder-open"></i></td>
                             <td><a class="dropdown-item" href="{{ route('files.create') }}">Arquivos</a></td>
                             <td>{{ $totalFiles }}</td>

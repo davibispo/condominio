@@ -55,7 +55,7 @@
                             @if (auth()->user()->status == '9')
                                 <li class="nav-item"><a class="nav-link" href="{{ route('adm.index') }}">Administração</a></li>
                             @endif
-                            <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservar Local</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('reservas.create') }}">Reservas</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('ocorrencias.create') }}">Ocorrências</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('files.index') }}">Arquivos</a></li>
                         @endif

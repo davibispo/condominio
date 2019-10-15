@@ -33,7 +33,7 @@
                         </table>
                     </div>
                     <hr>
-                    <div class="alert alert-secondary">
+                    <div class="alert" style="background-color:rgba(0,0,0,.03)">
                         <b>Cadastrar Área</b>
                         {!! Form::open(['method'=>'post', 'action'=>'LocavelAreaController@store', 'class'=>'form-horizontal']) !!}
 

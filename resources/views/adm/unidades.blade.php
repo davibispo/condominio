@@ -8,7 +8,7 @@
                 <div class="card-header">Gerenciamento de Recursos - Unidades</div>
 
                 <div class="card-body">
-                    <div class="container" style="overflow:auto; height: 600px;">
+                    <div class="container" style="overflow:auto; height: 500px;">
                     <table class="table table-sm">
                         <tbody>
                             <tr>

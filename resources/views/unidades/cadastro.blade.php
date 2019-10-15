@@ -8,7 +8,7 @@
                 <div class="card-header">Cadastrar Proprietários em Unidades</div>
 
                 <div class="card-body">
-                    <div class="container" style="overflow:auto; height: 400px;">
+                    <div class="container" style="overflow:auto; height: 500px;">
                         <table class="table table-sm table-striped" style="font-size:10px">
                             @forelse ($unidades as $u)
                             <tr>

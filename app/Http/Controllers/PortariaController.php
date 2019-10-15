@@ -15,7 +15,10 @@ class PortariaController extends Controller
      */
     public function index()
     {
-        
+        $visitantes = Visitante::all()->sortByDesc('id');
+        $moradores  = User::all()->where('ativo', 1)->sortBy('apto')->sortBy('bloco');;
+        $dataAtual  = date('Y-m-d');
+        return view('portaria.index', compact('visitantes', 'moradores', 'dataAtual'));
     }
 
     /**

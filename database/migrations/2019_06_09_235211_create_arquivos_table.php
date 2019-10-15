@@ -17,7 +17,7 @@ class CreateArquivosTable extends Migration
             $table->bigIncrements('id');
             $table->text('arquivo');
             $table->string('descricao');
-            $table->char('status', 1)->default(1);
+            $table->char('ativo', 1)->default(1);
             $table->timestamps();
         });
     }

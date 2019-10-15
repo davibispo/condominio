@@ -28,7 +28,7 @@
 
                     <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                {!! Form::submit('Enviar', ['class'=>'btn btn-dark btn-sm']) !!}
+                                {!! Form::submit('Salvar', ['class'=>'btn btn-dark btn-sm']) !!}
                             </div>
                         </div>
                     {!! Form::close() !!}
@@ -39,6 +39,7 @@
                             <thead>
                                 <th>Nº</th>
                                 <th>Descrição</th>
+                                <th>Disponibilizar</th>
                                 <th><i class="fas fa-download"></i></th>
                                 <th><i class="fas fa-trash-alt"></i></th>
                             </thead>
@@ -47,6 +48,13 @@
                                 <tr>
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $item->descricao }}</td>
+                                    <td>
+                                        @if ($item->ativo == 2)
+                                            <a href="{{ route('files.edit', $item->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                        @else
+                                            <a href="{{ route('files.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                        @endif
+                                    </td>
                                     <td><a class="btn btn-link btn-sm" href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['ArquivoController@destroy', $item->id], 'style'=>'display:inline']) !!}

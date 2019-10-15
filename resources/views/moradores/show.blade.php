@@ -8,7 +8,7 @@
                 <div class="card-header">Detalhes de Morador</div>
 
                 <div class="card-body">
-                    <div class="container" style="overflow:auto; height: 600px;">
+                    <div class="container" style="overflow:auto; height: 500px;">
                         <div>
                             <td>
                                 <!-- Button to Open the Modal -->

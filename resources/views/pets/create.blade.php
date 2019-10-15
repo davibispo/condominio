@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Cadastrar Pet</div>
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="container">
-                    <table class="table table-hover table-sm">
+                    <table class="table table-sm">
                         <thead>
                             <th>Foto</th>
                             <th>Tipo</th>
@@ -123,6 +123,9 @@
                                         {!! Form::submit('Remover', ['class'=>'btn btn-link btn-sm']) !!}
                                     {!! Form::close() !!}
                                 </td>
+                            </tr>
+                            <tr>
+                                <td colspan="7"> {{$p->obs}} </td>
                             </tr>
                         @empty
                             <div class="alert alert-warning">

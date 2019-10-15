@@ -16,7 +16,7 @@ class ArquivoController extends Controller
      */
     public function index()
     {
-        $arquivos = Arquivo::all();
+        $arquivos = Arquivo::all()->where('ativo', 2);
         $i = 1;
         return view('files.index', compact('arquivos', 'i'));
     }
@@ -74,7 +74,7 @@ class ArquivoController extends Controller
 
         $arquivo->save();
 
-        return redirect()->route('files.index')->with('alertSuccess', 'Arquivo enviado com sucesso!');
+        return redirect()->back()->with('alertSuccess', 'Arquivo salvo com sucesso!');
     }
 
     /**
@@ -96,7 +96,17 @@ class ArquivoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $file = Arquivo::find($id);
+
+        if($file->ativo == 1){
+            $file->ativo = 2; //disponibilizar arquivo
+        }else{
+            $file->ativo = 1; //não disponibilizar cadastro
+        }
+
+        $file->update();
+
+        return redirect()->back();
     }
 
     /**

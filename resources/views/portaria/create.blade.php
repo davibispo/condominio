@@ -62,7 +62,7 @@
                         </div>
                     {!! Form::close() !!}
                     <br>
-                    <div class="container" style="overflow:auto; height: 400px;">
+                    <div class="container" style="overflow:auto; height: 200px;">
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <thead>    
                                 <tr>

@@ -46,6 +46,7 @@ class User extends Authenticatable
         'ativo',
         'tipo',
         'status',
+        'reside',
     ];
 
     /**

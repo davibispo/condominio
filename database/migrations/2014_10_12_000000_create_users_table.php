@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->char('ativo', 1)->default('0');
             $table->char('status', 1)->default('0'); // qualquer status necessário
-            $table->string('tipo', 30)->nullable(); // proprietario ou inquilino
+            $table->char('reside', 1)->default('1'); // se reside no condomínio
+            $table->string('tipo', 30)->nullable();  // proprietario ou inquilino
             $table->string('bloco', 5)->nullable();
             $table->string('apto', 5)->nullable();
             $table->string('name');

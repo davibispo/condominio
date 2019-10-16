@@ -282,6 +282,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            {!! Form::label('reside', 'Resido no condomínio', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            <i style="color:red">*</i>
+                            <div class="col-md-4">
+                                <input type="radio" name="reside" value="1" required> SIM
+                                <br>
+                                <input type="radio" name="reside" value="0" required> NÃO
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -118,6 +118,7 @@ class MoradorController extends Controller
         $user->idade_residente4 = $request->idade_residente4;
         $user->idade_residente5 = $request->idade_residente5;
         $user->email = $request->email;
+        $user->reside = $request->reside;
 
         /* FOTOS DE RESIDENTES */
         // Define o valor default para a variável que contém o nome da imagem

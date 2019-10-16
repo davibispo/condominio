@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">PORTARIA - HISTÓRICO</div>
+                <div class="card-header">PORTARIA - HISTÓRICO DE VISITAS</div>
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 500px;">
@@ -46,6 +46,9 @@
                             @endforelse
                         </table>
                     </div>    
+                    <div class="container">
+                        <a href="{{ route('adm.index') }}" class="btn btn-dark btn-sm" style="margin-top:15px"><i class="fas fa-reply"></i> Voltar</a>
+                    </div>
                 </div>
             </div>
         </div>

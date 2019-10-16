@@ -31,7 +31,7 @@
 
                         <div class="input-group mb-3 input-group-lg">
                             <input type="text" class="form-control" style="text-transform:uppercase; width:70%" name="nome" placeholder="Nome do visitante" autofocus required>
-                            <input type="number" class="form-control" name="qtde" placeholder="Qtde" value="1" min="0" max="100" autofocus>
+                            <input type="number" class="form-control" name="qtde" placeholder="Qtde" value="1" min="1" max="100" autofocus>
                         </div>
                         <div class="input-group mb-3 input-group-lg">
                             <input id="cpf" type="text" class="form-control" style="text-transform:uppercase;" name="cpf" placeholder="CPF" autofocus>
@@ -50,7 +50,7 @@
                             <select name="tipo" id="" class="form-control">
                                 <option value="Entregador">1. Entregador</option>
                                 <option value="Parente">2. Parente</option>
-                                <option value="Amigo">3. Amigo</option>
+                                <option value="Amigo(a)">3. Amigo(a)</option>
                                 <option value="Outro">4. Outro</option>
                             </select>
                         </div>

@@ -37,26 +37,24 @@
                     <div class="container">
                         <table class="table table-sm">
                             <thead>
-                                <th>Nº</th>
-                                <th>Descrição</th>
-                                <th>Disponibilizar</th>
-                                <th><i class="fas fa-download"></i></th>
-                                <th><i class="fas fa-trash-alt"></i></th>
+                                <th>Descrição do arquivo</th>
+                                <th style="text-align:center">Disponibilizar</th>
+                                <th style="text-align:center"><i class="fas fa-download"></i></th>
+                                <th style="text-align:center"><i class="fas fa-trash-alt"></i></th>
                             </thead>
                             <tbody>
                                 @foreach ($arquivos as $item)
                                 <tr>
-                                    <td>{{ $i++ }}</td>
                                     <td>{{ $item->descricao }}</td>
-                                    <td>
+                                    <td style="text-align:center">
                                         @if ($item->ativo == 2)
                                             <a href="{{ route('files.edit', $item->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
                                         @else
                                             <a href="{{ route('files.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
                                         @endif
                                     </td>
-                                    <td><a class="btn btn-link btn-sm" href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
-                                    <td>
+                                    <td style="text-align:center"><a class="btn btn-link btn-sm" href="{{url("storage/{$item->arquivo}")}}" target="_blank">Baixar</a></td>
+                                    <td style="text-align:center">
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['ArquivoController@destroy', $item->id], 'style'=>'display:inline']) !!}
                                             {!! Form::submit('Excluir', ['class'=>'btn btn-link btn-sm', 'style'=>'color:red']) !!}
                                         {!! Form::close() !!}

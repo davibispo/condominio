@@ -34,7 +34,7 @@
 
 
 </head>
-<body>
+<body style="background: url('{{ asset('img/img-BA.jpg') }}') no-repeat fixed center; background-size: 100%">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

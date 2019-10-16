@@ -18,7 +18,7 @@ class AdmController extends Controller
 
         $totalMoradores = DB::table('users')->select('id')->where('ativo', 1)->count();
         $totalOcorrencias = DB::table('ocorrencias')->select('id')->count();
-        $totalFiles = DB::table('arquivos')->select('id')->count();
+        $totalFiles = DB::table('arquivos')->select('id')->where('ativo', 2)->count();
         $totalLocais = DB::table('locavel_areas')->select('id')->count();
         $totalReservas = DB::table('reservas')->select('id')->count();
         $totalVeiculos = DB::table('veiculos')->select('id')->count();

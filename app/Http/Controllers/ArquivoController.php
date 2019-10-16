@@ -16,9 +16,9 @@ class ArquivoController extends Controller
      */
     public function index()
     {
-        $arquivos = Arquivo::all()->where('ativo', 2);
-        $i = 1;
-        return view('files.index', compact('arquivos', 'i'));
+        $arquivos = Arquivo::all()->where('ativo', 2)->sortByDesc('id');
+        
+        return view('files.index', compact('arquivos'));
     }
 
     /**
@@ -28,9 +28,9 @@ class ArquivoController extends Controller
      */
     public function create()
     {
-        $arquivos = Arquivo::all();
-        $i = 1;
-        return view('files.create', compact('arquivos', 'i'));
+        $arquivos = Arquivo::all()->sortByDesc('id');
+       
+        return view('files.create', compact('arquivos'));
     }
 
     /**

@@ -15,7 +15,7 @@
                             <table class="table table-sm table-hover">
                                 <thead>
                                     <tr>
-                                        <th colspan="2">Locais disponíveis <i style="color:red">*</i></th>
+                                        <th colspan="2">Locais disponíveis *</th>
                                         <th>Valor</th>
                                         <th>Observações</th>
                                     </tr>
@@ -33,16 +33,14 @@
                     </div>
                     <br>
                     <div class="form-group row">
-                        {!! Form::label('data_solicitada', 'Data', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('data_solicitada', 'Data *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-3">
                             {!! Form::date('data_solicitada', null, ['class'=>'form-control', 'required']) !!}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('hora_inicio', 'Horário', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('hora_inicio', 'Horário *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-2">
                             {!! Form::select('hora_inicio',
                                 [
@@ -98,6 +96,8 @@
                             <textarea class="form-control" name="obs"></textarea>
                         </div>
                     </div>
+
+                    <p style="text-align:center">(*) Campos obrigatórios</p>
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">

@@ -12,8 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo *') }}</label>
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -26,8 +25,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo *') }}</label>
                             <div class="col-md-6">
                                 <select id="tipo" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
                                     <option value="">-- Escolha --</option>
@@ -45,8 +43,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="unidade" class="col-md-4 col-form-label text-md-right">{{ __('Unidade') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="unidade" class="col-md-4 col-form-label text-md-right">{{ __('Unidade *') }}</label>
                             <div class="col-md-6">
                                 <select id="bloco"  class="form-control @error('bloco') is-invalid @enderror" name="bloco" value="{{ old('bloco') }}" required autocomplete="bloco" autofocus>
                                     <option value="">Bloco</option>
@@ -83,8 +80,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Celular *') }}</label>
                             <div class="col-md-6">
                                 <input id="tel1" type="tel" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}" placeholder="com DDD" required autocomplete="tel1" autofocus>
                                 @error('tel1')
@@ -103,8 +99,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF *') }}</label>
                             <div class="col-md-6">
                                 <input id="cpf" type="text" maxlength="14" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
 
@@ -117,8 +112,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo *') }}</label>
                             <div class="col-md-6">
                                 <select id="sexo" class="form-control @error('sexo') is-invalid @enderror" name="sexo" value="{{ old('sexo') }}" required autocomplete="sexo" autofocus>
                                     <option value="">-- Escolha --</option>
@@ -134,8 +128,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Nascimento') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Nascimento *') }}</label>
                             <div class="col-md-6">
                                 <input id="data_nascimento" type="date" class="form-control @error('data_nascimento') is-invalid @enderror" name="data_nascimento" value="{{ old('data_nascimento') }}" required autocomplete="data_nascimento" autofocus>
 
@@ -148,8 +141,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail *') }}</label>
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
@@ -162,8 +154,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto *') }}</label>
                             <div class="col-md-6">
                                 <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
 
@@ -261,8 +252,7 @@
                         <hr>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha *') }}</label>
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Mínimo 6 caracteres" required autocomplete="new-password">
 
@@ -275,16 +265,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
-                            <i style="color:red">*</i>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha *') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Mínimo 6 caracteres" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('reside', 'Resido no condomínio', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                            <i style="color:red">*</i>
+                            {!! Form::label('reside', 'Reside no condomínio *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-4">
                                 <input type="radio" name="reside" value="1" required> SIM
                                 <br>
@@ -292,9 +280,11 @@
                             </div>
                         </div>
 
+                        <p style="text-align:center">(*) Campos obrigatórios</p>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Cadastrar') }}
                                 </button>
                             </div>

@@ -11,7 +11,7 @@
                     {!! Form::model($pet, ['method'=>'PATCH', 'action'=>['PetController@update', $pet->id], 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data']) !!}
 
                         <div class="form-group row">
-                            {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('tipo', 'Tipo *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-3">
                                 {!! Form::select('tipo',
                                     [
@@ -25,14 +25,14 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('nome', 'Nome', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('nome', 'Nome *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {!! Form::text('nome', null, ['class'=>'form-control', 'placeholder'=>'']) !!}
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('descricao', 'Características', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('descricao', 'Características *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 <textarea name="descricao" id="" cols="" rows="2" class="form-control">{{ $pet->descricao }}</textarea>
                             </div>
@@ -61,6 +61,8 @@
                                 <textarea name="obs" id="" cols="" rows="3" class="form-control">{{ $pet->obs }}</textarea>
                             </div>
                         </div>
+
+                        <p style="text-align:center">(*) Campos obrigatórios</p>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">

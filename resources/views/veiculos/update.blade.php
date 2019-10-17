@@ -11,7 +11,7 @@
                     {!! Form::model($veiculo, ['method'=>'PATCH', 'action'=>['VeiculoController@update', $veiculo->id], 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group row">
-                            {!! Form::label('tipo', 'Tipo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('tipo', 'Tipo *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-3">
                                 {!! Form::select('tipo',
                                     [
@@ -19,6 +19,7 @@
                                     'Moto' => 'Moto',
                                     'Caminhonete' => 'Caminhonete',
                                     'Caminhão' => 'Caminhão',
+                                    'Outro' => 'Outro',
                                     ]
 
                                 , null, ['class'=>'form-control', 'required']) !!}
@@ -26,14 +27,14 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('descricao', 'Veículo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('descricao', 'Veículo *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'autofocus', 'style'=>'text-transform:uppercase', 'placeholder'=>'Ex: Fiat Uno Mille']) !!}
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('cor', 'Cor', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('cor', 'Cor *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-3">
                                 {!! Form::select('cor',
                                     [
@@ -47,6 +48,7 @@
                                     'Prata'     => 'Prata',
                                     'Cinza'     => 'Cinza',
                                     'Verde'     => 'Verde',
+                                    'Outra'     => 'Outra',
                                     ]
 
                                 , null, ['class'=>'form-control', 'required']) !!}
@@ -54,11 +56,13 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('placa', 'Placa', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('placa', 'Placa *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-3">
                                 {!! Form::text('placa', null, ['class'=>'form-control', 'required', 'autofocus', 'placeholder'=>'AAA-1234', 'id'=>'placa']) !!}
                             </div>
                         </div>
+
+                        <p style="text-align:center">(*) Campos obrigatórios</p>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">

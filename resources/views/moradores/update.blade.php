@@ -11,16 +11,14 @@
                     {!! Form::model($user,['method'=>'PATCH', 'action'=>['MoradorController@update', $user->id], 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
                         
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo') }}</label>
-                    
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome completo *') }}</label>
                         <div class="col-md-6">
                             {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
-
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo *') }}</label>
                             <div class="col-md-6">
                                     {!! Form::select('tipo', 
                                         [
@@ -35,8 +33,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="unidade" class="col-md-4 col-form-label text-md-right">{{ __('Unidade') }}</label>
-
+                            <label for="unidade" class="col-md-4 col-form-label text-md-right">{{ __('Unidade *') }}</label>
                             <div class="col-md-6">
                                 {!! Form::select('bloco',
                                     [
@@ -87,14 +84,11 @@
                                     ],
                                     null, ['class' => 'form-control', 'required', 'placeholder' => '-- Apartamento --']) 
                                 !!}
-
                             </div>
                         </div>
 
-
                         <div class="form-group row">
-                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
-
+                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Celular *') }}</label>
                             <div class="col-md-6">
                                 {!! Form::tel('tel1', null, ['class' => 'form-control', 'id'=>'tel1', 'required']) !!}
                                 {!! Form::tel('tel2', null, ['class' => 'form-control', 'id'=>'tel2']) !!}                                
@@ -102,16 +96,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
-
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF *') }}</label>
                             <div class="col-md-6">
                                 {!! Form::text('cpf', null, ['class' => 'form-control', 'id'=>'cpf', 'required']) !!}    
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
-
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo *') }}</label>
                             <div class="col-md-6">
                                 {!! Form::select('sexo', 
                                     [
@@ -124,15 +116,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Nascimento') }}</label>
-
+                            <label for="data_nascimento" class="col-md-4 col-form-label text-md-right">{{ __('Nascimento *') }}</label>
                             <div class="col-md-6">
                                 {!! Form::date('data_nascimento', null, ['class' => 'form-control', 'required']) !!}  
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto *') }}</label>
                             <div class="col-md-6">
                                 {!! Form::file('foto', null, ['class' => 'form-control']) !!}  
                             </div>
@@ -275,7 +266,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail *') }}</label>
 
                             <div class="col-md-6">
                                 {!! Form::email('email', null, ['class' => 'form-control', 'required']) !!}
@@ -283,18 +274,19 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('reside', 'Resido no condomínio', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                            <i style="color:red">*</i>
+                            {!! Form::label('reside', 'Resido no condomínio *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                             <div class="col-md-4">
-                                <input type="radio" name="reside" value=" {{$user->reside}} " required> SIM
+                                {!! Form::radio('reside', 1) !!} SIM
                                 <br>
-                                <input type="radio" name="reside" value=" {{$user->reside}} " required> NÃO
+                                {!! Form::radio('reside', 0) !!} NÃO
                             </div>
                         </div>
 
+                        <p style="text-align:center">(*) Campos obrigatórios</p>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Atualizar') }}
                                 </button>
                             </div>

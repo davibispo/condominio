@@ -18,24 +18,21 @@
                     {!! Form::open(['method'=>'POST', 'action'=>'OcorrenciaController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
 
                     <div class="form-group row">
-                        {!! Form::label('data_solicitada', 'Data do ocorrido', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('data_solicitada', 'Data do ocorrido *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-3">
                             {!! Form::date('data', null, ['class'=>'form-control', 'required']) !!}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('descricao', 'Descrição *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-6">
                             <textarea rows="6" class="form-control" name="descricao"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('anonimo', 'Assinar', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('anonimo', 'Assinar *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-4">
                             <input type="radio" name="anonimo" value="1" required> SIM
                             <br>
@@ -67,6 +64,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <p style="text-align:center">(*) Campos obrigatórios</p>
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">

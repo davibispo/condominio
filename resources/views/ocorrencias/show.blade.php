@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Anexos do Registro de Ocorrência</div>
+                <div class="card-header" style="font-weight:bold">Anexos do Registro de Ocorrência</div>
 
                 <div class="card-body">
                     <!-- Nav tabs -->

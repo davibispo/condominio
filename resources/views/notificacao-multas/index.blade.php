@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Notificações e/ou Multas</div>
+                <div class="card-header" style="font-weight:bold">Notificações e/ou Multas</div>
 
                 <div class="card-body">
 

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Áreas Locáveis</div>
+                <div class="card-header" style="font-weight:bold">Áreas Locáveis</div>
 
                 <div class="card-body">
                         <div class="container" style="overflow:auto; height: 500px;">

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Arquivos Disponíveis</div>
+                <div class="card-header" style="font-weight:bold">Arquivos Disponíveis</div>
 
                 <div class="card-body" style="overflow:auto; height: 500px;">
                     <table class="table table-sm table-hover table-striped">

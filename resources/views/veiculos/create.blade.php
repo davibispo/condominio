@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Cadastrar Veículo</div>
+                <div class="card-header" style="font-weight:bold">Cadastrar Veículo</div>
 
                 <div class="card-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'VeiculoController@store', 'class'=>'form-horizontal']) !!}

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ __('Atualizar Cadastro') }}</div>
+                <div class="card-header" style="font-weight:bold">{{ __('Atualizar Cadastro') }}</div>
 
                 <div class="card-body">
                     {!! Form::model($user,['method'=>'PATCH', 'action'=>['MoradorController@update', $user->id], 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}

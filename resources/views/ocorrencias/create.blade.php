@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Registrar Ocorrência</div>
+                <div class="card-header" style="font-weight:bold">Registrar Ocorrência</div>
 
                 <div class="card-body">
                     <div class="alert" style="background-color:rgba(0,0,0,.03)">

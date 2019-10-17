@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Editar Área Locável</div>
+                <div class="card-header" style="font-weight:bold">Editar Área Locável</div>
 
                 <div class="card-body">
                     {!! Form::model($area, ['method'=>'PATCH', 'action'=>['LocavelAreaController@update', $area->id], 'class'=>'form-horizontal']) !!}

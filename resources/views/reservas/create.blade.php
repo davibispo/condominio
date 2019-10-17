@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Solicitar Reserva de Local</div>
+                <div class="card-header" style="font-weight:bold">Solicitar Reserva de Local</div>
 
                 <div class="card-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'ReservaController@store', 'class'=>'form-horizontal']) !!}

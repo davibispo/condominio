@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Enviar Arquivos</div>
+                <div class="card-header" style="font-weight:bold">Enviar Arquivos</div>
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 500px;">

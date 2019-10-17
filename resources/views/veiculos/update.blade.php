@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Editar Cadastro de Veículo</div>
+                <div class="card-header" style="font-weight:bold">Editar Cadastro de Veículo</div>
 
                 <div class="card-body">
                     {!! Form::model($veiculo, ['method'=>'PATCH', 'action'=>['VeiculoController@update', $veiculo->id], 'class'=>'form-horizontal']) !!}

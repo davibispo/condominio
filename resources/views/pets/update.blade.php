@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Editar Cadastro de Pet</div>
+                <div class="card-header" style="font-weight:bold">Editar Cadastro de Pet</div>
 
                 <div class="card-body">
                     {!! Form::model($pet, ['method'=>'PATCH', 'action'=>['PetController@update', $pet->id], 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data']) !!}

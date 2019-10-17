@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">PORTARIA - GERENCIAMENTO DE VISITAS</div>
+                <div class="card-header" style="font-weight:bold">PORTARIA - GERENCIAMENTO DE VISITAS</div>
 
                 <div class="card-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'PortariaController@store', 'class'=>'form-horizontal']) !!}

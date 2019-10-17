@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Ocorrências Registradas</div>
+                <div class="card-header" style="font-weight:bold">Ocorrências Registradas</div>
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 500px;">

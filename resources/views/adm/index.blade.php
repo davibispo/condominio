@@ -72,6 +72,13 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr>
+                            <td><i class="fas fa-lock"></i></td>
+                            <td><a class="dropdown-item" href="{{ route('adm.permissoes') }}">Acesso</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </table> 
 
                     <div class="container" style="float:right">

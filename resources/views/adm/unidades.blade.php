@@ -9,7 +9,16 @@
 
                 <div class="card-body">
                     <div class="container" style="overflow:auto; height: 500px;">
+                        <table style="width:100%">
+                            <tr>
+                                <td  style="padding-left:5%; padding-right:5%"><i class="fas fa-user" style="color:blue"></i> Proprietário </td>
+                                <td  style="padding-left:5%; padding-right:5%"><i class="fas fa-user" style="color:brown"></i> Inquilino </td>
+                                <td  style="padding-left:5%; padding-right:5%"><i class="fas fa-user" style="color:grey"></i> Morador </td>
+                            </tr>
+                        </table>
+                        
                     <table class="table table-sm">
+                        <br>
                         <tbody>
                             <tr>
                                 <td> 
@@ -21,7 +30,21 @@
                                                 
                                                     @foreach ($users as $u)
                                                         @if ($u->bloco == $i && $u->apto == $j)
-                                                            <i class="fas fa-user" style="color:blue"></i>
+                                                            @switch($u->tipo)
+                                                                @case('Proprietário')
+                                                                    <i class="fas fa-user" style="color:blue"></i>
+                                                                    @break
+                                                                @case('Inquilino')
+                                                                    <i class="fas fa-user" style="color:brown"></i>
+                                                                    @break
+                                                                @case('Morador')
+                                                                    <i class="fas fa-user" style="color:grey"></i>
+                                                                    @break
+                                                                @case('Outro')
+                                                                    <i class="fas fa-user" style="color:yellow"></i>
+                                                                    @break
+                                                                @default
+                                                            @endswitch
                                                         @endif
                                                     @endforeach
                                                 </li>
@@ -38,7 +61,21 @@
 
                                                     @foreach ($users as $u)
                                                         @if ($u->bloco == $i && $u->apto == $j)
-                                                            <i class="fas fa-user" style="color:blue"></i>
+                                                            @switch($u->tipo)
+                                                                @case('Proprietário')
+                                                                    <i class="fas fa-user" style="color:blue"></i>
+                                                                    @break
+                                                                @case('Inquilino')
+                                                                    <i class="fas fa-user" style="color:brown"></i>
+                                                                    @break
+                                                                @case('Morador')
+                                                                    <i class="fas fa-user" style="color:grey"></i>
+                                                                    @break
+                                                                @case('Outro')
+                                                                    <i class="fas fa-user" style="color:yellow"></i>
+                                                                    @break
+                                                                @default
+                                                            @endswitch
                                                         @endif
                                                     @endforeach
                                                 </li>
@@ -55,7 +92,21 @@
                                                     
                                                     @foreach ($users as $u)
                                                         @if ($u->bloco == $i && $u->apto == $j)
-                                                            <i class="fas fa-user" style="color:blue"></i>
+                                                            @switch($u->tipo)
+                                                                @case('Proprietário')
+                                                                    <i class="fas fa-user" style="color:blue"></i>
+                                                                    @break
+                                                                @case('Inquilino')
+                                                                    <i class="fas fa-user" style="color:brown"></i>
+                                                                    @break
+                                                                @case('Morador')
+                                                                    <i class="fas fa-user" style="color:grey"></i>
+                                                                    @break
+                                                                @case('Outro')
+                                                                    <i class="fas fa-user" style="color:yellow"></i>
+                                                                    @break
+                                                                @default
+                                                            @endswitch
                                                         @endif
                                                     @endforeach
                                                 </li>
@@ -72,7 +123,21 @@
                                                 
                                                     @foreach ($users as $u)
                                                         @if ($u->bloco == $i && $u->apto == $j)
-                                                            <i class="fas fa-user" style="color:blue"></i>
+                                                            @switch($u->tipo)
+                                                                @case('Proprietário')
+                                                                    <i class="fas fa-user" style="color:blue"></i>
+                                                                    @break
+                                                                @case('Inquilino')
+                                                                    <i class="fas fa-user" style="color:brown"></i>
+                                                                    @break
+                                                                @case('Morador')
+                                                                    <i class="fas fa-user" style="color:grey"></i>
+                                                                @break
+                                                                @case('Outro')
+                                                                    <i class="fas fa-user" style="color:yellow"></i>
+                                                                    @break
+                                                                @default
+                                                            @endswitch
                                                         @endif
                                                     @endforeach
                                                 </li>

@@ -96,7 +96,14 @@ class AdmController extends Controller
 
     public function unidades()
     {
-        $users = User::all()->where('ativo', 1);
+        $users = User::all()->where('ativo', 1)->where('reside', 1);
         return view('adm.unidades', compact('users'));
+    }
+
+    public function permissoes()
+    {
+        $users = User::all();
+
+        return view('adm.permissoes', compact('users'));
     }
 }

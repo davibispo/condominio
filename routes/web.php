@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('adm/permissoes', 'AdmController@permissoes')->name('adm.permissoes');
 Route::get('adm/unidades', 'AdmController@unidades')->name('adm.unidades');
 Route::resource('portaria', 'PortariaController');
 Route::resource('adm', 'AdmController');

@@ -55,9 +55,9 @@
                             </select>
                         </div>
 
-                        <div class="input-group mb-3 input-group-lg">
-                            <div class="col-md-8 offset-md-4">
-                                {!! Form::submit('Salvar', ['class'=>'btn btn-dark btn']) !!}
+                        <div class="input-group mb-8 input-group-lg">
+                            <div class="col-md-12">
+                                {!! Form::submit('Salvar', ['class'=>'btn btn-primary btn btn-block']) !!}
                             </div>
                         </div>
                     {!! Form::close() !!}

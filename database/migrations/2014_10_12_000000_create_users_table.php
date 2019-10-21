@@ -16,7 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('ativo', 1)->default('0');
-            $table->char('status', 1)->default('0'); // qualquer status necessário
+            $table->char('status', 1)->default('0'); 
+                // 9-Administrador Geral; 
+                // 8-Porteiro
+                // 0-Moradores/Inquilinos/Proprietarios; 
             $table->char('reside', 1)->default('1'); // se reside no condomínio
             $table->string('tipo', 30)->nullable();  // proprietario ou inquilino
             $table->string('bloco', 5)->nullable();

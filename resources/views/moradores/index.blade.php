@@ -22,7 +22,7 @@
                                 <th>Telefone 2</th>
                                 <th>E-mail</th>
                                 <th>Ativo</th>
-                                <th>Status</th>
+                                <th>Reside</th>
                             </tr>
                             @foreach ($users as $item)
                             <tbody id="myTable" style="font-size:12px">
@@ -46,7 +46,13 @@
                                             <a href="{{ route('moradores.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
                                         @endif
                                     </td>
-                                    <td>{{ $item->status }}</td>
+                                    <td>
+                                        @if ($item->reside == 1)
+                                            Sim
+                                            @else
+                                                Não
+                                        @endif
+                                    </td>
                                 </tr>
                             </tbody>
                             @endforeach

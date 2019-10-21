@@ -50,6 +50,7 @@
                                     @for ($i = 1; $i < 23; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
+                                    <option value="SU">Sem Unidade</option>
                                 </select>
                                 <select id="apto"  class="form-control @error('apto') is-invalid @enderror" name="apto" value="{{ old('apto') }}" required autocomplete="apto" autofocus>
                                     <option value="">Apartamento</option>
@@ -69,6 +70,7 @@
                                     <option value="302">302</option>
                                     <option value="303">303</option>
                                     <option value="304">304</option>
+                                    <option value="SU">Sem Unidade</option>
                                 </select>
 
                                 @error('apto')

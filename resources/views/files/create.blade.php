@@ -11,16 +11,14 @@
                     <div class="container" style="overflow:auto; height: 500px;">
                     {!! Form::open(['method'=>'POST', 'action'=>'ArquivoController@store', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
                     <div class="form-group row">
-                        {!! Form::label('arquivo', 'Arquivo', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('arquivo', 'Arquivo *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-6">
                             {!! Form::file('arquivo', null, ['class'=>'form-control', 'required']) !!}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
-                        <i style="color:red">*</i>
+                        {!! Form::label('descricao', 'Descrição *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}
                         <div class="col-md-6">
                             {!! Form::text('descricao', null, ['class'=>'form-control', 'required', 'placeholder'=>'Dê um nome para o arquivo.']) !!}
                         </div>

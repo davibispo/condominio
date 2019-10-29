@@ -102,8 +102,18 @@ class AdmController extends Controller
 
     public function permissoes()
     {
-        $users = User::all();
-
+        $users = User::all()->where('ativo', 1)->sortByDesc('updated_at');
+        
         return view('adm.permissoes', compact('users'));
+    }
+
+    public function permissoesUpdate(Request $request)
+    {        
+        if($request->user_id > 0){
+            DB::update("update users set status = $request->status where id = ?", [$request->user_id]);
+            return redirect()->back()->with('alertSuccess', 'Permissão de acesso especial liberado com sucesso!');
+        }else{
+            return redirect()->back()->with('alertDanger', 'Erro! Precisa escolher algum usuário!');;
+        }
     }
 }

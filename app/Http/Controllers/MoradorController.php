@@ -18,7 +18,7 @@ class MoradorController extends Controller
      */
     public function index()
     {
-        $users = User::all()->sortBy('apto')->sortBy('bloco'); 
+        $users = User::all()->where('tipo','<>','Outro')->sortByDesc('apto')->sortByDesc('bloco'); 
         return view('moradores.index', compact('users'));
     }
 

@@ -32,7 +32,7 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        $reservas = Reserva::all()->sortByDesc('data_solicitada');
+        $reservas = Reserva::all()->sortByDesc('data_solicitada')->where('status', '<>', 3);
         $areas = LocavelArea::all()->where('ativo', 1);
         return view('reservas.create', compact('areas', 'reservas'));
     }
@@ -54,7 +54,7 @@ class ReservaController extends Controller
         $reserva->hora_fim = $request->hora_fim;
         $reserva->obs = $request->obs;
         $reserva->user_id = auth()->user()->id;
-        $reserva->status = 1;
+        $reserva->status = 1; // 1-Solicitado, 2-Liberado, 3-Removido 
         
         $solicitante = auth()->user(); // retorna os dados do usuário logado.
         
@@ -64,7 +64,7 @@ class ReservaController extends Controller
                 
         $dataLimite = date('d-m-Y', strtotime('+30 days')); // limite de data para permitir solicitações.
         
-        if($solicitante->status == 1){ // supondo q status 1 seja inadimplente.
+        if($solicitante->status == 1){ // supondo q status do user 1 seja inadimplente.
             return redirect()->back()->with('alertDanger', 'Desculpe, algo deu errado. Procure o Síndico ou Administradora para resolver.');
         }
         elseif ($existeData == true) { // verifica se existe reserva na data solicitada.
@@ -145,7 +145,8 @@ class ReservaController extends Controller
     public function destroy($id)
     {
         $reserva = Reserva::find($id);
-        $reserva->delete();
+        $reserva->status = 3;
+        $reserva->update();
 
         return redirect()->back()->with('alertDanger', 'Reserva removida com sucesso!');
     }

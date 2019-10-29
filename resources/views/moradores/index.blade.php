@@ -14,12 +14,12 @@
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <tr>
                                 <th><i class="fas fa-search"></i></th>
-                                <th>Unidade</th>
+                                <th style="width:5%">Unidade</th>
                                 <th>Nome</th>
                                 <th>Tipo</th>
-                                <th>CPF</th>
-                                <th>Telefone 1</th>
-                                <th>Telefone 2</th>
+                                <th style="width:10%">CPF</th>
+                                <th style="width:12%">Telefone 1</th>
+                                <th style="width:12%">Telefone 2</th>
                                 <th>E-mail</th>
                                 <th>Ativo</th>
                                 <th>Reside</th>
@@ -50,7 +50,7 @@
                                         @if ($item->reside == 1)
                                             Sim
                                             @else
-                                                Não
+                                                <b>Não</b>
                                         @endif
                                     </td>
                                 </tr>

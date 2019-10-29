@@ -27,25 +27,6 @@
                                 @endforeach
                             </table>
                         </div>
-                        <br>
-                        <hr>
-
-                        <i>Acesso atual: 
-                            <b>
-                                @switch($u->status)
-                                    @case(0)
-                                        Cadastrado (Proprietário, Inquilino, Morador ou Outro)
-                                        @break
-                                    @case(8)
-                                        Porteiro    
-                                        @break
-                                    @case(9)
-                                        Administrador Geral    
-                                        @break
-                                    @default
-                                @endswitch
-                            </b>
-                        </i>
                         <br><br>
 
                         <div class="form-group row">
@@ -54,7 +35,7 @@
                             <div class="col-md-6">
                                 <select name="status" id="" class="form-control">
                                     <option value="">Escolha</option>
-                                    <option value="0">Proprietário, Inquilino, Morador ou Outro</option>
+                                    <option value="0">Acesso normal</option>
                                     <option value="8">Porteiro</option>
                                     <option value="9">Administrador Geral</option>
                                 </select>
@@ -73,8 +54,8 @@
                         <table class="table table-sm table-hover" style="font-size:10px">
                             <thead>    
                                 <tr>
-                                    <th>Unidade</th>
                                     <th>Nome</th>
+                                    <th>Unidade</th>
                                     <th>CPF</th>
                                     <th>Telefone 1</th>
                                     <th>Telefone 2</th>
@@ -85,8 +66,8 @@
                                 @if($u->status != 0)
                                     <tbody style="font-size:12px" class="alert-info">
                                         <tr>
-                                            <td> {{$u->bloco}}-{{$u->apto}} </td>
                                             <td> {{$u->name}} </td>
+                                            <td> {{$u->bloco}}-{{$u->apto}} </td>
                                             <td> {{$u->cpf}} </td>
                                             <td> {{$u->tel1}} </td>
                                             <td> {{$u->tel2}} </td>

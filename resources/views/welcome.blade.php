@@ -63,7 +63,7 @@
             }
         </style>
     </head>
-    <body style="background: url('{{ asset('img/img-BA.jpg') }}') no-repeat fixed center; background-size: 100%">
+    <body style="background: url('{{ asset('') }}') no-repeat fixed center; background-size: 100%">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <span style="color: white; text-shadow: 2px 2px 4px #000000;">Sistema Residencial<br><b>Bosque das Acácias</b> </span>  
+                    <span>Sistema de Controle Residencial</span>  
                 </div>
 
                 <div class="links">

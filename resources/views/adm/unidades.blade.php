@@ -19,10 +19,10 @@
                         
                     <table class="table table-sm">
                         <br>
-                        <tbody>
+                        <tbody style="background-color:rgba(0,0,0,.03);">
                             <tr>
                                 <td> 
-                                    @for ($i = 1; $i < 17; $i++) 
+                                    @for ($i = 1; $i < 23; $i++) 
                                         @for ($j = 001; $j < 005; $j++)
                                             <ul>
                                                 <li style="list-style:none"> 
@@ -53,7 +53,7 @@
                                     @endfor
                                 </td>
                                 <td> 
-                                    @for ($i = 1; $i < 17; $i++) 
+                                    @for ($i = 1; $i < 23; $i++) 
                                         @for ($j = 101; $j < 105; $j++)
                                             <ul>
                                                 <li style="list-style:none"> 
@@ -84,7 +84,7 @@
                                     @endfor
                                 </td>
                                 <td> 
-                                    @for ($i = 1; $i < 17; $i++) 
+                                    @for ($i = 1; $i < 23; $i++) 
                                         @for ($j = 201; $j < 205; $j++)
                                             <ul>
                                                 <li style="list-style:none"> 
@@ -115,7 +115,7 @@
                                     @endfor
                                 </td>
                                 <td> 
-                                    @for ($i = 1; $i < 17; $i++) 
+                                    @for ($i = 1; $i < 23; $i++) 
                                         @for ($j = 301; $j < 305; $j++)
                                             <ul>
                                                 <li style="list-style:none"> 

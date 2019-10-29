@@ -56,14 +56,21 @@
                                         <td>De {{ $item->hora_inicio }} às {{ $item->hora_fim }}</td>
                                         <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
                                         <td>
-                                            @if ($item->status == 1)
-                                                <i style="color:red">Solicitado</i>
-                                            @else
-                                                <i style="color:green">Liberado</i>
-                                            @endif
+                                            @switch($item->status)
+                                                @case(1)
+                                                    <i style="color:red">Solicitado</i>
+                                                    @break
+                                                @case(2)
+                                                    <i style="color:green">Liberado</i>
+                                                    @break
+                                                @case(3)
+                                                    <i style="color:brown">Removido</i>
+                                                    @break
+                                                @default
+                                            @endswitch
                                         </td>
                                         <td>
-                                            @if ($item->data_solicitada >= $dataAtual)
+                                            @if ($item->data_solicitada >= $dataAtual && $item->status == 1)
                                                 @if ($item->status == 1)
                                                     <a href="{{ route('reservas.edit', $item->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
                                                 @else

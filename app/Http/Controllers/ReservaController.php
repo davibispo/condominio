@@ -33,8 +33,9 @@ class ReservaController extends Controller
     public function create()
     {
         $reservas = Reserva::all()->sortByDesc('data_solicitada')->where('status', '<>', 3);
+        $datasReservadas = Reserva::all()->sortByDesc('data_solicitada')->where('status', '<>', 3)->where('status', 2)->where('data_solicitada', '>', date('Y-m-d'));
         $areas = LocavelArea::all()->where('ativo', 1);
-        return view('reservas.create', compact('areas', 'reservas'));
+        return view('reservas.create', compact('areas', 'reservas', 'datasReservadas'));
     }
 
     /**
@@ -68,7 +69,7 @@ class ReservaController extends Controller
             return redirect()->back()->with('alertDanger', 'Desculpe, algo deu errado. Procure o Síndico ou Administradora para resolver.');
         }
         elseif ($existeData == true) { // verifica se existe reserva na data solicitada.
-            return redirect()->back()->with('alertDanger', 'Desculpe, esta data já está reservada! Escolha uma data disponível.');
+            return redirect()->back()->with('alertDanger', 'Desculpe, esta data/local já está reservada! Escolha uma data/local disponível.');
         }        
         elseif (strtotime($reserva->data_solicitada) < strtotime($dataAtual)) { // verifica se data solicitada é passado.
             return redirect()->back()->with('alertDanger', 'Erro! Data solicitada já passou!');

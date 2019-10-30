@@ -20,6 +20,7 @@
                                         </td>
                                         <td> {{$u->bloco}}-{{$u->apto}} </td>
                                         <td> {{$u->name}} </td>
+                                        <td> {{$u->cpf}} </td>
                                         <td> {{$u->tel1}} </td>
                                         <td> {{$u->tel2}} </td>
                                     </tr>    

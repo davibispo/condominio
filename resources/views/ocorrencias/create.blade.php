@@ -87,7 +87,7 @@
                                                 Status:
                                                 @switch($item->status)
                                                     @case(1)
-                                                        <i>Ocorrência registrada</i>
+                                                        <i style="color:brown">Ocorrência registrada</i>
                                                         @break
                                                     @case(2)
                                                         <i style="color:blue">Ocorrência lida</i>

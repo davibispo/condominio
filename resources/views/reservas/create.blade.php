@@ -31,6 +31,16 @@
                             </table>
                         </div>
                     </div>
+                    <div>
+                        Datas ocupadas: 
+                        @foreach ($datasReservadas as $r)
+                            @foreach ($areas as $a)
+                                @if ($r->locavel_area_id == $a->id)
+                                    <span class="badge badge-danger">{{ date('d/m', strtotime($r->data_solicitada)) }}: {{ $a->descricao }}</span>
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </div>
                     <br>
                     <div class="form-group row">
                         {!! Form::label('data_solicitada', 'Data *', ['class'=>'col-sm-4 col-form-label text-md-right']) !!}

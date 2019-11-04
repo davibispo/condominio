@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="font-weight:bold">Painel</div>
-
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -23,10 +23,7 @@
                         <li>Cadastre abaixo, caso tenha:</li>
                         <br>
                         <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Veículo(s):</a> {{ $totalVeiculos }}</li>
-                        <br>
                         <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Animais:</a> {{ $totalPets }}</li>
-                        <!--<br>
-                        <li style="list-style:none"><a href="#"><i class="fas fa-shipping-fast"></i> Cadastrar meu(s) Fornecedor(es) </a></li>-->
                         <br>
                         @if (auth()->user()->ativo == '1')
                             <li style="list-style:none"><i class="fas fa-check" style="color:green"></i> Cadastro ativo!</li>
@@ -37,6 +34,21 @@
                             </li>
                         @endif
                     </ul>
+
+                        @if (Auth::check() && auth()->user()->ativo == '1')
+                            @if (auth()->user()->status == '8' or auth()->user()->status == '9')
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('portaria.create') }}">PORTARIA</a>
+                            @endif
+                            @if (auth()->user()->status == '9')
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('adm.index') }}">Administração</a>
+                            @endif
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('reservas.create') }}">Reservas</a>
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('ocorrencias.create') }}">Ocorrências</a>
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('files.index') }}">Arquivos</a>
+                        @endif
+                    
+
+
                 </div>
             </div>
         </div>

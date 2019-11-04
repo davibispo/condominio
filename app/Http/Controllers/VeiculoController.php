@@ -16,9 +16,9 @@ class VeiculoController extends Controller
      */
     public function index()
     {
-        $veiculos   = Veiculo::all()->where('ativo', 1)->sortBy('user_id');
+        $veiculos   = Veiculo::all()->sortBy('user_id');
         $users      = User::all()->where('ativo', 1);
-        $unidades   = Unidade::all()->where('ativo', 1);
+        //$unidades   = Unidade::all()->where('ativo', 1);
 
         return view('veiculos.index', compact('veiculos', 'users', 'unidades'));
     }

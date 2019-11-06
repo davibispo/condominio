@@ -80,8 +80,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    <span>Sistema de Controle Residencial</span>  
+                <div class="">
+                    <span><h3>Sistema de Controle Residencial</h3></span>  
                 </div>
 
                 <div class="links">

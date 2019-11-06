@@ -37,10 +37,10 @@
 
                         @if (Auth::check() && auth()->user()->ativo == '1')
                             @if (auth()->user()->status == '8' or auth()->user()->status == '9')
-                                <a class="btn btn-lg btn-light btn-block" href="{{ route('portaria.create') }}">PORTARIA</a>
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('portaria.create') }}"><b>PORTARIA</b></a>
                             @endif
                             @if (auth()->user()->status == '9')
-                                <a class="btn btn-lg btn-light btn-block" href="{{ route('adm.index') }}">Administração</a>
+                                <a class="btn btn-lg btn-light btn-block" href="{{ route('adm.index') }}"><b>Administração</b></a>
                             @endif
                                 <a class="btn btn-lg btn-light btn-block" href="{{ route('reservas.create') }}">Reservas</a>
                                 <a class="btn btn-lg btn-light btn-block" href="{{ route('ocorrencias.create') }}">Ocorrências</a>

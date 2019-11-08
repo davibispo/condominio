@@ -14,17 +14,19 @@
                         </div>
                     @endif
                     @if (auth()->user()->ativo == '1')
-                        <b>Você está concetado!</b>
+                        <b>Você está conectado!</b>
                     @else
-                        Você está concetado, <b style="color:red">mas ainda sem acesso aos recursos!</b>
+                        Você está conectado, <b style="color:red">mas ainda sem acesso aos recursos!</b>
                     @endif    
                     <br><br>
                     <ul>
-                        <li>Cadastre abaixo, caso tenha:</li>
-                        <br>
-                        <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Veículo(s):</a> {{ $totalVeiculos }}</li>
-                        <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Animais:</a> {{ $totalPets }}</li>
-                        <br>
+                        @if (auth()->user()->status != '8')
+                            <li>Cadastre abaixo, caso tenha:</li>
+                            <br>
+                            <li style="list-style:none"><a href="{{ route('veiculos.create') }}"><i class="fas fa-car"></i> Veículo(s):</a> {{ $totalVeiculos }}</li>
+                            <li style="list-style:none"><a href="{{ route('pets.create') }}"><i class="fas fa-paw"></i> Animais:</a> {{ $totalPets }}</li>
+                            <br>
+                        @endif
                         @if (auth()->user()->ativo == '1')
                             <li style="list-style:none"><i class="fas fa-check" style="color:green"></i> Cadastro ativo!</li>
                         @else
@@ -34,7 +36,7 @@
                             </li>
                         @endif
                     </ul>
-
+                        
                         @if (Auth::check() && auth()->user()->ativo == '1')
                             @if (auth()->user()->status == '8' or auth()->user()->status == '9')
                                 <a class="btn btn-lg btn-light btn-block" href="{{ route('portaria.create') }}"><b>PORTARIA</b></a>
@@ -46,9 +48,6 @@
                                 <a class="btn btn-lg btn-light btn-block" href="{{ route('ocorrencias.create') }}">Ocorrências</a>
                                 <a class="btn btn-lg btn-light btn-block" href="{{ route('files.index') }}">Arquivos</a>
                         @endif
-                    
-
-
                 </div>
             </div>
         </div>
